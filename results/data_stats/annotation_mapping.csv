@@ -1,0 +1,22 @@
+symbol,description,final_class,reason,train,val,test,total
+F,Fusion of ventricular and normal beat,F,,385,29,388,802
+N,Normal beat,N,,31854,6220,36415,74489
+L,Left bundle branch block beat,N,,1457,2490,4123,8070
+R,Right bundle branch block beat,N,,3779,0,3473,7252
+j,Nodal (junctional) escape beat,N,,6,10,213,229
+e,Atrial escape beat,N,,0,16,0,16
+A,Atrial premature contraction,S,,705,105,1736,2546
+a,Aberrated atrial premature beat,S,,2,98,50,150
+J,Nodal (junctional) premature beat,S,,31,1,51,83
+S,Premature or ectopic supraventricular beat,S,,2,0,0,2
+V,Premature ventricular contraction,V,,2901,780,3218,6899
+E,Ventricular escape beat,V,,105,0,1,106
++,Rhythm change,excluded,non-beat annotation (rhythm/quality/artifact marker),539,77,557,1173
+~,Signal quality change,excluded,non-beat annotation (rhythm/quality/artifact marker),271,18,284,573
+!,Ventricular flutter wave,excluded,non-beat annotation (rhythm/quality/artifact marker),472,0,0,472
+"""",Comment annotation,excluded,non-beat annotation (rhythm/quality/artifact marker),2,0,435,437
+x,Non-conducted P-wave (blocked APB),excluded,non-beat annotation (rhythm/quality/artifact marker),21,37,135,193
+|,Isolated QRS-like artifact,excluded,non-beat annotation (rhythm/quality/artifact marker),65,1,65,131
+Q,Unclassifiable beat,excluded,"beat type outside N/S/V/F (paced, fusion of paced/normal, unclassifiable)",8,0,7,15
+[,Start of ventricular flutter/fibrillation,excluded,non-beat annotation (rhythm/quality/artifact marker),6,0,0,6
+],End of ventricular flutter/fibrillation,excluded,non-beat annotation (rhythm/quality/artifact marker),6,0,0,6

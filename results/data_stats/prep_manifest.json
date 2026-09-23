@@ -1,0 +1,219 @@
+{
+  "generated_utc": "2026-09-15T15:01:39+00:00",
+  "git_commit": null,
+  "config": {
+    "seed": 42,
+    "paths": {
+      "mitdb_dir": "data/raw/mitdb",
+      "nstdb_dir": "data/raw/nstdb",
+      "processed_dir": "data/processed",
+      "stats_dir": "results/data_stats"
+    },
+    "splits": {
+      "ds1": [
+        101,
+        106,
+        108,
+        109,
+        112,
+        114,
+        115,
+        116,
+        118,
+        119,
+        122,
+        124,
+        201,
+        203,
+        205,
+        207,
+        208,
+        209,
+        215,
+        220,
+        223,
+        230
+      ],
+      "ds2": [
+        100,
+        103,
+        105,
+        111,
+        113,
+        117,
+        121,
+        123,
+        200,
+        202,
+        210,
+        212,
+        213,
+        214,
+        219,
+        221,
+        222,
+        228,
+        231,
+        232,
+        233,
+        234
+      ],
+      "val": [
+        109,
+        201,
+        205,
+        223
+      ]
+    },
+    "signal": {
+      "lead": "MLII",
+      "fs": 360,
+      "bandpass": {
+        "enabled": true,
+        "low_hz": 0.5,
+        "high_hz": 40.0,
+        "order": 4
+      }
+    },
+    "window": {
+      "pre_samples": 320,
+      "post_samples": 192
+    },
+    "normalization": {
+      "method": "zscore",
+      "clip": 5.0
+    },
+    "labels": {
+      "N": [
+        "N",
+        "L",
+        "R",
+        "e",
+        "j"
+      ],
+      "S": [
+        "A",
+        "a",
+        "J",
+        "S"
+      ],
+      "V": [
+        "V",
+        "E"
+      ],
+      "F": [
+        "F"
+      ]
+    },
+    "qrs_symbols": [
+      "N",
+      "L",
+      "R",
+      "B",
+      "A",
+      "a",
+      "J",
+      "S",
+      "V",
+      "r",
+      "F",
+      "e",
+      "j",
+      "n",
+      "E",
+      "/",
+      "f",
+      "Q",
+      "?"
+    ],
+    "noise": {
+      "types": {
+        "bw": "baseline wander",
+        "em": "electrode motion",
+        "ma": "muscle artifact"
+      },
+      "channel": 0,
+      "snr_db": [
+        12,
+        6,
+        0
+      ],
+      "train_fraction": 0.5
+    }
+  },
+  "input_shape": [
+    1,
+    512
+  ],
+  "classes": [
+    "N",
+    "S",
+    "V",
+    "F"
+  ],
+  "splits": {
+    "train": [
+      101,
+      106,
+      108,
+      112,
+      114,
+      115,
+      116,
+      118,
+      119,
+      122,
+      124,
+      203,
+      207,
+      208,
+      209,
+      215,
+      220,
+      230
+    ],
+    "val": [
+      109,
+      201,
+      205,
+      223
+    ],
+    "test": [
+      100,
+      103,
+      105,
+      111,
+      113,
+      117,
+      121,
+      123,
+      200,
+      202,
+      210,
+      212,
+      213,
+      214,
+      219,
+      221,
+      222,
+      228,
+      231,
+      232,
+      233,
+      234
+    ]
+  },
+  "software": {
+    "python": "3.11.5",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.5",
+    "wfdb": "4.3.1",
+    "platform": "Windows-10-10.0.26200-SP0"
+  },
+  "outputs_sha256": {
+    "train.npz": "b6fcd4e6b0f0594a0514643c58c33735fe0a993423e39aa067786a3eae439e62",
+    "val.npz": "f020155e5fe276bc9c440c610ed606c6f315308e518109050a8a75b4bd74b726",
+    "test.npz": "93dadb43e2e746d236f0baf956d17017883f7efe510c78a9a3c179177c88b343"
+  }
+}

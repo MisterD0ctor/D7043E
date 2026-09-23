@@ -1,0 +1,65 @@
+# ai8x-synthesis network description for ai85ecgnet (max78002/model_configuration/ai85ecgnet.py).
+# DRAFT - not yet synthesized. Copy to ai8x-synthesis/networks/. Layer order must match forward().
+# Input: 1 x 512 (largest activation: 16 x 512 = 8192 bytes, so outputs alternate 0x0000 / 0x4000).
+---
+arch: ai85ecgnet
+dataset: ECG_MITBIH
+
+layers:
+  # 0: Conv1d 1->16, k5, len 512
+  - operation: Conv1d
+    kernel_size: 5
+    pad: 2
+    activate: ReLU
+    data_format: HWC
+    out_offset: 0x4000
+    processors: 0xffffffffffffffff
+  # 1: MaxPool 2 + Conv1d 16->32, len 256
+  - max_pool: 2
+    pool_stride: 2
+    operation: Conv1d
+    kernel_size: 5
+    pad: 2
+    activate: ReLU
+    out_offset: 0x0000
+    processors: 0xffffffffffffffff
+  # 2: MaxPool 2 + Conv1d 32->32, len 128
+  - max_pool: 2
+    pool_stride: 2
+    operation: Conv1d
+    kernel_size: 5
+    pad: 2
+    activate: ReLU
+    out_offset: 0x4000
+    processors: 0xffffffffffffffff
+  # 3: MaxPool 2 + Conv1d 32->64, len 64
+  - max_pool: 2
+    pool_stride: 2
+    operation: Conv1d
+    kernel_size: 5
+    pad: 2
+    activate: ReLU
+    out_offset: 0x0000
+    processors: 0xffffffffffffffff
+  # 4: MaxPool 2 + Conv1d 64->64, len 32
+  - max_pool: 2
+    pool_stride: 2
+    operation: Conv1d
+    kernel_size: 5
+    pad: 2
+    activate: ReLU
+    out_offset: 0x4000
+    processors: 0xffffffffffffffff
+  # 5: MaxPool 4 only, len 8
+  - max_pool: 4
+    pool_stride: 4
+    operation: None
+    out_offset: 0x0000
+    processors: 0xffffffffffffffff
+  # 6: Linear 512->4 (wide output)
+  - flatten: true
+    operation: MLP
+    output_width: 32
+    activate: None
+    out_offset: 0x4000
+    processors: 0xffffffffffffffff

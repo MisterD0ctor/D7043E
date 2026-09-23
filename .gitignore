@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Raw PhysioNet data and generated datasets (download with src/download_data.py)
+data/
+
+# Training artefacts (large); keep only curated results in results/
+results/runs/
+*.pt
+*.pth.tar
+!max78002/**/*.pth.tar
+
+# ai8x toolchain clones (install separately, see max78002/README.md)
+ai8x-training/
+ai8x-synthesis/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.claude/settings.local.json

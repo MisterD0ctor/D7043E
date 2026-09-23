@@ -1,0 +1,41 @@
+# Training configuration for the FP32 edge model (CRISP-DM stage 4: Modeling).
+# Model selection uses the VALIDATION split only - never DS2.
+
+run_name: ecgnet_baseline
+seed: 42
+data_config: configs/data.yaml
+
+model:
+  name: ECGNet
+  params:
+    num_classes: 4
+    in_channels: 1
+    input_len: 512          # must equal window.pre_samples + window.post_samples
+    channels: [16, 32, 32, 64, 64]
+    kernel_size: 5
+    head_pool: 4
+    dropout: 0.2
+
+training:
+  epochs: 50
+  batch_size: 256
+  optimizer: adamw
+  lr: 0.001
+  weight_decay: 0.0001
+  early_stopping_patience: 10
+  selection_metric: macro_f1   # on the validation split
+  num_workers: 0
+
+imbalance:
+  strategy: weighted_loss      # weighted_loss | balanced_sampler | none
+  weight_power: 0.5            # 1.0 = inverse frequency, 0.5 = sqrt inverse frequency
+
+augmentation:                  # applied to the training split only
+  enabled: true
+  amplitude_scale: [0.9, 1.1]
+  max_shift: 8                 # samples (~22 ms at 360 Hz)
+  gaussian_noise_std: 0.02     # in normalized units ([-1, 1] input range)
+  baseline_wander:
+    fs: 360
+    amplitude: 0.05
+    max_freq_hz: 0.5

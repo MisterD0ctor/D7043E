@@ -1,0 +1,65 @@
+# Data preparation configuration (CRISP-DM stage 3: Data Preparation).
+# Every parameter that influences the generated datasets lives here, so the
+# preprocessing is fully reproducible from this file + src/prepare_data.py.
+
+seed: 42
+
+paths:
+  mitdb_dir: data/raw/mitdb        # MIT-BIH Arrhythmia Database v1.0.0
+  nstdb_dir: data/raw/nstdb        # MIT-BIH Noise Stress Test Database v1.0.0
+  processed_dir: data/processed    # generated train/val/test .npz files
+  stats_dir: results/data_stats    # generated statistics (committed)
+
+splits:
+  # Inter-patient partition (de Chazal et al., 2004). Paced records 102, 104,
+  # 107, 217 are not part of either set.
+  ds1: [101, 106, 108, 109, 112, 114, 115, 116, 118, 119, 122, 124,
+        201, 203, 205, 207, 208, 209, 215, 220, 223, 230]
+  ds2: [100, 103, 105, 111, 113, 117, 121, 123, 200, 202, 210, 212,
+        213, 214, 219, 221, 222, 228, 231, 232, 233, 234]
+  # Validation records: a subset of DS1 (split by record, never by beat), chosen with
+  # src/select_val_records.py: ~20 % of DS1 N/S/V beats; 208 (90 % of F beats) and
+  # 207 (all E beats) are kept in training. Only 29 F beats remain for validation -
+  # consider record-grouped cross-validation on DS1 for F-sensitive decisions.
+  val: [109, 201, 205, 223]
+
+signal:
+  lead: MLII          # selected by signal name, not channel index (record 114 has MLII on channel 1)
+  fs: 360             # native MIT-BIH sampling frequency; no resampling
+  bandpass:
+    enabled: true
+    low_hz: 0.5       # removes baseline wander
+    high_hz: 40.0     # removes powerline interference and high-frequency EMG
+    order: 4          # Butterworth, applied zero-phase (sosfiltfilt) to the whole record
+
+window:
+  # Fixed-size window around the annotated R-peak (annotation sample).
+  # pre + post = model input length. 320/192 samples = 0.89 s / 0.53 s at 360 Hz,
+  # long enough to usually contain the previous R-peak (prematurity cue for S beats).
+  pre_samples: 320
+  post_samples: 192
+
+normalization:
+  method: zscore      # zscore (per window) | none
+  clip: 5.0           # clip standardized values to +-clip, then divide by clip -> [-1, 1]
+
+# Final class -> original MIT-BIH beat annotation symbols (AAMI EC57 grouping).
+# The order defines the class index (N=0, S=1, V=2, F=3).
+labels:
+  N: [N, L, R, e, j]  # normal, left/right bundle branch block, atrial/nodal escape
+  S: [A, a, J, S]     # atrial premature, aberrated APC, nodal premature, supraventricular premature
+  V: [V, E]           # premature ventricular contraction, ventricular escape
+  F: [F]              # fusion of ventricular and normal
+
+# Annotation symbols that mark a QRS complex; used for RR-interval features.
+# Excluded beat types (/, f, Q) still count as QRS complexes for RR computation.
+qrs_symbols: [N, L, R, B, A, a, J, S, V, r, F, e, j, n, E, /, f, Q, "?"]
+
+noise:
+  # MIT-BIH Noise Stress Test Database records (channel 0 used).
+  types: {bw: baseline wander, em: electrode motion, ma: muscle artifact}
+  channel: 0
+  snr_db: [12, 6, 0]
+  # Leakage guard: the first half of every noise record is reserved for
+  # training-time augmentation, the second half for robustness evaluation.
+  train_fraction: 0.5

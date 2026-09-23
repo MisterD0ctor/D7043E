@@ -1,0 +1,21 @@
+# Python 3.11 (3.11.8 recommended - same version as the ai8x toolchain)
+# GPU (optional): install torch first from the CUDA index, e.g.
+#   pip install torch==2.11.0 --index-url https://download.pytorch.org/whl/cu128
+# The MAX78002 toolchain (ai8x-training / ai8x-synthesis) uses its own environment,
+# see max78002/README.md.
+
+numpy==2.4.6
+scipy==1.17.1
+pandas==3.0.5
+matplotlib==3.11.2
+scikit-learn==1.9.1
+wfdb==4.3.1
+PyYAML==6.0.3
+tqdm==4.70.1
+torch==2.11.0
+
+# notebooks
+jupyter==1.1.1
+ipykernel==7.3.0
+nbformat==5.11.1
+nbconvert==7.17.1
