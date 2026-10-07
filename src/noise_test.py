@@ -3,9 +3,12 @@
 Noise is added to the RAW held-out ECG signal before the unchanged preprocessing pipeline
 (filter -> segment -> normalize), mimicking a noisy recording rather than a noisy model input.
 
-    SNR (dB) = 10 log10(P_ecg / P_noise)
-    P_ecg   = variance of the band-pass-filtered clean record
-    P_noise = variance of the zero-mean noise segment (before filtering)
+    SNR (dB) = 10 log10(S / N), defined as in the WFDB `nst` tool that generated the NSTDB records
+    S = (peak-to-peak amplitude of the first 300 normal QRS complexes of the clean raw record)^2 / 8
+    N = (RMS amplitude of the scaled noise in one-second windows, first 300 s of the noise record)^2
+
+Unlike the default nst protocol (two-minute noisy and clean segments alternating), the noise covers
+the whole record.
 
 Leakage guard: only the evaluation part of each noise record (after `noise.train_fraction`)
 is used here; the first part is reserved for training-time augmentation.
@@ -23,8 +26,8 @@ import torch
 
 from config import class_names, load_config, resolve, split_records
 from evaluate import compute_metrics, load_checkpoint, predict
-from noise import load_noise, scaled_noise
-from prepare_data import load_record, preprocess_signal, process_record
+from noise import load_noise, noise_power, qrs_power, scaled_noise
+from prepare_data import load_record, process_record
 
 SERIES_COLORS = ["#2a78d6", "#eb6834", "#1baf7a"]  # categorical slots 1-3 (bw, em, ma)
 
@@ -66,18 +69,18 @@ def main():
     rng = np.random.default_rng(cfg["seed"])
 
     conditions = [("clean", None)] + [(t, s) for t in cfg["noise"]["types"] for s in cfg["noise"]["snr_db"]]
-    noises = {t: load_noise(cfg, t) for t in cfg["noise"]["types"]}
+    noises = {t: (load_noise(cfg, t), noise_power(cfg, t)) for t in cfg["noise"]["types"]}
     ecg_power = {}
     for rec in records:
-        x, fs, _, _ = load_record(cfg["paths"]["mitdb_dir"], rec, cfg["signal"]["lead"])
-        ecg_power[rec] = (preprocess_signal(x, fs, cfg).var(), len(x))
+        x, fs, samples, symbols = load_record(cfg["paths"]["mitdb_dir"], rec, cfg["signal"]["lead"])
+        ecg_power[rec] = (qrs_power(x, fs, samples, symbols), len(x))
 
     rows = []
     for ntype, snr in conditions:
         y_true, y_pred = [], []
         for rec in records:
             power, length = ecg_power[rec]
-            noise = None if snr is None else scaled_noise(noises[ntype], length, power, snr, rng)
+            noise = None if snr is None else scaled_noise(noises[ntype][0], length, power, noises[ntype][1], snr, rng)
             arrays, *_ = process_record(rec, cfg, noise=noise)
             y_true.append(arrays["y"])
             y_pred.append(predict(model, torch.from_numpy(arrays["X"]), device))

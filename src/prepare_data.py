@@ -11,8 +11,10 @@ Processing order for every record:
 
 Outputs:
     data/processed/{train,val,test}.npz      X, y, record, sample, symbol, rr_pre, rr_post, rr_local
+    data/processed/excluded.npz              the same for DS1 records that are not used for training or validation
     results/data_stats/record_stats.csv      per-record class counts, exclusions, amplitude/quality stats
     results/data_stats/split_summary.csv     per-split N/S/V/F counts (report table 3.8)
+    results/data_stats/cv_folds.csv          cross-validation folds over the development records with class counts
     results/data_stats/annotation_mapping.csv  every annotation symbol seen -> class or exclusion reason
     results/data_stats/prep_manifest.json    parameters, software versions, seed, output checksums
 
@@ -33,7 +35,7 @@ import scipy
 import wfdb
 from scipy import signal as sps
 
-from config import class_names, load_config, resolve, split_records, symbol_to_class
+from config import class_names, cv_folds, load_config, resolve, split_records, symbol_to_class
 
 
 # ---------------------------------------------------------------------------
@@ -56,7 +58,7 @@ def preprocess_signal(x: np.ndarray, fs: float, cfg: dict) -> np.ndarray:
     bp = cfg["signal"]["bandpass"]
     if bp["enabled"]:
         sos = sps.butter(bp["order"], [bp["low_hz"], bp["high_hz"]], btype="bandpass", fs=fs, output="sos")
-        x = sps.sosfiltfilt(sos, x)
+        x = sps.sosfiltfilt(sos, x) if bp.get("zero_phase", True) else sps.sosfilt(sos, x)
     return x
 
 
@@ -170,6 +172,8 @@ def main():
 
     record_rows, symbol_counts, summary_rows, checksums = [], {}, [], {}
     for split, records in splits.items():
+        if not records:
+            continue
         parts = []
         for rec in records:
             arrays, excluded, edge_dropped, raw = process_record(rec, cfg)
@@ -227,6 +231,14 @@ def main():
             **{s: c.get(s, 0) for s in splits}, "total": sum(c.values()),
         })
     mapping_df = pd.DataFrame(mapping_rows).sort_values(["final_class", "total"], ascending=[True, False])
+
+    per_record = record_df.set_index("record")[classes]
+    fold_rows = []
+    for k, (train_records, held_out) in enumerate(cv_folds(cfg), start=1):
+        fold_rows.append({"fold": k, "held_out": " ".join(map(str, held_out)), "n_train_records": len(train_records),
+                          **{f"train_{c}": int(per_record.loc[train_records, c].sum()) for c in classes},
+                          **{f"held_out_{c}": int(per_record.loc[held_out, c].sum()) for c in classes}})
+    pd.DataFrame(fold_rows).to_csv(stats_dir / "cv_folds.csv", index=False)
 
     record_df.to_csv(stats_dir / "record_stats.csv", index=False)
     summary_df.to_csv(stats_dir / "split_summary.csv", index=False)

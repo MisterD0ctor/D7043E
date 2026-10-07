@@ -33,7 +33,8 @@ def main():
 
     classes = list(cfg["labels"])
     stats = pd.read_csv(resolve(cfg["paths"]["stats_dir"]) / "record_stats.csv").set_index("record")
-    ds1 = stats.loc[cfg["splits"]["ds1"], classes]
+    excluded = cfg["splits"].get("exclude", [])  # DS1 records that are not used for training or validation
+    ds1 = stats.loc[[r for r in cfg["splits"]["ds1"] if r not in excluded], classes]
     total = ds1.sum()
     candidates = [r for r in ds1.index if r not in args.keep_in_train]
 
@@ -47,7 +48,7 @@ def main():
                          **ds1.loc[list(combo)].sum().to_dict(), **{f"share_{c}": round(share[c], 3) for c in classes}})
 
     ranked = pd.DataFrame(rows).sort_values(["score", "n_records"]).head(args.top)
-    print(f"DS1 totals: {total.to_dict()} | kept in train: {args.keep_in_train}")
+    print(f"DS1 totals without {excluded}: {total.to_dict()} | kept in train: {args.keep_in_train}")
     print(ranked.to_string(index=False))
     print(f"\nBest validation records: [{ranked.iloc[0]['records'].replace(' ', ', ')}]")
 

@@ -17,11 +17,22 @@ splits:
         201, 203, 205, 207, 208, 209, 215, 220, 223, 230]
   ds2: [100, 103, 105, 111, 113, 117, 121, 123, 200, 202, 210, 212,
         213, 214, 219, 221, 222, 228, 231, 232, 233, 234]
-  # Validation records: a subset of DS1 (split by record, never by beat), chosen with
-  # src/select_val_records.py: ~20 % of DS1 N/S/V beats; 208 (90 % of F beats) and
-  # 207 (all E beats) are kept in training. Only 29 F beats remain for validation -
-  # consider record-grouped cross-validation on DS1 for F-sensitive decisions.
-  val: [109, 201, 205, 223]
+  # DS1 records that are prepared and described but never used for training, validation or
+  # model selection. 201 comes from the same subject as DS2 record 202 (same analog tape), so
+  # using it would put one person on both sides of the DS1/DS2 split.
+  exclude: [201]
+  # Validation records: a subset of DS1 (split by record, never by beat). Originally chosen with
+  # src/select_val_records.py together with 201; 208 (90 % of the DS1 F beats) and 207 (all E
+  # beats) are kept in training. 76 S and 27 F beats remain for validation - too few to select
+  # models on; see the validation design in report section 3.1.
+  val: [109, 205, 223]
+
+# Model selection: record-grouped cross-validation over the development records (DS1 without
+# `splits.exclude`). leave_one_record_out: every development record is held out once and predicted
+# by a model trained on all the others; the out-of-fold predictions of all records are pooled
+# before the metrics are computed. The validation records above only monitor a training run.
+cross_validation:
+  scheme: leave_one_record_out
 
 signal:
   lead: MLII          # selected by signal name, not channel index (record 114 has MLII on channel 1)
@@ -30,7 +41,9 @@ signal:
     enabled: true
     low_hz: 0.5       # removes baseline wander
     high_hz: 40.0     # removes powerline interference and high-frequency EMG
-    order: 4          # Butterworth, applied zero-phase (sosfiltfilt) to the whole record
+    order: 4          # Butterworth; with order 4 the band-pass is of 8th order
+    zero_phase: true  # true: forward-backward over the whole record (no phase shift, needs future samples)
+                      # false: one causal pass, as a device would have to filter
 
 window:
   # Fixed-size window around the annotated R-peak (annotation sample).
@@ -59,7 +72,7 @@ noise:
   # MIT-BIH Noise Stress Test Database records (channel 0 used).
   types: {bw: baseline wander, em: electrode motion, ma: muscle artifact}
   channel: 0
-  snr_db: [12, 6, 0]
+  snr_db: [12, 6, 0]  # SNR as defined by the WFDB nst tool (QRS amplitude based), see src/noise.py
   # Leakage guard: the first half of every noise record is reserved for
   # training-time augmentation, the second half for robustness evaluation.
   train_fraction: 0.5
