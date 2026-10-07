@@ -548,7 +548,10 @@ the band (section 2.3).
 
 The zero-phase form keeps every wave where it is relative to the annotation, but it uses future samples. It can
 therefore only be applied to a stored record. A device needs a causal filter, which delays the signal and shifts the
-waves relative to each other. This difference between the prepared data and a device is a limitation of the project.
+waves relative to each other. The zero-phase filter is kept for the prepared data: a causal filter removes no
+additional noise and changes the shape of the waves, so it cannot be expected to improve the classification. The
+difference between the prepared data and a device is a limitation of the project, and what the causal filter costs
+is examined in the deployment stage.
 
 **Filtering before segmentation.** The filter is applied to the whole record and the windows are cut afterwards. The
 other order gives a different signal: when each 512-sample window is filtered on its own, the result deviates from
@@ -658,23 +661,74 @@ shares also differ from the test set, where S makes up 3.7 % of the beats, twice
   framework.
 - *None of them changes the number of patients behind a class.* F from 1.2 patients remains F from one patient.
 
-**Decision.** Balancing is restricted to class weights in the loss; the data are not resampled. The strength of the
-weights is treated as a parameter, because the square-root weights of the initial configuration were never compared
-with alternatives: no weights, square-root weights and inverse-frequency weights will be compared by cross-validation
-in the modelling stage (section 3.1). The comparison is judged on the macro F1 of the pooled predictions, with
-precision and recall reported per class, so that recall is not bought with precision unnoticed. The records that are
-held out and the test set keep their natural class proportions. The imbalance between patients cannot be removed by
-any weighting. It is handled by evaluating by record (section 3.1) and by augmentation (section 3.7), and it is the
-main risk of the project (section 1.6).
-
-**TODO (your additions before we move on):**
-- The three candidates (no weights, square root, inverse frequency) and the exclusion of resampling and focal loss
-  are my proposal. Do you agree, or should balanced sampling be a candidate too? The code for it exists.
-- "Effective number of patients" is my choice of a summary number for the concentration. Keep it?
+**Decision.** The strategy is treated as a parameter, because the square-root weights of the initial configuration
+were never compared with alternatives. Four strategies will be compared by cross-validation in the modelling stage
+(section 3.1): no balancing, square-root class weights in the loss, inverse-frequency class weights, and balanced
+sampling, in which every beat of a batch is drawn with the same probability for each class (`balanced_sampler` in
+`src/dataset.py`). Undersampling and focal loss are not used, for the reasons given above. The comparison is judged on
+the macro F1 of the pooled predictions, with precision and recall reported per class, so that recall is not bought
+with precision unnoticed. The records that are held out and the test set keep their natural class proportions. The
+imbalance between patients cannot be removed by any of the four. It is handled by evaluating by record (section 3.1)
+and by augmentation (section 3.7), and it is the main risk of the project (section 1.6).
 
 ### 3.7 Data Augmentation
-Training split only (`configs/train.yaml`): amplitude scaling 0.9-1.1, time shift +-8 samples, Gaussian noise,
-synthetic baseline wander. **TODO:** justification; optional NSTDB noise from the training half of the noise records.
+**Rule.** Augmentation is applied to training data only: to the training records of a training run and to the 20
+training records of each cross-validation fold. The record that is held out, the validation records and the test set
+are never augmented. In the code, `src/train.py` passes the augmentation settings to the training dataset only.
+
+**What is implemented.** `src/dataset.py` applies four random augmentations to a prepared window each time it is
+drawn. Their settings come from the initial configuration (`configs/train.yaml`) and are starting values. The third
+column expresses each setting in standard deviations of the window, the unit of the z-score (notebook, "Evidence for
+the data preparation").
+
+| Augmentation | Setting | In window standard deviations | What it stands for |
+|---|---|---|---|
+| Amplitude scaling | factor between 0.9 and 1.1 | - | variation of the normalization divisor |
+| Shift in time | up to +-8 samples (22 ms) | - | uncertainty of the beat position |
+| White noise | standard deviation up to 0.02 | up to 0.10 | sensor noise |
+| Sinusoidal wander | amplitude up to 0.05, 0.05-0.5 Hz | up to 0.25 | baseline drift |
+
+How well each of them matches what it stands for differs.
+
+- *Amplitude scaling.* The divisor of the z-score depends on what the window contains (section 3.4), so the normalized
+  height of a beat varies naturally, by a factor of about 1.5 between windows with one and with two beats. A factor of 0.9
+  to 1.1 is small against that.
+- *Shift in time.* The annotation lies within three samples of the largest deflection for 96.5 % of the beats (section
+  3.3), and a causal filter would move the deflection by a median of 4 samples (11 ms). A QRS detector on a device adds
+  its own error. A range of +-8 samples covers the first two. The shift is circular: up to 1.6 % of the window moves
+  from one edge to the other, which a real shift would not do.
+- *White noise.* It is ten times weaker than the electrode-motion noise that remains after the filter at 12 dB (see
+  below), and it is white, while real noise after the filter is limited to the band.
+- *Sinusoidal wander.* It imitates drift below 0.5 Hz, which the band-pass filter removes before the model sees the
+  signal. What remains of real baseline wander after the filter lies above that frequency.
+
+**What is missing.** The robustness test adds recorded noise to the raw signal, before filtering and normalization.
+What remains of that noise after the filter is large, in standard deviations of a clean beat window (median over the
+development records):
+
+| Noise | 12 dB | 6 dB | 0 dB |
+|---|---|---|---|
+| Baseline wander | 0.33 | 0.66 | 1.31 |
+| Electrode motion | 1.00 | 1.99 | 3.98 |
+| Muscle artifact | 0.54 | 1.08 | 2.15 |
+
+None of the four augmentations comes near these values. An augmentation that prepares the model for this test has to
+add the same kind of noise in the same way: recorded noise from the Noise Stress Test Database, scaled to a random
+SNR and added to the raw training record before filtering and normalization. It is not implemented yet. It may only
+use the first half of each noise record; the second half is reserved for the robustness test (section 2.5).
+
+**Decision.** Like the other settings of the initial configuration, the augmentation is treated as a parameter. Three
+settings will be compared by cross-validation in the modelling stage (section 3.1): no augmentation, the four
+augmentations above, and the four together with recorded noise added to the raw signal.
+
+**TODO (your additions before we move on):**
+- Do you agree with these three settings?
+- The shift is circular. Should the windows be stored with 8 extra samples on each side, so that a real shift can be
+  cut from them? That changes the format of the prepared data slightly.
+- The sinusoidal wander imitates what the filter removes. Keep it in the set of four, or drop it?
+- To judge the noise augmentation in cross-validation, the held-out records need noise that is used neither for
+  augmentation nor for the final test. Should each noise record be split three ways (for example 40 % augmentation,
+  20 % cross-validation, 40 % final test) instead of into two halves?
 
 ### 3.8 Final Dataset *(generated: `split_summary.csv`)*
 | Split | Subjects/records | N | S | V | F | Total |
