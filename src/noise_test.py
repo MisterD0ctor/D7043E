@@ -10,8 +10,8 @@ Noise is added to the RAW held-out ECG signal before the unchanged preprocessing
 Unlike the default nst protocol (two-minute noisy and clean segments alternating), the noise covers
 the whole record.
 
-Leakage guard: only the evaluation part of each noise record (after `noise.train_fraction`)
-is used here; the first part is reserved for training-time augmentation.
+Leakage guard: DS1 validation records get the `cv` part of each noise record and DS2 the `eval` part
+(`noise.parts` in configs/data.yaml); the `train` part is reserved for training-time augmentation.
 
 Usage:
     python src/noise_test.py --checkpoint results/runs/<run>/best.pt --split val
@@ -69,7 +69,8 @@ def main():
     rng = np.random.default_rng(cfg["seed"])
 
     conditions = [("clean", None)] + [(t, s) for t in cfg["noise"]["types"] for s in cfg["noise"]["snr_db"]]
-    noises = {t: (load_noise(cfg, t), noise_power(cfg, t)) for t in cfg["noise"]["types"]}
+    part = "eval" if args.split == "test" else "cv"
+    noises = {t: (load_noise(cfg, t, part), noise_power(cfg, t)) for t in cfg["noise"]["types"]}
     ecg_power = {}
     for rec in records:
         x, fs, samples, symbols = load_record(cfg["paths"]["mitdb_dir"], rec, cfg["signal"]["lead"])

@@ -43,8 +43,8 @@ class ECGBeatDataset(Dataset):
         if a.get("max_shift"):
             shift = int(rng.integers(-a["max_shift"], a["max_shift"] + 1))
             x = torch.roll(x, shift, dims=-1)
-        if a.get("baseline_wander"):
-            bw = a["baseline_wander"]
+        bw = a.get("baseline_wander")
+        if bw and bw.get("enabled", True):
             t = torch.arange(L, dtype=x.dtype) / bw["fs"]
             freq, phase = rng.uniform(0.05, bw["max_freq_hz"]), rng.uniform(0, 2 * np.pi)
             x += rng.uniform(0, bw["amplitude"]) * torch.sin(2 * np.pi * freq * t + phase)

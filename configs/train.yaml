@@ -35,7 +35,8 @@ augmentation:                  # applied to the training split only
   amplitude_scale: [0.9, 1.1]
   max_shift: 8                 # samples (~22 ms at 360 Hz)
   gaussian_noise_std: 0.02     # in normalized units ([-1, 1] input range)
-  baseline_wander:
+  baseline_wander:             # dropped (report section 3.7): imitates drift below 0.5 Hz that the band-pass removes
+    enabled: false
     fs: 360
     amplitude: 0.05
     max_freq_hz: 0.5

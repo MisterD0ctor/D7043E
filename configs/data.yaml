@@ -73,6 +73,7 @@ noise:
   types: {bw: baseline wander, em: electrode motion, ma: muscle artifact}
   channel: 0
   snr_db: [12, 6, 0]  # SNR as defined by the WFDB nst tool (QRS amplitude based), see src/noise.py
-  # Leakage guard: the first half of every noise record is reserved for
-  # training-time augmentation, the second half for robustness evaluation.
-  train_fraction: 0.5
+  # Leakage guard: every noise record is split in time into consecutive, non-overlapping parts
+  # (fractions of the record, in this order). train: training-time augmentation and EDA;
+  # cv: noisy held-out records during model selection; eval: robustness test on DS2 only.
+  parts: {train: 0.4, cv: 0.2, eval: 0.4}

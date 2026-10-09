@@ -2,9 +2,8 @@
 
 D7043E - Group XX: _name 1_, _name 2_, _name 3_, _name 4_
 
-> Draft structure following the course specification. Sections marked **TODO** are to be written by the
-> group; numbers marked *(generated)* come from `results/data_stats/` and must be refreshed whenever the
-> data preparation changes.
+> Submission 1 covers sections 1-3; sections 4-8 follow in Submission 2. Numbers marked *(generated)* come from
+> `results/data_stats/` and must be refreshed whenever the data preparation changes.
 
 ---
 
@@ -13,10 +12,38 @@ D7043E - Group XX: _name 1_, _name 2_, _name 3_, _name 4_
 ## 1. Business/Application Understanding
 
 ### 1.1 Application Scenario
-**TODO:** problem; where automatic ECG beat classification is useful (long-term Holter/wearable monitoring,
-triage of recordings); why on-device inference (privacy, latency, connectivity, battery / data transmission);
-potential users (cardiologists reviewing Holter data, wearable manufacturers, researchers). State explicitly that
-this is not a medical device.
+**The problem.** Most heartbeats start in the sinus node and spread through the normal conduction path. Ectopic beats
+start elsewhere: in the atria or the atrioventricular node (supraventricular ectopic beats, S) or in the ventricles
+(ventricular ectopic beats, V). A fusion beat (F) arises when a normal and a ventricular activation meet. Single
+ectopic beats also occur in healthy people; what is of interest is how often they occur and in which pattern, and
+that can only be seen in long recordings. A 24-hour recording contains about 100,000 beats, far more than a person can
+inspect one by one. The problem addressed here is the step that makes such recordings manageable: assigning every
+heartbeat automatically to one of four classes, N, S, V or F, on a patient the system has never seen.
+
+**Where it is useful.**
+
+- *Long-term ambulatory monitoring.* Holter recorders (24-48 h) and adhesive patch monitors (one to two weeks)
+  produce recordings that are analysed by software and then checked by a technician or cardiologist. Beat
+  classification provides the counts and the episodes they review.
+- *Wearable monitors.* A device worn in daily life can count ectopic beats continuously and mark the stretches worth
+  reviewing.
+- *Monitoring in hospital wards* and the pre-screening of large sets of recordings, where the classifier sorts and
+  prioritizes and a person decides.
+
+**Why on the device.** The alternative to inference on the device is to transmit the raw signal and classify it
+elsewhere. One lead at 360 Hz and 11 bit is about 43 MB per day, sent continuously by radio, and the radio is
+typically one of the largest consumers of energy in a wearable. A device that classifies itself can send one label per beat (about 100 kB per day)
+or only the stretches that contain ectopic beats. It also keeps working without a network connection, can react
+without the delay of a round trip, and keeps the raw ECG, which is health data, on the person. The MAX78002 is built
+for this case: a microcontroller with a hardware accelerator for convolutional networks, intended for battery-powered
+devices. Its limits on memory, number format and operations shape the model (section 1.5).
+
+**Who could use it.** Manufacturers of wearable and ambulatory ECG monitors and developers of Holter analysis
+software, as one component of their devices; the cardiologists and technicians who review the recordings, through
+those devices; and researchers who need beat labels for large data sets.
+
+This project studies the data-mining and Edge-AI development process for such a component. It is **not a medical
+device**, it is not clinically validated, and no result in this report supports clinical use.
 
 ### 1.2 Data-Mining Objective
 - **Input:** one heartbeat window of 512 samples (320 before / 192 after the annotated R-peak) of band-pass
@@ -24,33 +51,100 @@ this is not a medical device.
 - **Output:** one of four heartbeat classes - N (normal-type), S (supraventricular ectopic), V (ventricular ectopic), F (fusion).
 - **Type of task:** supervised single-label multiclass (4-class) classification, evaluated inter-patient.
 
+One prediction is made per annotated beat; the beat positions are taken from the reference annotations (section 3.3).
+The window length and the clip level above are the starting configuration; alternatives are compared in the modelling
+stage (sections 3.3 and 3.4).
+
 ### 1.3 Project Objectives
-**TODO:** list technical objectives.
+1. **Distinguish N, S, V and F beats in patients the model has not seen**: train on the development records (DS1) and
+   test once on the records of other patients (DS2).
+2. **Detect the minority classes**, not only the 90 % of beats that are normal: handle the class imbalance and judge
+   the model by macro F1 and per-class precision and recall, not by accuracy.
+3. **Remain usable under real ECG noise**: baseline wander, electrode motion and muscle artifact from the Noise Stress
+   Test Database at 12, 6 and 0 dB.
+4. **Develop a compact model** with a fixed-size input and only operations that the MAX78002 CNN accelerator supports,
+   far below the 2 MB design target.
+5. **Quantize the model** to 8-bit integers (and compare 16-bit), with quantization-aware training if the loss is too
+   large, and measure what quantization costs.
+6. **Pass the MAX78002 toolchain**: train with ai8x-training, quantize, synthesize with ai8x-synthesis and generate
+   the C code, and report the memory it needs.
+7. **Keep the process reproducible and free of leakage**: all preprocessing from one configuration file, all splits
+   by record, DS2 used only for the final evaluation.
+
+A simple baseline model (section 4.1) is the reference against which the network has to show its value.
 
 ### 1.4 Success Criteria
-**TODO (measurable):** e.g. validation/test macro F1 >= _x_; per-class recall of S and F >= _x_; macro F1 drop at 6 dB <= _x_
-points; parameters / INT8 weight size <= _x_ KB (hard limit 2 MB); INT8 vs FP32 macro F1 difference <= _x_ points;
-ai8x-synthesis completes for MAX78002 with weight and data memory within device limits.
+The criteria are fixed now, before any model is trained, and reviewed in section 5.6. They are judged on the final
+evaluation on DS2, which is run once; the cross-validated results on the development records (section 3.1) are
+reported next to them.
 
 | Area | Criterion | Threshold |
 |---|---|---|
-| Predictive performance | | |
-| Minority classes | | |
-| Noise robustness | | |
-| Model complexity | | |
-| MAX78002 compatibility | | |
+| Predictive performance | macro F1 over N, S, V, F on DS2 | >= 0.50, and higher than the simple baseline |
+| Minority classes | recall (sensitivity) of S on DS2 | >= 0.40 |
+| | recall of V on DS2 | >= 0.70 |
+| | precision, recall and F1 of F | reported, no threshold (see below) |
+| Noise robustness | drop of macro F1 from the clean value, for each of the three noise types | <= 0.10 at 12 dB, <= 0.25 at 6 dB; 0 dB reported |
+| Model complexity | trainable parameters | <= 250,000 (<= 250 kB at 8 bit, an eighth of the 2 MB target) |
+| Quantization | macro F1 of the INT8 model against the FP32 model | difference <= 0.05; INT16 reported as well |
+| MAX78002 compatibility | ai8x toolchain | model accepted by ai8x-training, quantization and synthesis complete, C files generated, weight memory <= 2,340 KiB and data memory <= 1,280 KiB |
+
+**Why accuracy has no threshold.** A model that always answers N reaches 89.0 % accuracy on DS2 and a macro F1 of
+0.24, so accuracy says little about the minority classes. It is reported, but macro F1 weighs the four classes
+equally and is the main measure.
+
+**Why these thresholds.** They are deliberately conservative. On the same inter-patient partition, de Chazal et al.
+(2004) reached a sensitivity of 75.9 % for S (positive predictivity 38.5 %) and 77.7 % for V (81.9 %) with both leads
+and hand-designed RR and morphology features. This project uses one lead, a small network and, after excluding record
+201, fewer development patients, and the minority classes come from very few of them (section 3.6). The thresholds
+are therefore set below the published values: S recall at about half of it, because S is the class that depends most
+on the patient's own rhythm (section 2.3), and V recall at 0.70, close to it, because V is recognized from the shape of
+the beat itself. Recall alone can be bought with precision (section 3.6), so precision is reported for every class and
+the macro F1 threshold covers both. F gets no threshold because the training data
+contain F beats from effectively 1.2 patients (section 3.6), so the F result measures whether one patient's fusion
+beats transfer to others, and is analysed rather than passed or failed. The noise thresholds allow a moderate loss at
+12 dB, a level at which the beats are still clearly visible (Figure 9), and a larger one at 6 dB. The complexity
+threshold leaves room for the model comparisons of the modelling stage while staying an order of magnitude below the
+memory of the device.
 
 ### 1.5 Constraints
-**TODO:** Edge memory (MAX78002: 2,340 KiB weight memory, 1,280 KiB data memory; course limit 2 MB); INT8/fixed-point;
-class imbalance; 47 subjects; noise; compute; no hardware.
+- **Limited Edge-AI memory.** The CNN accelerator of the MAX78002 holds the weights in 2,340 KiB of kernel memory and
+  the activations in 1,280 KiB of data memory; the course sets 2 MB as a design target. The model has to fit
+  entirely, because weights are not streamed from outside during inference. The starting model, a five-layer 1D CNN
+  (`src/model.py`), has 41,156 parameters, about 40 kB at 8 bit, and its largest activation (16 channels x 512
+  samples) needs 8 kB. The stricter limits are on the operations: 1D convolutions with kernels of 1 to 9 and padding of at
+  most 2, pooling, ReLU, and linear layers with at most 1,024 inputs and outputs. Recurrent layers, attention and
+  operations outside this set cannot be used, and the input must have a fixed size.
+- **Fixed-point/INT8 computation.** The accelerator computes with 8-bit weights and 8-bit activations. The input must
+  be scaled to a fixed range ([-1, 1], mapped to -128 ... 127), batch normalization is folded into the convolutions,
+  and every layer loses resolution. How fine the 8-bit steps of the input are depends on the clip level (section
+  3.4). Quantization-aware training is available in ai8x-training to reduce the loss.
+- **Class imbalance.** 90 % of the development beats are N; there are 54 N beats for every S beat and 107 for every F
+  beat (section 3.6).
+- **Limited number of subjects.** The database has 47 subjects. After the exclusion of record 201, 21 patients are
+  available for development and 22 for the test. The minority classes are concentrated in a few of them: the S beats
+  of the development records correspond to 3.6 equally contributing patients, the F beats to 1.2.
+- **Noise.** Real recordings contain baseline wander, muscle artifact and electrode motion. Electrode motion lies in
+  the frequency band of the ECG and cannot be filtered out (section 2.3), so robustness has to come from the model.
+- **Computational resources.** Model selection by leave-one-record-out cross-validation costs 21 training runs per
+  configuration, three times that with three random seeds, on ordinary student computers. This limits how many
+  configurations can be compared and favors small models. The ai8x toolchain runs on Linux or WSL2 only and needs its
+  own Python environment.
+- **No physical MAX78002 hardware.** Every deployment result is software verified: the toolchain accepts, quantizes
+  and synthesizes the model. Latency, energy, real-time behavior and accuracy on the device cannot be measured and are
+  not claimed.
 
 ### 1.6 Risks and Challenges
 
 | Risk | Why is it important? | Proposed mitigation |
 |---|---|---|
-| **TODO** | | |
-| | | |
-| | | |
+| **Minority classes come from very few patients** (F effectively from one, S from four) | The model can learn to recognize these patients instead of the class; it will then fail on new patients, and the per-class results depend on single records | Evaluate only on unseen records (cross-validation pooled over all 21 records, DS2 once); report per-class precision and recall; keep information relative to the patient in the input (preceding beat, RR intervals); no threshold for F, analysed as a limitation |
+| **Data leakage** gives optimistic results | Overlapping windows, beats of one patient in two splits (records 201/202), or choices made with test data make the test score say nothing about new patients (section 2.5) | All splits by record, enforced in `config.split_records()`; record 201 excluded; DS2 only with `--final`; noise records split in time into separate parts for augmentation, model selection and test |
+| **Model selection overfits the small development set** | Many configurations compared on 21 patients can pick a configuration by chance, especially for S and F | A fixed, small set of alternatives declared in advance (window length, clip level, imbalance strategy, augmentation); three seeds per configuration; a difference smaller than the spread between seeds is not treated as evidence |
+| **The model fails in the MAX78002 toolchain late in the project** | A model that cannot be synthesized does not meet the project objective, and a late failure leaves no time for a CRISP-DM iteration | Use only layers that map 1:1 onto ai8x fused layers (section 4.2); run the whole toolchain early with a briefly trained model and feed failures back into the architecture |
+| **Quantization costs the minority classes** | Small differences between classes (F between N and V) may not survive 8-bit weights and activations; a model good in FP32 may fail as INT8 | Compare FP32, INT16 and INT8 per class; use quantization-aware training; include the quantized model when choosing the clip level |
+| **Poor robustness to electrode-motion noise** | Electrode motion is in the ECG band and resembles ectopic beats, so the model may call noise V or S | Augment with recorded noise from the training part of the noise records; report results per noise type and SNR; state the remaining limit |
+| **The prepared data are easier than a device** | Beat positions come from the annotations and the filter uses future samples; a device has a QRS detector and a causal filter, and the 1970s Holter recordings differ from a wearable | Train with random shifts of the window; evaluate the causal filter in the deployment stage; state the domain shift as a limitation |
 
 ## 2. Data Understanding
 
@@ -80,7 +174,23 @@ Counts over the 44 DS1 + DS2 records. Excluded: 15 unclassifiable beats (`Q`); n
 (`+` rhythm change 1,173, `~` signal-quality change 573, `!` ventricular flutter wave 472, `"` comment 437,
 `x` non-conducted P-wave 193, `|` isolated QRS-like artifact 131, `[`/`]` flutter start/end 6/6); paced records
 102, 104, 107, 217 (paced `/` and fusion-of-paced `f` beats) are not part of DS1/DS2; 74 mappable beats (0-3 per record)
-whose 512-sample window exceeds the record boundaries. **TODO:** justify exclusions.
+whose 512-sample window exceeds the record boundaries.
+
+**Why these are excluded.** The project description permits excluding beats outside the four classes, and every
+exclusion follows from what the annotation means:
+
+- *Paced records (102, 104, 107, 217).* Their beats are produced by a pacemaker, not by the heart's own conduction
+  system, and the four classes describe the latter. The AAMI recommendation (ANSI/AAMI EC57) and the inter-patient
+  partition of de Chazal et al. leave these records out, which is why they are in neither DS1 nor DS2.
+- *Unclassifiable beats (`Q`).* The annotators could not assign them a type, so they have no label to learn. AAMI puts
+  them, together with paced beats, into a fifth class Q, which is not one of the four required classes. There are 15 of
+  them, 0.015 % of the beats.
+- *Non-beat annotations.* Rhythm changes, signal-quality changes, comments, flutter waves, non-conducted P waves and
+  artifacts mark an event or a state, not a heartbeat, so they produce no beat window. They are still counted, and the
+  QRS-like ones are used for the RR intervals (section 3.3). The 472 ventricular flutter waves in record 207 are the
+  only large group of heart activity that is lost this way; flutter is a rhythm, not a beat type, and outside the task.
+- *Beats at the edges of a record.* Their 512-sample window would reach beyond the recording. Padding would add
+  samples that are not ECG, so they are dropped (section 3.3).
 
 ### 2.3 Exploratory Data Analysis
 All figures are generated by `notebooks/EDA.ipynb`. Waveforms, amplitudes and noise are analysed on DS1 only; DS2
@@ -170,11 +280,11 @@ amplitude divided by 8, the noise power the squared RMS noise amplitude in one-s
 scaling was checked against the twelve noisy records the database provides (118e24 to 119e_6): the gains agree within
 0.05 dB.
 
-The three noise types differ in how much of their power lies in the 0.5-40 Hz band that the filter passes: 1 % for
-baseline wander, 16 % for muscle artifact and 58 % for electrode motion. Figure 9 shows the consequence for record 101,
-whose QRS complexes measure 1.73 mV peak to peak. At 0 dB the added baseline wander has an RMS amplitude of 2.85 mV, of
-which 0.34 mV remains after the filter; of the muscle artifact 0.55 of 1.37 mV remains, of the electrode motion 1.02 of
-1.35 mV. Baseline wander is therefore mostly removed, although its fastest swings pass the filter and are locally as
+The three noise types differ in how much of their power lies in the 0.5-40 Hz band that the filter passes: 1.5 % for
+baseline wander, 18 % for muscle artifact and 53 % for electrode motion (training part of each noise record, section
+3.7). Figure 9 shows the consequence for record 101, whose QRS complexes measure 1.73 mV peak to peak. At 0 dB the added
+baseline wander has an RMS amplitude of 2.77 mV, of which 0.33 mV remains after the filter; of the muscle artifact 0.58
+of 1.37 mV remains, of the electrode motion 0.93 of 1.30 mV. Baseline wander is therefore mostly removed, although its fastest swings pass the filter and are locally as
 large as a QRS complex at 0 dB. Muscle artifact leaves bursts of fast oscillation between and on top of the beats.
 Electrode motion is hardly reduced, and its deflections have the width and amplitude of QRS complexes and ectopic
 beats: at 12 dB it distorts the baseline, at 6 dB beats and noise are hard to tell apart by eye, and at 0 dB the noise
@@ -384,7 +494,7 @@ classes better within a patient than across patients (Figure 14).
 | Statistics computed across splits | normalization constants or filter settings estimated on all data | the filter is applied per record and the z-score per window; no statistic is shared between records | by design; if measures are scaled for a classifier, the scaling must be fitted on training records only |
 | Choices made with test data | model selection, early stopping, thresholds or hyperparameters tuned on DS2 | `evaluate.py` and `noise_test.py` refuse DS2 unless `--final` is given | a guard against accidents; `test.npz` is on disk from the first run, so it rests on discipline |
 | Design decisions from looking at test data | exploring DS2 signals | the notebook analyses DS1 signals only; DS2 enters through record headers and class counts | by procedure; `record_stats.csv` contains DS2 amplitude statistics written by the pipeline, which were not inspected |
-| Noise | the same noise segment in training augmentation and in the robustness test | each noise record is split in time: first half for augmentation, second half for evaluation | enforced in `src/noise.py` |
+| Noise | the same noise segment in training augmentation, in model selection and in the robustness test | each noise record is split in time into three consecutive parts: the first 40 % for augmentation, the next 20 % for noisy held-out records during model selection, the last 40 % for the robustness test on DS2 | enforced in `src/noise.py` (`noise.parts` in `configs/data.yaml`) |
 | One person in two splits | records 201 (DS1) and 202 (DS2) come from the same subject | record 201 is excluded from training, validation and model selection (`splits.exclude` in `configs/data.yaml`) | enforced: `config.split_records()` keeps excluded records out of the training and validation lists |
 
 **What remains.**
@@ -543,7 +653,7 @@ differ between records (Figure 6). Above 40 Hz lies 0.3 % of the power, includin
 part of the muscle noise. 90.6 % of the raw power lies inside the band (Figure 11). The cost is small: the
 peak-to-peak amplitude of the QRS complex falls by 3 % in the median (between 7 % less and 2 % more over the DS1
 records), and the lower band edge stays below the slowest median heart rate of DS1 (53 bpm, 0.89 Hz), so the
-fundamental frequency of the rhythm passes. The filter cannot remove electrode-motion noise, 58 % of which lies inside
+fundamental frequency of the rhythm passes. The filter cannot remove electrode-motion noise, 53 % of which lies inside
 the band (section 2.3).
 
 The zero-phase form keeps every wave where it is relative to the annotation, but it uses future samples. It can
@@ -626,7 +736,15 @@ V = 2, F = 3. Counts are annotations in the 44 DS1 + DS2 records after window ex
 | `\|` | Isolated QRS-like artifact | excluded (not a beat) | 131 |
 | `[`, `]` | Start / end of ventricular flutter/fibrillation | excluded (not a beat) | 6 / 6 |
 
-No other annotation symbol occurs in the 44 records. **TODO:** source of the grouping.
+No other annotation symbol occurs in the 44 records.
+
+**Source of the grouping.** The mapping is the AAMI grouping of ANSI/AAMI EC57, in the form used by de Chazal et al.
+(2004) for the same inter-patient partition. AAMI defines five classes: N (normal, bundle branch block and escape
+beats of supraventricular origin), SVEB (= S here), VEB (= V), F, and Q (paced, fusion of paced and normal, and
+unclassifiable beats). The four required classes are the first four; Q is excluded (section 2.2). Two assignments are
+worth noting because they do not follow the name of the beat: atrial and nodal *escape* beats (`e`, `j`) are N, since
+they are the heart's normal backup rhythm and not premature, while ventricular escape beats (`E`) are V, since they
+originate in the ventricle. Bundle branch block beats (`L`, `R`) are N although their QRS is wide (section 2.4).
 
 ### 3.6 Class Imbalance
 **The imbalance.** The table describes the 21 development records (notebook, "Evidence for the data preparation").
@@ -697,7 +815,7 @@ How well each of them matches what it stands for differs.
   3.3), and a causal filter would move the deflection by a median of 4 samples (11 ms). A QRS detector on a device adds
   its own error. A range of +-8 samples covers the first two. The shift is circular: up to 1.6 % of the window moves
   from one edge to the other, which a real shift would not do.
-- *White noise.* It is ten times weaker than the electrode-motion noise that remains after the filter at 12 dB (see
+- *White noise.* It is about nine times weaker than the electrode-motion noise that remains after the filter at 12 dB (see
   below), and it is white, while real noise after the filter is limited to the band.
 - *Sinusoidal wander.* It imitates drift below 0.5 Hz, which the band-pass filter removes before the model sees the
   signal. What remains of real baseline wander after the filter lies above that frequency.
@@ -708,27 +826,32 @@ development records):
 
 | Noise | 12 dB | 6 dB | 0 dB |
 |---|---|---|---|
-| Baseline wander | 0.33 | 0.66 | 1.31 |
-| Electrode motion | 1.00 | 1.99 | 3.98 |
-| Muscle artifact | 0.54 | 1.08 | 2.15 |
+| Baseline wander | 0.32 | 0.63 | 1.26 |
+| Electrode motion | 0.91 | 1.81 | 3.61 |
+| Muscle artifact | 0.56 | 1.12 | 2.24 |
 
 None of the four augmentations comes near these values. An augmentation that prepares the model for this test has to
 add the same kind of noise in the same way: recorded noise from the Noise Stress Test Database, scaled to a random
-SNR and added to the raw training record before filtering and normalization. It is not implemented yet. It may only
-use the first half of each noise record; the second half is reserved for the robustness test (section 2.5).
+SNR and added to the raw training record before filtering and normalization. It is not implemented yet and is added
+in the modelling stage. It may only use the first 40 % of each noise record (section 2.5).
 
-**Decision.** Like the other settings of the initial configuration, the augmentation is treated as a parameter. Three
-settings will be compared by cross-validation in the modelling stage (section 3.1): no augmentation, the four
-augmentations above, and the four together with recorded noise added to the raw signal.
+**Decisions.**
 
-**TODO (your additions before we move on):**
-- Do you agree with these three settings?
-- The shift is circular. Should the windows be stored with 8 extra samples on each side, so that a real shift can be
-  cut from them? That changes the format of the prepared data slightly.
-- The sinusoidal wander imitates what the filter removes. Keep it in the set of four, or drop it?
-- To judge the noise augmentation in cross-validation, the held-out records need noise that is used neither for
-  augmentation nor for the final test. Should each noise record be split three ways (for example 40 % augmentation,
-  20 % cross-validation, 40 % final test) instead of into two halves?
+- *Sinusoidal wander is dropped.* It imitates drift below 0.5 Hz, which the band-pass filter removes before the model
+  sees the signal, so it trains the model on a disturbance it never meets. It is switched off in `configs/train.yaml`
+  (`baseline_wander.enabled: false`); real baseline wander enters through the recorded noise.
+- *The shift stays circular.* At most 8 of 512 samples (1.6 %) wrap from one edge of the window to the other, far from
+  the R-peak and the preceding beat. Storing wider windows to cut a real shift would change the format of the prepared
+  data for a negligible gain. This is accepted and stated here.
+- *Each noise record is split into three parts.* To judge the noise augmentation in cross-validation, the held-out
+  records need noise that is used neither for augmentation nor for the final test. The first 40 % of every noise record
+  is used for augmentation (and the EDA), the next 20 % for noisy held-out records during model selection, and the last
+  40 % only for the robustness test on DS2 (`noise.parts` in `configs/data.yaml`). With 30 min per noise record, each
+  part is long enough to give every record a different stretch of noise (12, 6 and 12 min).
+- *Three settings are compared.* Like the other settings of the initial configuration, the augmentation is treated as
+  a parameter. Three settings will be compared by cross-validation in the modelling stage (section 3.1), on clean and
+  on noisy held-out records: no augmentation; amplitude scaling, shift and white noise; and these three together with
+  recorded noise added to the raw signal.
 
 ### 3.8 Final Dataset *(generated: `split_summary.csv`)*
 | Split | Subjects/records | N | S | V | F | Total |
@@ -747,7 +870,8 @@ development records (section 3.1), in which 816 S and 412 F beats are predicted 
 ### 3.9 Reproducibility *(generated: `prep_manifest.json`)*
 | Item | Value |
 |---|---|
-| Software | Python 3.14.7, NumPy 2.4.6, SciPy 1.17.1, pandas 3.0.5, wfdb 4.3.1 (Linux); package versions pinned in `requirements.txt`. The statistics files were also reproduced byte for byte with Python 3.11.5 on Windows, before record 201 was excluded |
+| Software | Python 3.11.17, NumPy 2.4.6, SciPy 1.17.1, pandas 3.0.5, wfdb 4.3.1, scikit-learn 1.9.1, Matplotlib 3.11.2 (Linux, WSL2); package versions pinned in `requirements.txt` |
+| Reproduction | Running `src/prepare_data.py` twice gives byte-identical `.npz` files (same SHA-256). On another platform the compressed files can differ in their bytes because the compression library differs; the statistics files are then still identical: the record and class statistics of the earlier run with Python 3.11.5 on Windows agree exactly with the current ones, apart from the changed split of record 201 |
 | Random seed | 42 (`configs/data.yaml`, `configs/train.yaml`) |
 | Sampling frequency | 360 Hz, native, no resampling |
 | Lead | MLII, selected by signal name |

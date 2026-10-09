@@ -1,0 +1,80 @@
+feature,family,description,pooled_S,direction_S,within_S,same_direction_S,records_S,pooled_V,direction_V,within_V,same_direction_V,records_V,pooled_F,direction_F,within_F,same_direction_F,records_F
+mean,amplitude,mean (mV),0.5685,higher,0.6801,0.625,8,0.5202,lower,0.6927,0.3333,15,0.6983,lower,0.8114,1.0,3
+median,amplitude,median (mV),0.5663,higher,0.6354,0.5,8,0.5829,lower,0.6986,0.5333,15,0.8795,lower,0.8541,1.0,3
+std,amplitude,standard deviation (mV),0.5454,lower,0.6013,0.75,8,0.8299,higher,0.8538,0.8,15,0.8333,higher,0.9897,1.0,3
+rms,amplitude,root mean square (mV),0.5449,lower,0.6017,0.75,8,0.8322,higher,0.8553,0.8,15,0.8346,higher,0.9911,1.0,3
+min,amplitude,minimum (mV),0.5841,lower,0.6708,0.375,8,0.759,lower,0.989,0.8,15,0.5657,higher,0.8598,0.0,3
+max,amplitude,maximum (mV),0.5928,lower,0.7588,0.625,8,0.5348,lower,0.9451,0.6,15,0.7697,higher,0.8772,1.0,3
+ptp,amplitude,peak-to-peak range (mV),0.5297,lower,0.6236,0.5,8,0.5987,higher,0.8209,0.6667,15,0.6948,higher,0.9496,1.0,3
+iqr,amplitude,interquartile range (mV),0.5226,higher,0.7669,0.5,8,0.8751,higher,0.9469,0.8667,15,0.6044,higher,0.7236,1.0,3
+mav,amplitude,mean absolute value (mV),0.5092,lower,0.6649,0.5,8,0.9092,higher,0.9256,0.8667,15,0.8434,higher,0.9738,1.0,3
+skewness,amplitude,skewness of the sample distribution,0.6324,lower,0.7683,0.375,8,0.8201,lower,0.9867,0.8,15,0.5053,lower,0.9834,1.0,3
+kurtosis,amplitude,excess kurtosis of the sample distribution,0.6088,lower,0.7731,0.5,8,0.9568,lower,0.9909,0.8,15,0.6076,lower,0.9836,1.0,3
+crest_factor,amplitude,largest absolute value / RMS,0.5936,lower,0.7065,0.625,8,0.964,lower,0.9921,0.8667,15,0.6389,lower,0.9804,1.0,3
+energy,amplitude,sum of squares / fs (mV^2 s),0.5449,lower,0.6017,0.75,8,0.8322,higher,0.8553,0.8,15,0.8346,higher,0.9911,1.0,3
+abs_area,amplitude,area between signal and baseline (mV s),0.5052,higher,0.7287,0.5,8,0.9219,higher,0.953,0.8667,15,0.7987,higher,0.9584,1.0,3
+zero_crossings,shape,crossings of the segment median,0.5017,lower,0.7175,0.375,8,0.776,lower,0.797,0.8,15,0.5848,lower,0.6441,1.0,3
+line_length,shape,sum of absolute sample-to-sample differences (mV),0.5882,higher,0.6701,0.5,8,0.546,higher,0.7834,0.6667,15,0.651,higher,0.7408,1.0,3
+max_slope,shape,largest absolute slope (mV/s),0.5281,higher,0.6376,0.5,8,0.707,lower,0.8529,0.6667,15,0.5699,higher,0.7984,0.3333,3
+slope_sign_changes,shape,number of local extrema (sign changes of the slope),0.5831,lower,0.6727,0.625,8,0.8557,lower,0.8868,0.9333,15,0.795,lower,0.7655,1.0,3
+hjorth_mobility,shape,Hjorth mobility: std of the derivative / std of the signal,0.585,higher,0.6594,0.625,8,0.9564,lower,0.9878,0.9333,15,0.7818,lower,0.9952,1.0,3
+hjorth_complexity,shape,Hjorth complexity: mobility of the derivative / mobility of the signal,0.5377,lower,0.6889,0.5,8,0.9463,higher,0.9728,0.9333,15,0.8315,higher,0.9123,1.0,3
+teager_energy,shape,mean Teager-Kaiser energy x[n]^2 - x[n-1] x[n+1],0.5593,higher,0.6672,0.5,8,0.6453,lower,0.834,0.6667,15,0.5819,higher,0.6525,0.3333,3
+n_peaks,shape,peaks of |signal - baseline| with prominence >= 25 % of the largest,0.6561,higher,0.5753,0.625,8,0.7078,higher,0.8659,0.8667,15,0.6975,lower,0.6633,0.6667,3
+perm_entropy,shape,"permutation entropy, order 3, normalized to 0-1",0.5835,lower,0.6562,0.625,8,0.8558,lower,0.8716,0.9333,15,0.7932,lower,0.7779,1.0,3
+amp_entropy,shape,"Shannon entropy of a 16-bin amplitude histogram, normalized to 0-1",0.578,higher,0.8228,0.625,8,0.9464,higher,0.9858,1.0,15,0.5609,higher,0.6934,1.0,3
+r_amp,qrs,amplitude at the annotated R-peak (mV),0.6045,lower,0.6721,0.625,8,0.5949,lower,0.964,0.6667,15,0.6758,higher,0.7978,1.0,3
+qrs_ptp,qrs,peak-to-peak range within +-50 ms (mV),0.5548,lower,0.6091,0.625,8,0.5894,lower,0.8853,0.5333,15,0.6259,higher,0.7914,1.0,3
+qrs_polarity,qrs,sign of the largest deflection within +-50 ms,0.5325,lower,0.5002,0.25,8,0.6389,lower,0.6856,0.8,15,0.511,higher,0.5352,0.0,3
+qrs_width,qrs,time within +-120 ms above half of the largest deflection (ms),0.5609,lower,0.5724,0.875,8,0.9254,higher,0.9887,0.8667,15,0.6145,higher,0.9542,1.0,3
+qrs_area,qrs,area between signal and baseline within +-60 ms (mV s),0.5883,lower,0.6103,1.0,8,0.7832,higher,0.819,0.6667,15,0.7923,higher,0.9082,1.0,3
+qrs_energy_share,qrs,energy within +-60 ms / energy of the beat segment,0.7108,lower,0.8529,0.625,8,0.8005,lower,0.9178,0.9333,15,0.554,lower,0.618,0.3333,3
+max_upslope,qrs,steepest rise within +-60 ms (mV/s),0.5065,lower,0.6548,0.5,8,0.8,lower,0.9502,0.8667,15,0.553,lower,0.7621,0.6667,3
+max_downslope,qrs,steepest fall within +-60 ms (mV/s),0.5271,lower,0.6358,0.625,8,0.7401,higher,0.855,0.6667,15,0.5829,lower,0.8021,0.3333,3
+q_depth,qrs,minimum in the 60 ms before the R-peak (mV),0.5383,higher,0.658,0.75,8,0.7033,higher,0.97,0.4,15,0.711,higher,0.8584,1.0,3
+s_depth,qrs,minimum in the 80 ms after the R-peak (mV),0.5847,lower,0.6631,0.375,8,0.5198,higher,0.9529,0.4,15,0.6392,higher,0.7212,0.6667,3
+qrs_asymmetry,qrs,(area after - area before the R-peak) / QRS area,0.6131,higher,0.5575,0.5,8,0.6023,higher,0.9462,0.6667,15,0.6134,lower,0.6367,0.3333,3
+t_amp,qrs,"largest deflection 150-400 ms after the R-peak, signed (mV)",0.6516,higher,0.7159,0.875,8,0.6329,lower,0.9411,0.4667,15,0.6928,lower,0.9262,1.0,3
+t_qrs_ratio,qrs,T deflection / QRS peak-to-peak range,0.7005,higher,0.7608,0.875,8,0.6219,lower,0.945,0.4667,15,0.6843,lower,0.9245,1.0,3
+p_amp,qrs,"largest deflection 250-80 ms before the R-peak, signed (mV)",0.6725,higher,0.8852,0.5,8,0.5578,higher,0.8155,0.4,15,0.5434,lower,0.71,0.3333,3
+p_energy_share,qrs,energy 250-80 ms before the R-peak / energy of the beat segment,0.6368,higher,0.8284,0.5,8,0.5225,higher,0.766,0.4,15,0.8112,lower,0.9227,1.0,3
+st_level,qrs,mean level 80-120 ms after the R-peak (mV),0.6379,higher,0.7107,0.5,8,0.7221,lower,0.8465,0.6,15,0.8345,lower,0.8603,1.0,3
+rr_pre,rhythm,interval to the previous beat (s),0.9199,lower,0.9898,1.0,8,0.8747,lower,0.9294,0.9333,15,0.8622,lower,0.7183,1.0,3
+rr_post,rhythm,interval to the next beat (s),0.625,lower,0.7702,0.5,8,0.6126,higher,0.8262,0.8667,15,0.9005,lower,0.7833,0.6667,3
+rr_local,rhythm,mean of the 10 previous intervals (s),0.6873,lower,0.8226,0.875,8,0.6041,lower,0.7662,0.7333,15,0.8325,lower,0.612,0.6667,3
+rr_pre_ratio,rhythm,previous interval / local mean (prematurity),0.8372,lower,0.8969,1.0,8,0.9356,lower,0.9712,1.0,15,0.7129,lower,0.7851,1.0,3
+rr_pre_ratio_32,rhythm,previous interval / median of the 32 intervals before it,0.8842,lower,0.9453,1.0,8,0.9184,lower,0.9734,1.0,15,0.5104,lower,0.7289,1.0,3
+rr_pre_ratio_128,rhythm,previous interval / median of the 128 intervals before it,0.9453,lower,0.9773,1.0,8,0.9262,lower,0.9749,1.0,15,0.5046,lower,0.7237,1.0,3
+rr_post_ratio,rhythm,next interval / local mean (pause after the beat),0.6397,higher,0.6054,0.75,8,0.7763,higher,0.8259,0.9333,15,0.7938,lower,0.7448,0.6667,3
+rr_pre_post,rhythm,previous interval / next interval,0.7491,lower,0.7379,0.875,8,0.8506,lower,0.896,1.0,15,0.7301,higher,0.5733,0.3333,3
+rr_diff,rhythm,next interval - previous interval (s),0.7521,higher,0.7474,0.875,8,0.8536,higher,0.9091,1.0,15,0.7186,lower,0.5355,0.3333,3
+heart_rate,rhythm,60 / previous interval (bpm),0.9199,higher,0.9898,1.0,8,0.8747,higher,0.9294,0.9333,15,0.8622,higher,0.7183,1.0,3
+rr_local_std,rhythm,standard deviation of the 10 previous intervals (s),0.6192,higher,0.7851,0.75,8,0.8546,higher,0.8085,1.0,15,0.7589,higher,0.6686,1.0,3
+rr_pre_delta,rhythm,previous interval - the interval before it (s),0.7663,lower,0.7804,1.0,8,0.8989,lower,0.9239,1.0,15,0.8024,lower,0.796,1.0,3
+beats_in_window,rhythm,annotated beats inside the 512-sample beat window,0.7618,higher,0.7824,0.875,8,0.6321,higher,0.6153,0.8667,15,0.8415,higher,0.5431,0.6667,3
+bp_low,frequency,share of spectral power in 0.5-5 Hz,0.5974,lower,0.6517,0.5,8,0.9475,higher,0.9904,1.0,15,0.8201,higher,0.995,1.0,3
+bp_mid,frequency,share of spectral power in 5-15 Hz,0.6496,lower,0.7167,0.625,8,0.8817,lower,0.9807,0.8667,15,0.706,lower,0.865,0.6667,3
+bp_high,frequency,share of spectral power in 15-40 Hz,0.577,higher,0.6493,0.5,8,0.8881,lower,0.9606,0.8667,15,0.7331,lower,0.9927,1.0,3
+spec_centroid,frequency,power-weighted mean frequency (Hz),0.577,higher,0.6993,0.625,8,0.9483,lower,0.9895,0.9333,15,0.7901,lower,0.9949,1.0,3
+spec_spread,frequency,power-weighted standard deviation of frequency (Hz),0.584,higher,0.6019,0.625,8,0.9182,lower,0.9618,0.8667,15,0.7311,lower,0.9918,1.0,3
+median_freq,frequency,frequency below which half of the power lies (Hz),0.5751,higher,0.5841,0.5,8,0.9346,lower,0.9929,0.9333,15,0.8116,lower,0.9756,1.0,3
+peak_freq,frequency,frequency of the largest spectral peak (Hz),0.5977,higher,0.5849,0.75,8,0.7447,lower,0.8675,0.8,15,0.6576,lower,0.857,1.0,3
+edge_95,frequency,frequency below which 95 % of the power lies (Hz),0.5885,higher,0.6412,0.625,8,0.9254,lower,0.9475,0.8667,15,0.7292,lower,0.9828,1.0,3
+spec_entropy,frequency,"Shannon entropy of the power spectrum, normalized to 0-1",0.5562,higher,0.6129,0.5,8,0.9523,lower,0.9948,0.9333,15,0.7693,lower,0.996,1.0,3
+spec_flatness,frequency,geometric mean / arithmetic mean of the power spectrum,0.6041,higher,0.6568,0.5,8,0.9069,lower,0.9681,0.9333,15,0.7105,lower,0.9843,1.0,3
+dwt_d2,wavelet,"detail level 2, about 45-90 Hz",0.5845,higher,0.6654,0.625,8,0.9567,lower,0.9883,0.9333,15,0.7819,lower,0.995,1.0,3
+dwt_d3,wavelet,"detail level 3, about 22-45 Hz",0.5242,higher,0.5832,0.5,8,0.8982,lower,0.9625,1.0,15,0.6507,lower,0.6293,0.3333,3
+dwt_d4,wavelet,"detail level 4, about 11-22 Hz",0.5566,higher,0.6335,0.625,8,0.9436,lower,0.984,1.0,15,0.8448,lower,0.9691,1.0,3
+dwt_d5,wavelet,"detail level 5, about 6-11 Hz",0.6031,lower,0.6133,0.375,8,0.7589,lower,0.9765,0.8667,15,0.7423,higher,0.9067,1.0,3
+dwt_a5,wavelet,"approximation level 5, below about 6 Hz",0.6198,lower,0.6412,0.75,8,0.9489,higher,0.989,1.0,15,0.7853,higher,0.9672,1.0,3
+template_corr,patient-relative,"correlation with the record's median beat, -100 ... +150 ms",0.7455,lower,0.8283,0.875,8,0.978,lower,0.9992,1.0,15,0.9242,lower,0.9899,1.0,3
+template_rmse,patient-relative,RMS difference to the record's median beat (mV),0.6858,higher,0.7783,1.0,8,0.9869,higher,0.9985,1.0,15,0.9472,higher,0.9544,1.0,3
+prev_beat_corr,patient-relative,"correlation with the previous beat, -100 ... +150 ms",0.6193,lower,0.591,0.75,8,0.9185,lower,0.8913,1.0,15,0.8998,lower,0.8334,0.6667,3
+qrs_ptp_rel,patient-relative,QRS peak-to-peak range / median of the record,0.5239,lower,0.6091,0.625,8,0.6115,lower,0.8853,0.5333,15,0.9276,higher,0.7914,1.0,3
+qrs_width_rel,patient-relative,QRS width / median of the record,0.5035,higher,0.5724,0.125,8,0.956,higher,0.9887,0.8667,15,0.9053,higher,0.9542,1.0,3
+energy_rel,patient-relative,energy / median of the record,0.5988,higher,0.6017,0.25,8,0.829,higher,0.8553,0.8,15,0.9396,higher,0.9911,1.0,3
+win_std,prepared window,"standard deviation of the window, the normalization divisor (mV)",0.5308,higher,0.7279,0.875,8,0.809,higher,0.847,0.8,15,0.8521,higher,0.8496,1.0,3
+win_ptp,prepared window,peak-to-peak range of the window (mV),0.5247,lower,0.6255,0.375,8,0.696,higher,0.8551,0.9333,15,0.6713,higher,0.8646,1.0,3
+win_max_z,prepared window,largest absolute z-score in the window,0.6038,lower,0.7869,0.75,8,0.8205,lower,0.8498,0.8667,15,0.6862,lower,0.7498,1.0,3
+win_clipped_share,prepared window,share of samples beyond the clip level,0.6088,lower,0.6503,0.75,8,0.741,lower,0.7609,0.8667,15,0.7014,lower,0.7144,1.0,3
+win_kurtosis,prepared window,excess kurtosis of the window,0.6183,lower,0.8296,0.75,8,0.8234,lower,0.866,0.8667,15,0.7315,lower,0.8581,1.0,3

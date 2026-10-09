@@ -1,6 +1,6 @@
 {
-  "generated_utc": "2026-09-15T15:01:39+00:00",
-  "git_commit": null,
+  "generated_utc": "2026-10-09T15:46:44+00:00",
+  "git_commit": "b995e07e9678e76ac7d721a9097bd5cc2dfab31c",
   "config": {
     "seed": 42,
     "paths": {
@@ -58,12 +58,17 @@
         233,
         234
       ],
+      "exclude": [
+        201
+      ],
       "val": [
         109,
-        201,
         205,
         223
       ]
+    },
+    "cross_validation": {
+      "scheme": "leave_one_record_out"
     },
     "signal": {
       "lead": "MLII",
@@ -72,7 +77,8 @@
         "enabled": true,
         "low_hz": 0.5,
         "high_hz": 40.0,
-        "order": 4
+        "order": 4,
+        "zero_phase": true
       }
     },
     "window": {
@@ -138,7 +144,11 @@
         6,
         0
       ],
-      "train_fraction": 0.5
+      "parts": {
+        "train": 0.4,
+        "cv": 0.2,
+        "eval": 0.4
+      }
     }
   },
   "input_shape": [
@@ -174,9 +184,11 @@
     ],
     "val": [
       109,
-      201,
       205,
       223
+    ],
+    "excluded": [
+      201
     ],
     "test": [
       100,
@@ -204,16 +216,17 @@
     ]
   },
   "software": {
-    "python": "3.11.5",
+    "python": "3.11.17",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "pandas": "3.0.5",
     "wfdb": "4.3.1",
-    "platform": "Windows-10-10.0.26200-SP0"
+    "platform": "Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.43"
   },
   "outputs_sha256": {
-    "train.npz": "b6fcd4e6b0f0594a0514643c58c33735fe0a993423e39aa067786a3eae439e62",
-    "val.npz": "f020155e5fe276bc9c440c610ed606c6f315308e518109050a8a75b4bd74b726",
-    "test.npz": "93dadb43e2e746d236f0baf956d17017883f7efe510c78a9a3c179177c88b343"
+    "train.npz": "846c9bab031a5057b014e0c191c3e2193f710716751333768a8eaccae6cd6a76",
+    "val.npz": "8ecddfd734bdffbc0fe1652eb7c1c7034893f1e71b52f0d4e0e87d5fb9e49616",
+    "excluded.npz": "435db31f9979c8cd82cee5d429c13a4176f5b48ff089de633f5155c8a8a7a4d2",
+    "test.npz": "3217508efde27433c8df2469e97480a9cebecfa533e5839a960cfd47b7b29ea7"
   }
 }

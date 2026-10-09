@@ -23,7 +23,6 @@ synthesis with the ai8x toolchain.
 │   ├── prepare_data.py      # beat extraction, labelling, normalization, statistics        (stage 3)
 │   ├── select_val_records.py  # reproducible record-level validation split inside DS1
 │   ├── features.py          # 79 signal measures per beat for the EDA (amplitude, shape, QRS, rhythm, spectrum, ...)
-│   ├── explore_*.py         # exploratory model comparison on DS1 only (see docs/exploration_notes.md)
 │   ├── dataset.py           # PyTorch dataset, augmentation (train only), class weights
 │   ├── model.py             # compact MAX78002-compatible 1D CNN                             (stage 4)
 │   ├── train.py             # training with record-level validation and early stopping
@@ -96,7 +95,9 @@ Outputs:
 | `results/data_stats/annotation_mapping.csv` | every annotation symbol -> final class or exclusion reason, with counts |
 | `results/data_stats/prep_manifest.json` | full config, software versions, seed, git commit, SHA-256 of the outputs |
 
-Re-running with the same config and package versions reproduces identical `.npz` checksums.
+Re-running with the same config and package versions reproduces identical `.npz` checksums on the same platform.
+On another platform the compressed `.npz` bytes can differ (different compression library), while the generated
+statistics stay identical.
 
 ### 3. Exploratory data analysis
 
@@ -128,7 +129,7 @@ validation, so model selection should rest on record-grouped cross-validation ov
 - Splits are always **by record**; `config.split_records()` asserts that no record is shared.
 - DS2 is only used for the final evaluation: `evaluate.py` and `noise_test.py` refuse `--split test` without `--final`.
 - Model and hyperparameter selection use leave-one-record-out cross-validation over the 21 development records (`cross_validation` in `configs/data.yaml`, folds in `results/data_stats/cv_folds.csv`); the validation records only monitor a training run.
-- NSTDB noise records are split in time: first half for augmentation, second half for robustness evaluation.
+- NSTDB noise records are split in time (`noise.parts` in `configs/data.yaml`): first 40 % for augmentation and the EDA, next 20 % for noisy held-out records during model selection, last 40 % for the robustness test on DS2.
 - Records 201 and 202 come from the same subject (DS1 and DS2 respectively). Record 201 is therefore not used for training, validation or model selection (`splits.exclude` in `configs/data.yaml`); it is still prepared (`excluded.npz`) and described in the EDA.
 
 ## Modeling, evaluation and deployment (Submission 2)

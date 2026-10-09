@@ -35,14 +35,21 @@ def _trimmed_mean(values) -> float:
 
 
 def load_noise(cfg: dict, noise_type: str, part: str = "eval") -> np.ndarray:
-    """Zero-mean noise signal ('bw', 'em' or 'ma').
+    """Zero-mean noise signal ('bw', 'em' or 'ma') from one of the consecutive, non-overlapping parts
+    of the record listed in `noise.parts`, in that order:
 
-    part='train' returns the first `noise.train_fraction` of the record (augmentation / EDA),
-    part='eval' the remainder (robustness evaluation only) - the two never overlap.
+        train  training-time augmentation and the EDA
+        cv     noisy held-out records in cross-validation / validation (model selection)
+        eval   robustness evaluation on DS2 (final test only)
     """
     n = _read_noise(cfg, noise_type)
-    cut = int(len(n) * cfg["noise"]["train_fraction"])
-    n = n[cut:] if part == "eval" else n[:cut]
+    parts = cfg["noise"]["parts"]
+    if part not in parts:
+        raise ValueError(f"Unknown noise part {part}; expected one of {list(parts)}")
+    bounds = np.cumsum([0.0] + list(parts.values()))
+    assert np.isclose(bounds[-1], 1.0), f"noise.parts must add up to 1, got {bounds[-1]}"
+    i = list(parts).index(part)
+    n = n[int(len(n) * bounds[i]):int(len(n) * bounds[i + 1])]
     return n - n.mean()
 
 
