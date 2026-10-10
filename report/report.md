@@ -8,9 +8,14 @@ D7043E - Group 4: Carl Lisper, Kasper Axelsson, Mohamd Amar Chms Aldden.
 ## 1. Business/Application Understanding
 
 ### 1.1 Application Scenario
-**The problem.** Most heartbeats start in the sinus node and spread through the normal conduction path. Ectopic beats
-start elsewhere: in the atria or the atrioventricular node (supraventricular ectopic beats, S) or in the ventricles
-(ventricular ectopic beats, V). A fusion beat (F) arises when a normal and a ventricular activation meet. Single
+**The problem.** Most heartbeats start in the sinus node, the heart's natural pacemaker, and spread through the normal
+conduction path. These are the normal-type beats (N). The class also contains beats that start normally but are
+conducted with a delay in one of the two bundle branches (bundle branch block beats, whose QRS complex is wider), and
+escape beats from the atria or the atrioventricular node, which take over when the sinus node pauses and arrive late
+rather than early. What the N beats have in common is that they are not premature beats from an abnormal site.
+Ectopic beats start outside the sinus node and come too early: in the atria or the atrioventricular node
+(supraventricular ectopic beats, S) or in the ventricles (ventricular ectopic beats, V; this class also contains the
+rare ventricular escape beats, section 3.5). A fusion beat (F) arises when a normal and a ventricular activation meet. Single
 ectopic beats also occur in healthy people; what is of interest is how often they occur and in which pattern, and
 that can only be seen in long recordings. A 24-hour recording contains about 100,000 beats, far more than a person can
 inspect one by one. The problem addressed here is the step that makes such recordings manageable: assigning every
