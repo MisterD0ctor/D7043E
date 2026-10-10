@@ -1,6 +1,6 @@
 # Edge-Ready ECG Classification using CRISP-DM
 
-D7043E - Group XX: _name 1_, _name 2_, _name 3_, _name 4_
+D7043E - Group 4: Carl Lisper, Kasper Axelsson, Mohamd Amar Chms Aldden.
 
 > Submission 1 covers sections 1-3; sections 4-8 follow in Submission 2. Numbers marked *(generated)* come from
 > `results/data_stats/` and must be refreshed whenever the data preparation changes.
