@@ -1,0 +1,9 @@
+group,experiment,model,strategy,n_features,training data,condition,accuracy,macro_f1,precision_N,recall_N,f1_N,support_N,precision_S,recall_S,f1_S,support_S,precision_V,recall_V,f1_V,support_V,precision_F,recall_F,f1_F,support_F
+imbalance,gradient boosting | none,gradient boosting,none,75,clean,clean,0.954,0.584,0.9757,0.9778,0.9767,44198,0.359,0.3137,0.3349,816,0.876,0.9022,0.8889,3588,0.1576,0.1189,0.1355,412
+imbalance,gradient boosting | sqrt weights,gradient boosting,sqrt weights,75,clean,clean,0.9524,0.5556,0.9784,0.9732,0.9758,44198,0.3264,0.364,0.3441,816,0.8495,0.9392,0.8921,3588,0.0172,0.0073,0.0102,412
+imbalance,gradient boosting | inverse weights,gradient boosting,inverse weights,75,clean,clean,0.9437,0.5384,0.9803,0.9634,0.9718,44198,0.2708,0.3676,0.3119,816,0.7994,0.9395,0.8638,3588,0.0079,0.0049,0.006,412
+imbalance,gradient boosting | balanced sampling,gradient boosting,balanced sampling,75,clean,clean,0.9437,0.5439,0.9829,0.962,0.9723,44198,0.2782,0.4056,0.33,816,0.7999,0.9482,0.8677,3588,0.0064,0.0049,0.0055,412
+imbalance,logistic regression | none,logistic regression,none,75,clean,clean,0.9167,0.4849,0.9724,0.942,0.957,44198,0.1622,0.1569,0.1595,816,0.6903,0.874,0.7714,3588,0.0381,0.0801,0.0516,412
+imbalance,logistic regression | sqrt weights,logistic regression,sqrt weights,75,clean,clean,0.8948,0.4977,0.978,0.9137,0.9448,44198,0.138,0.2794,0.1848,816,0.691,0.8824,0.775,3588,0.0551,0.199,0.0863,412
+imbalance,logistic regression | inverse weights,logistic regression,inverse weights,75,clean,clean,0.8487,0.5059,0.9863,0.8558,0.9164,44198,0.1023,0.4596,0.1674,816,0.7219,0.8868,0.7959,3588,0.0834,0.5243,0.144,412
+imbalance,logistic regression | balanced sampling,logistic regression,balanced sampling,75,clean,clean,0.8263,0.4701,0.986,0.8346,0.904,44198,0.0743,0.3897,0.1248,816,0.7011,0.8871,0.7832,3588,0.0392,0.2646,0.0683,412

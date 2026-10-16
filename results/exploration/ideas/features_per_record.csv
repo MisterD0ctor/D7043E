@@ -1,0 +1,232 @@
+experiment,record,accuracy,recall_N,recall_S,recall_V,recall_F
+gradient boosting | rhythm only,101,0.9898,0.9909,0.3333,,
+gradient boosting | rhythm only,106,0.9625,0.9688,,0.9442,
+gradient boosting | rhythm only,108,0.9325,0.9367,0.25,0.7647,0.0
+gradient boosting | rhythm only,109,0.9751,0.9908,,0.0,0.0
+gradient boosting | rhythm only,112,0.9996,1.0,0.5,,
+gradient boosting | rhythm only,114,0.9808,0.9945,0.4167,0.6512,0.0
+gradient boosting | rhythm only,115,0.9913,0.9913,,,
+gradient boosting | rhythm only,116,0.9743,0.9991,0.0,0.4587,
+gradient boosting | rhythm only,118,0.9767,0.9903,0.7708,0.375,
+gradient boosting | rhythm only,119,0.9491,0.9844,,0.8266,
+gradient boosting | rhythm only,122,0.9968,0.9968,,,
+gradient boosting | rhythm only,124,0.9165,0.9485,0.0,0.5745,0.0
+gradient boosting | rhythm only,203,0.5173,0.4486,0.0,0.9122,0.0
+gradient boosting | rhythm only,205,0.9834,0.9981,0.0,0.6479,0.0
+gradient boosting | rhythm only,207,0.895,0.9942,0.2991,0.4689,
+gradient boosting | rhythm only,208,0.5736,0.9161,0.0,0.2422,0.0
+gradient boosting | rhythm only,209,0.4073,0.4074,0.4047,1.0,
+gradient boosting | rhythm only,215,0.1646,0.1582,0.3333,0.2866,0.0
+gradient boosting | rhythm only,220,0.9633,0.9969,0.266,,
+gradient boosting | rhythm only,223,0.8978,0.9912,0.6712,0.556,0.0
+gradient boosting | rhythm only,230,0.9707,0.9712,,0.0,
+gradient boosting | morphology only,101,0.9979,0.9995,0.0,,
+gradient boosting | morphology only,106,0.8801,0.8825,,0.8731,
+gradient boosting | morphology only,108,0.7928,0.7987,0.0,0.4706,0.0
+gradient boosting | morphology only,109,0.981,0.9819,,0.9737,0.0
+gradient boosting | morphology only,112,0.9992,1.0,0.0,,
+gradient boosting | morphology only,114,0.3743,0.3612,0.25,1.0,0.0
+gradient boosting | morphology only,115,0.9979,0.9979,,,
+gradient boosting | morphology only,116,0.9842,0.9874,0.0,0.9266,
+gradient boosting | morphology only,118,0.9469,0.9935,0.0,0.3125,
+gradient boosting | morphology only,119,1.0,1.0,,1.0,
+gradient boosting | morphology only,122,0.8917,0.8917,,,
+gradient boosting | morphology only,124,0.9703,0.9954,0.0,0.8936,0.0
+gradient boosting | morphology only,203,0.6998,0.6519,0.0,0.9775,0.0
+gradient boosting | morphology only,205,0.9947,1.0,0.3333,0.9859,0.0
+gradient boosting | morphology only,207,0.8827,0.9475,0.0,0.8565,
+gradient boosting | morphology only,208,0.8125,0.8877,0.0,0.999,0.0
+gradient boosting | morphology only,209,0.8821,0.9992,0.0809,1.0,
+gradient boosting | morphology only,215,0.9298,0.9637,0.0,0.2927,0.0
+gradient boosting | morphology only,220,0.9604,1.0,0.1383,,
+gradient boosting | morphology only,223,0.902,0.9716,0.0,0.7611,0.2143
+gradient boosting | morphology only,230,0.6945,0.6943,,1.0,
+gradient boosting | reference without running template,101,0.9995,1.0,0.6667,,
+gradient boosting | reference without running template,106,0.9941,0.9973,,0.9846,
+gradient boosting | reference without running template,108,0.9608,0.9638,1.0,0.7647,0.0
+gradient boosting | reference without running template,109,0.987,0.9884,,0.9211,0.5
+gradient boosting | reference without running template,112,0.9996,1.0,0.5,,
+gradient boosting | reference without running template,114,0.9478,0.9522,0.5,0.9767,0.0
+gradient boosting | reference without running template,115,0.9836,0.9836,,,
+gradient boosting | reference without running template,116,0.9992,0.9991,1.0,1.0,
+gradient boosting | reference without running template,118,0.964,0.9991,0.2708,0.375,
+gradient boosting | reference without running template,119,0.998,0.9974,,1.0,
+gradient boosting | reference without running template,122,0.9964,0.9964,,,
+gradient boosting | reference without running template,124,0.9697,1.0,0.0323,0.7021,0.0
+gradient boosting | reference without running template,203,0.5943,0.5241,0.0,0.9977,0.0
+gradient boosting | reference without running template,205,0.9959,1.0,1.0,1.0,0.0
+gradient boosting | reference without running template,207,0.3811,0.3281,0.0,0.9665,
+gradient boosting | reference without running template,208,0.8539,0.9647,0.0,0.999,0.0
+gradient boosting | reference without running template,209,0.8961,1.0,0.1854,1.0,
+gradient boosting | reference without running template,215,0.9482,0.9724,1.0,0.4817,0.0
+gradient boosting | reference without running template,220,0.9956,1.0,0.9043,,
+gradient boosting | reference without running template,223,0.9478,0.9951,0.6712,0.8118,0.0714
+gradient boosting | reference without running template,230,0.9863,0.9862,,1.0,
+gradient boosting | reference,101,0.9995,1.0,0.6667,,
+gradient boosting | reference,106,0.9896,0.994,,0.9769,
+gradient boosting | reference,108,0.9563,0.9597,0.5,0.8235,0.0
+gradient boosting | reference,109,0.9704,0.9707,,0.9737,0.5
+gradient boosting | reference,112,0.9996,1.0,0.5,,
+gradient boosting | reference,114,0.942,0.9456,0.5,1.0,0.0
+gradient boosting | reference,115,0.9928,0.9928,,,
+gradient boosting | reference,116,0.9988,0.9991,1.0,0.9908,
+gradient boosting | reference,118,0.9912,1.0,0.8646,0.5625,
+gradient boosting | reference,119,0.998,0.9974,,1.0,
+gradient boosting | reference,122,0.9964,0.9964,,,
+gradient boosting | reference,124,0.974,1.0,0.0323,0.8511,0.0
+gradient boosting | reference,203,0.6447,0.5835,0.0,0.9977,0.0
+gradient boosting | reference,205,0.9932,0.9996,0.6667,0.9155,0.0909
+gradient boosting | reference,207,0.8988,0.952,0.0,0.9665,
+gradient boosting | reference,208,0.8522,0.9615,0.0,0.999,0.0
+gradient boosting | reference,209,0.8928,0.9996,0.1619,1.0,
+gradient boosting | reference,215,0.9637,0.9815,1.0,0.622,0.0
+gradient boosting | reference,220,0.9946,0.9995,0.8936,,
+gradient boosting | reference,223,0.942,0.9961,0.726,0.7696,0.0
+gradient boosting | reference,230,0.965,0.965,,1.0,
+gradient boosting | reference + deviations (previous 32 beats),101,0.9995,1.0,0.6667,,
+gradient boosting | reference + deviations (previous 32 beats),106,0.9926,0.996,,0.9827,
+gradient boosting | reference + deviations (previous 32 beats),108,0.9705,0.9753,0.5,0.7059,0.0
+gradient boosting | reference + deviations (previous 32 beats),109,0.9933,0.9948,,0.9474,0.0
+gradient boosting | reference + deviations (previous 32 beats),112,1.0,1.0,1.0,,
+gradient boosting | reference + deviations (previous 32 beats),114,0.9862,0.9912,0.5,1.0,0.0
+gradient boosting | reference + deviations (previous 32 beats),115,0.9918,0.9918,,,
+gradient boosting | reference + deviations (previous 32 beats),116,0.9979,0.9983,1.0,0.9908,
+gradient boosting | reference + deviations (previous 32 beats),118,0.9908,0.9995,0.8438,0.6875,
+gradient boosting | reference + deviations (previous 32 beats),119,0.9965,0.9955,,1.0,
+gradient boosting | reference + deviations (previous 32 beats),122,0.9984,0.9984,,,
+gradient boosting | reference + deviations (previous 32 beats),124,0.9746,1.0,0.0323,0.8723,0.0
+gradient boosting | reference + deviations (previous 32 beats),203,0.6726,0.6179,0.0,0.9887,0.0
+gradient boosting | reference + deviations (previous 32 beats),205,0.9951,0.9996,0.6667,0.9859,0.0909
+gradient boosting | reference + deviations (previous 32 beats),207,0.9133,0.9728,0.0,0.9426,
+gradient boosting | reference + deviations (previous 32 beats),208,0.8329,0.9256,0.0,0.998,0.0027
+gradient boosting | reference + deviations (previous 32 beats),209,0.9154,1.0,0.3368,1.0,
+gradient boosting | reference + deviations (previous 32 beats),215,0.9458,0.9818,1.0,0.25,0.0
+gradient boosting | reference + deviations (previous 32 beats),220,0.9956,0.9995,0.9149,,
+gradient boosting | reference + deviations (previous 32 beats),223,0.9458,0.9985,0.7123,0.778,0.1429
+gradient boosting | reference + deviations (previous 32 beats),230,0.9898,0.9898,,1.0,
+gradient boosting | rhythm + running template + deviations only,101,0.9979,0.9984,0.6667,,
+gradient boosting | rhythm + running template + deviations only,106,0.9877,0.9874,,0.9885,
+gradient boosting | rhythm + running template + deviations only,108,0.9398,0.9425,0.75,0.8235,0.0
+gradient boosting | rhythm + running template + deviations only,109,0.9945,0.9956,,0.9737,0.0
+gradient boosting | rhythm + running template + deviations only,112,1.0,1.0,1.0,,
+gradient boosting | rhythm + running template + deviations only,114,0.9941,1.0,0.4167,1.0,0.0
+gradient boosting | rhythm + running template + deviations only,115,0.9974,0.9974,,,
+gradient boosting | rhythm + running template + deviations only,116,0.9979,0.9978,1.0,1.0,
+gradient boosting | rhythm + running template + deviations only,118,0.9917,0.9995,0.8229,0.9375,
+gradient boosting | rhythm + running template + deviations only,119,0.996,0.9955,,0.9977,
+gradient boosting | rhythm + running template + deviations only,122,0.9972,0.9972,,,
+gradient boosting | rhythm + running template + deviations only,124,0.9728,1.0,0.0323,0.8085,0.0
+gradient boosting | rhythm + running template + deviations only,203,0.6958,0.6436,0.0,0.9977,0.0
+gradient boosting | rhythm + running template + deviations only,205,0.994,0.9996,0.6667,0.8873,0.4545
+gradient boosting | rhythm + running template + deviations only,207,0.9112,0.9948,0.514,0.4976,
+gradient boosting | rhythm + running template + deviations only,208,0.8373,0.9722,0.0,0.9374,0.0
+gradient boosting | rhythm + running template + deviations only,209,0.9244,0.9962,0.4334,1.0,
+gradient boosting | rhythm + running template + deviations only,215,0.9292,0.9345,1.0,0.8293,0.0
+gradient boosting | rhythm + running template + deviations only,220,0.9868,0.9995,0.7234,,
+gradient boosting | rhythm + running template + deviations only,223,0.9447,0.999,0.7671,0.7632,0.0714
+gradient boosting | rhythm + running template + deviations only,230,0.988,0.988,,1.0,
+gradient boosting | reference + deviations from the whole record (not causal),101,0.9989,0.9995,0.6667,,
+gradient boosting | reference + deviations from the whole record (not causal),106,0.9872,0.9834,,0.9981,
+gradient boosting | reference + deviations from the whole record (not causal),108,0.9364,0.9402,1.0,0.6471,0.0
+gradient boosting | reference + deviations from the whole record (not causal),109,0.9937,0.9956,,0.9211,0.0
+gradient boosting | reference + deviations from the whole record (not causal),112,0.9996,1.0,0.5,,
+gradient boosting | reference + deviations from the whole record (not causal),114,0.9856,0.9907,0.5,1.0,0.0
+gradient boosting | reference + deviations from the whole record (not causal),115,0.9933,0.9933,,,
+gradient boosting | reference + deviations from the whole record (not causal),116,0.9983,0.9987,1.0,0.9908,
+gradient boosting | reference + deviations from the whole record (not causal),118,0.9925,1.0,0.8646,0.75,
+gradient boosting | reference + deviations from the whole record (not causal),119,0.9935,0.9916,,1.0,
+gradient boosting | reference + deviations from the whole record (not causal),122,0.9964,0.9964,,,
+gradient boosting | reference + deviations from the whole record (not causal),124,0.9753,1.0,0.0645,0.8723,0.0
+gradient boosting | reference + deviations from the whole record (not causal),203,0.7244,0.68,0.0,0.982,0.0
+gradient boosting | reference + deviations from the whole record (not causal),205,0.9951,0.9988,1.0,1.0,0.0909
+gradient boosting | reference + deviations from the whole record (not causal),207,0.8827,0.9987,0.0,0.4785,
+gradient boosting | reference + deviations from the whole record (not causal),208,0.8586,0.9735,0.0,0.999,0.0
+gradient boosting | reference + deviations from the whole record (not causal),209,0.9164,1.0,0.3446,1.0,
+gradient boosting | reference + deviations from the whole record (not causal),215,0.942,0.9809,1.0,0.189,0.0
+gradient boosting | reference + deviations from the whole record (not causal),220,0.9956,0.9995,0.9149,,
+gradient boosting | reference + deviations from the whole record (not causal),223,0.9424,0.9985,0.6027,0.7674,0.4286
+gradient boosting | reference + deviations from the whole record (not causal),230,0.9827,0.9827,,1.0,
+gradient boosting | reference + next beat (decision one beat later),101,0.9995,1.0,0.6667,,
+gradient boosting | reference + next beat (decision one beat later),106,0.9946,0.998,,0.9846,
+gradient boosting | reference + next beat (decision one beat later),108,0.9177,0.9218,0.25,0.7647,0.0
+gradient boosting | reference + next beat (decision one beat later),109,0.987,0.9876,,0.9737,0.5
+gradient boosting | reference + next beat (decision one beat later),112,1.0,1.0,1.0,,
+gradient boosting | reference + next beat (decision one beat later),114,0.9723,0.9764,0.5833,1.0,0.0
+gradient boosting | reference + next beat (decision one beat later),115,0.9959,0.9959,,,
+gradient boosting | reference + next beat (decision one beat later),116,0.9988,0.9991,1.0,0.9908,
+gradient boosting | reference + next beat (decision one beat later),118,0.9908,1.0,0.7917,0.9375,
+gradient boosting | reference + next beat (decision one beat later),119,0.9975,0.9968,,1.0,
+gradient boosting | reference + next beat (decision one beat later),122,0.9988,0.9988,,,
+gradient boosting | reference + next beat (decision one beat later),124,0.974,1.0,0.0323,0.8511,0.0
+gradient boosting | reference + next beat (decision one beat later),203,0.5926,0.5222,0.0,0.9977,0.0
+gradient boosting | reference + next beat (decision one beat later),205,0.9932,0.9996,0.6667,0.9155,0.0909
+gradient boosting | reference + next beat (decision one beat later),207,0.8902,0.9449,0.0,0.9426,
+gradient boosting | reference + next beat (decision one beat later),208,0.862,0.9773,0.0,0.999,0.0108
+gradient boosting | reference + next beat (decision one beat later),209,0.8854,0.9996,0.1044,1.0,
+gradient boosting | reference + next beat (decision one beat later),215,0.9759,0.9893,1.0,0.7195,0.0
+gradient boosting | reference + next beat (decision one beat later),220,0.9966,0.9995,0.9362,,
+gradient boosting | reference + next beat (decision one beat later),223,0.9474,0.9971,0.7123,0.797,0.0
+gradient boosting | reference + next beat (decision one beat later),230,0.9685,0.9685,,1.0,
+gradient boosting | raw waveform (64 values) + rhythm,101,0.9995,1.0,0.6667,,
+gradient boosting | raw waveform (64 values) + rhythm,106,0.9862,0.992,,0.9692,
+gradient boosting | raw waveform (64 values) + rhythm,108,0.647,0.6475,0.75,0.6471,0.0
+gradient boosting | raw waveform (64 values) + rhythm,109,0.9917,0.9964,,0.7368,0.0
+gradient boosting | raw waveform (64 values) + rhythm,112,0.9992,1.0,0.0,,
+gradient boosting | raw waveform (64 values) + rhythm,114,0.9915,0.9978,0.3333,1.0,0.0
+gradient boosting | raw waveform (64 values) + rhythm,115,0.9872,0.9872,,,
+gradient boosting | raw waveform (64 values) + rhythm,116,0.9988,0.9987,1.0,1.0,
+gradient boosting | raw waveform (64 values) + rhythm,118,0.957,0.9995,0.0104,0.875,
+gradient boosting | raw waveform (64 values) + rhythm,119,0.999,0.9994,,0.9977,
+gradient boosting | raw waveform (64 values) + rhythm,122,0.9988,0.9988,,,
+gradient boosting | raw waveform (64 values) + rhythm,124,0.9536,0.9935,0.0323,0.3617,0.0
+gradient boosting | raw waveform (64 values) + rhythm,203,0.6807,0.6294,0.0,0.9775,0.0
+gradient boosting | raw waveform (64 values) + rhythm,205,0.9898,0.9981,1.0,0.8451,0.0
+gradient boosting | raw waveform (64 values) + rhythm,207,0.1981,0.1141,0.0,0.9187,
+gradient boosting | raw waveform (64 values) + rhythm,208,0.8488,0.9672,0.0,0.9798,0.0
+gradient boosting | raw waveform (64 values) + rhythm,209,0.9108,0.9969,0.3211,1.0,
+gradient boosting | raw waveform (64 values) + rhythm,215,0.9241,0.9596,1.0,0.2378,0.0
+gradient boosting | raw waveform (64 values) + rhythm,220,0.978,0.9995,0.5319,,
+gradient boosting | raw waveform (64 values) + rhythm,223,0.9305,0.9927,0.7945,0.7061,0.1429
+gradient boosting | raw waveform (64 values) + rhythm,230,0.9827,0.9827,,1.0,
+gradient boosting | raw waveform + reference,101,0.9995,1.0,0.6667,,
+gradient boosting | raw waveform + reference,106,0.9911,0.9927,,0.9865,
+gradient boosting | raw waveform + reference,108,0.9075,0.9097,0.75,0.8235,0.0
+gradient boosting | raw waveform + reference,109,0.9909,0.9916,,0.9737,0.5
+gradient boosting | raw waveform + reference,112,0.9996,1.0,0.5,,
+gradient boosting | raw waveform + reference,114,0.9659,0.9703,0.5,1.0,0.0
+gradient boosting | raw waveform + reference,115,0.9969,0.9969,,,
+gradient boosting | raw waveform + reference,116,0.9979,0.9983,1.0,0.9908,
+gradient boosting | raw waveform + reference,118,0.9758,0.9995,0.4479,0.9375,
+gradient boosting | raw waveform + reference,119,1.0,1.0,,1.0,
+gradient boosting | raw waveform + reference,122,1.0,1.0,,,
+gradient boosting | raw waveform + reference,124,0.974,1.0,0.0323,0.8511,0.0
+gradient boosting | raw waveform + reference,203,0.6834,0.629,0.0,0.9977,0.0
+gradient boosting | raw waveform + reference,205,0.9932,0.9996,0.6667,0.9155,0.0909
+gradient boosting | raw waveform + reference,207,0.8977,0.9565,0.0,0.9234,
+gradient boosting | raw waveform + reference,208,0.8539,0.964,0.0,0.999,0.0027
+gradient boosting | raw waveform + reference,209,0.9021,1.0,0.2324,1.0,
+gradient boosting | raw waveform + reference,215,0.95,0.9778,1.0,0.4146,0.0
+gradient boosting | raw waveform + reference,220,0.9941,0.9995,0.883,,
+gradient boosting | raw waveform + reference,223,0.9462,0.9971,0.7397,0.7865,0.0
+gradient boosting | raw waveform + reference,230,0.9769,0.9769,,1.0,
+"gradient boosting, 20 best measures per fold | reference",101,0.9995,1.0,0.6667,,
+"gradient boosting, 20 best measures per fold | reference",106,0.9901,0.996,,0.9731,
+"gradient boosting, 20 best measures per fold | reference",108,0.9325,0.9367,0.5,0.7059,0.0
+"gradient boosting, 20 best measures per fold | reference",109,0.8905,0.8916,,0.8421,0.5
+"gradient boosting, 20 best measures per fold | reference",112,1.0,1.0,1.0,,
+"gradient boosting, 20 best measures per fold | reference",114,0.9846,0.9912,0.25,1.0,0.0
+"gradient boosting, 20 best measures per fold | reference",115,0.9405,0.9405,,,
+"gradient boosting, 20 best measures per fold | reference",116,0.9971,0.997,1.0,1.0,
+"gradient boosting, 20 best measures per fold | reference",118,0.9877,0.9986,0.8333,0.4375,
+"gradient boosting, 20 best measures per fold | reference",119,1.0,1.0,,1.0,
+"gradient boosting, 20 best measures per fold | reference",122,0.9669,0.9669,,,
+"gradient boosting, 20 best measures per fold | reference",124,0.9623,1.0,0.0323,0.4468,0.0
+"gradient boosting, 20 best measures per fold | reference",203,0.6161,0.5498,0.0,0.9977,0.0
+"gradient boosting, 20 best measures per fold | reference",205,0.9943,1.0,1.0,0.9437,0.0
+"gradient boosting, 20 best measures per fold | reference",207,0.8471,0.9332,0.0,0.6459,
+"gradient boosting, 20 best measures per fold | reference",208,0.8298,0.9123,1.0,1.0,0.0242
+"gradient boosting, 20 best measures per fold | reference",209,0.9221,0.9969,0.4099,1.0,
+"gradient boosting, 20 best measures per fold | reference",215,0.8655,0.8734,0.0,0.7317,0.0
+"gradient boosting, 20 best measures per fold | reference",220,0.9956,1.0,0.9043,,
+"gradient boosting, 20 best measures per fold | reference",223,0.9116,0.9946,0.7671,0.592,0.3571
+"gradient boosting, 20 best measures per fold | reference",230,0.9836,0.9836,,1.0,

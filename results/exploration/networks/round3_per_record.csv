@@ -1,0 +1,442 @@
+configuration,seed,record,accuracy
+cnn+template | epochs: 40,0,101,0.9989
+cnn+template | epochs: 40,0,106,0.9492
+cnn+template | epochs: 40,0,108,0.9733
+cnn+template | epochs: 40,0,109,0.9953
+cnn+template | epochs: 40,0,112,0.9992
+cnn+template | epochs: 40,0,114,0.9867
+cnn+template | epochs: 40,0,115,1.0
+cnn+template | epochs: 40,0,116,0.9992
+cnn+template | epochs: 40,0,118,0.9548
+cnn+template | epochs: 40,0,119,1.0
+cnn+template | epochs: 40,0,122,1.0
+cnn+template | epochs: 40,0,124,0.9703
+cnn+template | epochs: 40,0,203,0.8329
+cnn+template | epochs: 40,0,205,0.9928
+cnn+template | epochs: 40,0,207,0.8999
+cnn+template | epochs: 40,0,208,0.8719
+cnn+template | epochs: 40,0,209,0.9394
+cnn+template | epochs: 40,0,215,0.9634
+cnn+template | epochs: 40,0,220,0.9834
+cnn+template | epochs: 40,0,223,0.9501
+cnn+template | epochs: 40,0,230,0.9982
+cnn+template | epochs: 40,1,101,0.9984
+cnn+template | epochs: 40,1,106,0.9462
+cnn+template | epochs: 40,1,108,0.9228
+cnn+template | epochs: 40,1,109,0.9854
+cnn+template | epochs: 40,1,112,0.9992
+cnn+template | epochs: 40,1,114,0.9899
+cnn+template | epochs: 40,1,115,1.0
+cnn+template | epochs: 40,1,116,0.9988
+cnn+template | epochs: 40,1,118,0.953
+cnn+template | epochs: 40,1,119,1.0
+cnn+template | epochs: 40,1,122,1.0
+cnn+template | epochs: 40,1,124,0.9728
+cnn+template | epochs: 40,1,203,0.7734
+cnn+template | epochs: 40,1,205,0.9951
+cnn+template | epochs: 40,1,207,0.8934
+cnn+template | epochs: 40,1,208,0.8681
+cnn+template | epochs: 40,1,209,0.9534
+cnn+template | epochs: 40,1,215,0.961
+cnn+template | epochs: 40,1,220,0.9765
+cnn+template | epochs: 40,1,223,0.9604
+cnn+template | epochs: 40,1,230,0.9965
+cnn+template | epochs: 40,2,101,0.9984
+cnn+template | epochs: 40,2,106,0.9413
+cnn+template | epochs: 40,2,108,0.9177
+cnn+template | epochs: 40,2,109,0.9949
+cnn+template | epochs: 40,2,112,0.9996
+cnn+template | epochs: 40,2,114,0.9899
+cnn+template | epochs: 40,2,115,1.0
+cnn+template | epochs: 40,2,116,0.9988
+cnn+template | epochs: 40,2,118,0.953
+cnn+template | epochs: 40,2,119,1.0
+cnn+template | epochs: 40,2,122,1.0
+cnn+template | epochs: 40,2,124,0.974
+cnn+template | epochs: 40,2,203,0.7903
+cnn+template | epochs: 40,2,205,0.9917
+cnn+template | epochs: 40,2,207,0.9101
+cnn+template | epochs: 40,2,208,0.8603
+cnn+template | epochs: 40,2,209,0.9364
+cnn+template | epochs: 40,2,215,0.9396
+cnn+template | epochs: 40,2,220,0.9829
+cnn+template | epochs: 40,2,223,0.9643
+cnn+template | epochs: 40,2,230,0.9991
+"cnn+template | channels: (32, 64, 64, 64, 64)",0,101,0.9984
+"cnn+template | channels: (32, 64, 64, 64, 64)",0,106,0.9581
+"cnn+template | channels: (32, 64, 64, 64, 64)",0,108,0.9302
+"cnn+template | channels: (32, 64, 64, 64, 64)",0,109,0.9953
+"cnn+template | channels: (32, 64, 64, 64, 64)",0,112,0.9992
+"cnn+template | channels: (32, 64, 64, 64, 64)",0,114,0.9931
+"cnn+template | channels: (32, 64, 64, 64, 64)",0,115,1.0
+"cnn+template | channels: (32, 64, 64, 64, 64)",0,116,0.9992
+"cnn+template | channels: (32, 64, 64, 64, 64)",0,118,0.9517
+"cnn+template | channels: (32, 64, 64, 64, 64)",0,119,1.0
+"cnn+template | channels: (32, 64, 64, 64, 64)",0,122,1.0
+"cnn+template | channels: (32, 64, 64, 64, 64)",0,124,0.9734
+"cnn+template | channels: (32, 64, 64, 64, 64)",0,203,0.758
+"cnn+template | channels: (32, 64, 64, 64, 64)",0,205,0.9921
+"cnn+template | channels: (32, 64, 64, 64, 64)",0,207,0.9069
+"cnn+template | channels: (32, 64, 64, 64, 64)",0,208,0.8593
+"cnn+template | channels: (32, 64, 64, 64, 64)",0,209,0.951
+"cnn+template | channels: (32, 64, 64, 64, 64)",0,215,0.9801
+"cnn+template | channels: (32, 64, 64, 64, 64)",0,220,0.9809
+"cnn+template | channels: (32, 64, 64, 64, 64)",0,223,0.9616
+"cnn+template | channels: (32, 64, 64, 64, 64)",0,230,0.9969
+"cnn+template | channels: (32, 64, 64, 64, 64)",1,101,0.9984
+"cnn+template | channels: (32, 64, 64, 64, 64)",1,106,0.9591
+"cnn+template | channels: (32, 64, 64, 64, 64)",1,108,0.9381
+"cnn+template | channels: (32, 64, 64, 64, 64)",1,109,0.9941
+"cnn+template | channels: (32, 64, 64, 64, 64)",1,112,0.9996
+"cnn+template | channels: (32, 64, 64, 64, 64)",1,114,0.9925
+"cnn+template | channels: (32, 64, 64, 64, 64)",1,115,1.0
+"cnn+template | channels: (32, 64, 64, 64, 64)",1,116,0.9988
+"cnn+template | channels: (32, 64, 64, 64, 64)",1,118,0.9508
+"cnn+template | channels: (32, 64, 64, 64, 64)",1,119,1.0
+"cnn+template | channels: (32, 64, 64, 64, 64)",1,122,1.0
+"cnn+template | channels: (32, 64, 64, 64, 64)",1,124,0.9703
+"cnn+template | channels: (32, 64, 64, 64, 64)",1,203,0.7492
+"cnn+template | channels: (32, 64, 64, 64, 64)",1,205,0.9943
+"cnn+template | channels: (32, 64, 64, 64, 64)",1,207,0.9037
+"cnn+template | channels: (32, 64, 64, 64, 64)",1,208,0.8712
+"cnn+template | channels: (32, 64, 64, 64, 64)",1,209,0.958
+"cnn+template | channels: (32, 64, 64, 64, 64)",1,215,0.9551
+"cnn+template | channels: (32, 64, 64, 64, 64)",1,220,0.9804
+"cnn+template | channels: (32, 64, 64, 64, 64)",1,223,0.9673
+"cnn+template | channels: (32, 64, 64, 64, 64)",1,230,0.9978
+"cnn+template | channels: (32, 64, 64, 64, 64)",2,101,0.9984
+"cnn+template | channels: (32, 64, 64, 64, 64)",2,106,0.9492
+"cnn+template | channels: (32, 64, 64, 64, 64)",2,108,0.9257
+"cnn+template | channels: (32, 64, 64, 64, 64)",2,109,0.9953
+"cnn+template | channels: (32, 64, 64, 64, 64)",2,112,0.9996
+"cnn+template | channels: (32, 64, 64, 64, 64)",2,114,0.9883
+"cnn+template | channels: (32, 64, 64, 64, 64)",2,115,1.0
+"cnn+template | channels: (32, 64, 64, 64, 64)",2,116,0.9988
+"cnn+template | channels: (32, 64, 64, 64, 64)",2,118,0.9539
+"cnn+template | channels: (32, 64, 64, 64, 64)",2,119,1.0
+"cnn+template | channels: (32, 64, 64, 64, 64)",2,122,1.0
+"cnn+template | channels: (32, 64, 64, 64, 64)",2,124,0.9672
+"cnn+template | channels: (32, 64, 64, 64, 64)",2,203,0.8292
+"cnn+template | channels: (32, 64, 64, 64, 64)",2,205,0.9917
+"cnn+template | channels: (32, 64, 64, 64, 64)",2,207,0.9004
+"cnn+template | channels: (32, 64, 64, 64, 64)",2,208,0.8664
+"cnn+template | channels: (32, 64, 64, 64, 64)",2,209,0.9311
+"cnn+template | channels: (32, 64, 64, 64, 64)",2,215,0.9521
+"cnn+template | channels: (32, 64, 64, 64, 64)",2,220,0.9809
+"cnn+template | channels: (32, 64, 64, 64, 64)",2,223,0.9478
+"cnn+template | channels: (32, 64, 64, 64, 64)",2,230,0.9947
+cnn+template | measures: rhythm,0,101,0.9995
+cnn+template | measures: rhythm,0,106,0.9817
+cnn+template | measures: rhythm,0,108,0.9228
+cnn+template | measures: rhythm,0,109,0.9949
+cnn+template | measures: rhythm,0,112,0.9992
+cnn+template | measures: rhythm,0,114,0.9899
+cnn+template | measures: rhythm,0,115,1.0
+cnn+template | measures: rhythm,0,116,0.9996
+cnn+template | measures: rhythm,0,118,0.9565
+cnn+template | measures: rhythm,0,119,1.0
+cnn+template | measures: rhythm,0,122,1.0
+cnn+template | measures: rhythm,0,124,0.9592
+cnn+template | measures: rhythm,0,203,0.7059
+cnn+template | measures: rhythm,0,205,0.9925
+cnn+template | measures: rhythm,0,207,0.8773
+cnn+template | measures: rhythm,0,208,0.8386
+cnn+template | measures: rhythm,0,209,0.8891
+cnn+template | measures: rhythm,0,215,0.9152
+cnn+template | measures: rhythm,0,220,0.9936
+cnn+template | measures: rhythm,0,223,0.9385
+cnn+template | measures: rhythm,0,230,1.0
+cnn+template | measures: rhythm,1,101,0.9995
+cnn+template | measures: rhythm,1,106,0.9822
+cnn+template | measures: rhythm,1,108,0.9597
+cnn+template | measures: rhythm,1,109,0.9937
+cnn+template | measures: rhythm,1,112,0.9992
+cnn+template | measures: rhythm,1,114,0.9846
+cnn+template | measures: rhythm,1,115,0.9995
+cnn+template | measures: rhythm,1,116,0.9983
+cnn+template | measures: rhythm,1,118,0.9565
+cnn+template | measures: rhythm,1,119,1.0
+cnn+template | measures: rhythm,1,122,1.0
+cnn+template | measures: rhythm,1,124,0.9604
+cnn+template | measures: rhythm,1,203,0.6424
+cnn+template | measures: rhythm,1,205,0.9928
+cnn+template | measures: rhythm,1,207,0.8784
+cnn+template | measures: rhythm,1,208,0.8437
+cnn+template | measures: rhythm,1,209,0.8748
+cnn+template | measures: rhythm,1,215,0.9545
+cnn+template | measures: rhythm,1,220,0.9917
+cnn+template | measures: rhythm,1,223,0.9328
+cnn+template | measures: rhythm,1,230,0.9947
+cnn+template | measures: rhythm,2,101,0.9995
+cnn+template | measures: rhythm,2,106,0.9877
+cnn+template | measures: rhythm,2,108,0.9773
+cnn+template | measures: rhythm,2,109,0.996
+cnn+template | measures: rhythm,2,112,0.9996
+cnn+template | measures: rhythm,2,114,0.9894
+cnn+template | measures: rhythm,2,115,0.999
+cnn+template | measures: rhythm,2,116,0.9992
+cnn+template | measures: rhythm,2,118,0.9596
+cnn+template | measures: rhythm,2,119,1.0
+cnn+template | measures: rhythm,2,122,1.0
+cnn+template | measures: rhythm,2,124,0.9604
+cnn+template | measures: rhythm,2,203,0.7049
+cnn+template | measures: rhythm,2,205,0.9928
+cnn+template | measures: rhythm,2,207,0.8767
+cnn+template | measures: rhythm,2,208,0.8641
+cnn+template | measures: rhythm,2,209,0.9001
+cnn+template | measures: rhythm,2,215,0.9491
+cnn+template | measures: rhythm,2,220,0.9922
+cnn+template | measures: rhythm,2,223,0.932
+cnn+template | measures: rhythm,2,230,0.9987
+cnn+template | balance: sqrt,0,101,0.9989
+cnn+template | balance: sqrt,0,106,0.9719
+cnn+template | balance: sqrt,0,108,0.9132
+cnn+template | balance: sqrt,0,109,0.9957
+cnn+template | balance: sqrt,0,112,0.9984
+cnn+template | balance: sqrt,0,114,0.9925
+cnn+template | balance: sqrt,0,115,1.0
+cnn+template | balance: sqrt,0,116,0.9983
+cnn+template | balance: sqrt,0,118,0.9526
+cnn+template | balance: sqrt,0,119,1.0
+cnn+template | balance: sqrt,0,122,0.9996
+cnn+template | balance: sqrt,0,124,0.9722
+cnn+template | balance: sqrt,0,203,0.7755
+cnn+template | balance: sqrt,0,205,0.9921
+cnn+template | balance: sqrt,0,207,0.88
+cnn+template | balance: sqrt,0,208,0.8647
+cnn+template | balance: sqrt,0,209,0.9567
+cnn+template | balance: sqrt,0,215,0.9125
+cnn+template | balance: sqrt,0,220,0.9848
+cnn+template | balance: sqrt,0,223,0.9604
+cnn+template | balance: sqrt,0,230,0.996
+cnn+template | balance: sqrt,1,101,0.9989
+cnn+template | balance: sqrt,1,106,0.9354
+cnn+template | balance: sqrt,1,108,0.9137
+cnn+template | balance: sqrt,1,109,0.9921
+cnn+template | balance: sqrt,1,112,0.9992
+cnn+template | balance: sqrt,1,114,0.9904
+cnn+template | balance: sqrt,1,115,1.0
+cnn+template | balance: sqrt,1,116,0.9979
+cnn+template | balance: sqrt,1,118,0.9517
+cnn+template | balance: sqrt,1,119,1.0
+cnn+template | balance: sqrt,1,122,1.0
+cnn+template | balance: sqrt,1,124,0.9722
+cnn+template | balance: sqrt,1,203,0.7597
+cnn+template | balance: sqrt,1,205,0.9951
+cnn+template | balance: sqrt,1,207,0.8897
+cnn+template | balance: sqrt,1,208,0.8695
+cnn+template | balance: sqrt,1,209,0.972
+cnn+template | balance: sqrt,1,215,0.9443
+cnn+template | balance: sqrt,1,220,0.9848
+cnn+template | balance: sqrt,1,223,0.9731
+cnn+template | balance: sqrt,1,230,0.9965
+cnn+template | balance: sqrt,2,101,0.9979
+cnn+template | balance: sqrt,2,106,0.9561
+cnn+template | balance: sqrt,2,108,0.8871
+cnn+template | balance: sqrt,2,109,0.9917
+cnn+template | balance: sqrt,2,112,0.9988
+cnn+template | balance: sqrt,2,114,0.9872
+cnn+template | balance: sqrt,2,115,1.0
+cnn+template | balance: sqrt,2,116,0.9983
+cnn+template | balance: sqrt,2,118,0.9521
+cnn+template | balance: sqrt,2,119,1.0
+cnn+template | balance: sqrt,2,122,1.0
+cnn+template | balance: sqrt,2,124,0.9753
+cnn+template | balance: sqrt,2,203,0.6813
+cnn+template | balance: sqrt,2,205,0.9898
+cnn+template | balance: sqrt,2,207,0.8924
+cnn+template | balance: sqrt,2,208,0.8573
+cnn+template | balance: sqrt,2,209,0.9724
+cnn+template | balance: sqrt,2,215,0.9176
+cnn+template | balance: sqrt,2,220,0.9848
+cnn+template | balance: sqrt,2,223,0.9647
+cnn+template | balance: sqrt,2,230,0.9902
+cnn+template,0,101,0.9989
+cnn+template,0,106,0.965
+cnn+template,0,108,0.9364
+cnn+template,0,109,0.9953
+cnn+template,0,112,0.9996
+cnn+template,0,114,0.9925
+cnn+template,0,115,1.0
+cnn+template,0,116,0.9983
+cnn+template,0,118,0.9526
+cnn+template,0,119,1.0
+cnn+template,0,122,1.0
+cnn+template,0,124,0.9709
+cnn+template,0,203,0.8501
+cnn+template,0,205,0.9925
+cnn+template,0,207,0.8945
+cnn+template,0,208,0.8712
+cnn+template,0,209,0.9477
+cnn+template,0,215,0.8949
+cnn+template,0,220,0.9848
+cnn+template,0,223,0.9547
+cnn+template,0,230,0.9978
+cnn+template,1,101,0.9984
+cnn+template,1,106,0.9482
+cnn+template,1,108,0.9098
+cnn+template,1,109,0.9917
+cnn+template,1,112,0.9996
+cnn+template,1,114,0.9931
+cnn+template,1,115,1.0
+cnn+template,1,116,0.9992
+cnn+template,1,118,0.9526
+cnn+template,1,119,1.0
+cnn+template,1,122,1.0
+cnn+template,1,124,0.974
+cnn+template,1,203,0.799
+cnn+template,1,205,0.994
+cnn+template,1,207,0.9085
+cnn+template,1,208,0.8688
+cnn+template,1,209,0.954
+cnn+template,1,215,0.9753
+cnn+template,1,220,0.9785
+cnn+template,1,223,0.9574
+cnn+template,1,230,0.9907
+cnn+template,2,101,0.9984
+cnn+template,2,106,0.966
+cnn+template,2,108,0.9268
+cnn+template,2,109,0.996
+cnn+template,2,112,0.9992
+cnn+template,2,114,0.9931
+cnn+template,2,115,1.0
+cnn+template,2,116,0.9988
+cnn+template,2,118,0.953
+cnn+template,2,119,1.0
+cnn+template,2,122,1.0
+cnn+template,2,124,0.974
+cnn+template,2,203,0.8272
+cnn+template,2,205,0.9921
+cnn+template,2,207,0.9064
+cnn+template,2,208,0.862
+cnn+template,2,209,0.9484
+cnn+template,2,215,0.9628
+cnn+template,2,220,0.9853
+cnn+template,2,223,0.9597
+cnn+template,2,230,0.9969
+cnn+template | augment: window+noise,0,101,0.9984
+cnn+template | augment: window+noise,0,106,0.9822
+cnn+template | augment: window+noise,0,108,0.9563
+cnn+template | augment: window+noise,0,109,0.9937
+cnn+template | augment: window+noise,0,112,0.9996
+cnn+template | augment: window+noise,0,114,0.9931
+cnn+template | augment: window+noise,0,115,1.0
+cnn+template | augment: window+noise,0,116,0.9975
+cnn+template | augment: window+noise,0,118,0.9447
+cnn+template | augment: window+noise,0,119,1.0
+cnn+template | augment: window+noise,0,122,1.0
+cnn+template | augment: window+noise,0,124,0.9678
+cnn+template | augment: window+noise,0,203,0.7368
+cnn+template | augment: window+noise,0,205,0.9921
+cnn+template | augment: window+noise,0,207,0.866
+cnn+template | augment: window+noise,0,208,0.8539
+cnn+template | augment: window+noise,0,209,0.9827
+cnn+template | augment: window+noise,0,215,0.9536
+cnn+template | augment: window+noise,0,220,0.9834
+cnn+template | augment: window+noise,0,223,0.9143
+cnn+template | augment: window+noise,0,230,0.9947
+cnn+template | augment: window+noise,1,101,0.9984
+cnn+template | augment: window+noise,1,106,0.9847
+cnn+template | augment: window+noise,1,108,0.9467
+cnn+template | augment: window+noise,1,109,0.9913
+cnn+template | augment: window+noise,1,112,1.0
+cnn+template | augment: window+noise,1,114,0.9925
+cnn+template | augment: window+noise,1,115,1.0
+cnn+template | augment: window+noise,1,116,0.9979
+cnn+template | augment: window+noise,1,118,0.953
+cnn+template | augment: window+noise,1,119,1.0
+cnn+template | augment: window+noise,1,122,1.0
+cnn+template | augment: window+noise,1,124,0.9734
+cnn+template | augment: window+noise,1,203,0.5889
+cnn+template | augment: window+noise,1,205,0.9917
+cnn+template | augment: window+noise,1,207,0.8714
+cnn+template | augment: window+noise,1,208,0.8468
+cnn+template | augment: window+noise,1,209,0.9627
+cnn+template | augment: window+noise,1,215,0.9265
+cnn+template | augment: window+noise,1,220,0.9751
+cnn+template | augment: window+noise,1,223,0.9293
+cnn+template | augment: window+noise,1,230,0.9947
+cnn+template | augment: window+noise,2,101,0.9984
+cnn+template | augment: window+noise,2,106,0.9877
+cnn+template | augment: window+noise,2,108,0.9671
+cnn+template | augment: window+noise,2,109,0.9877
+cnn+template | augment: window+noise,2,112,0.9996
+cnn+template | augment: window+noise,2,114,0.9936
+cnn+template | augment: window+noise,2,115,1.0
+cnn+template | augment: window+noise,2,116,0.9979
+cnn+template | augment: window+noise,2,118,0.9517
+cnn+template | augment: window+noise,2,119,1.0
+cnn+template | augment: window+noise,2,122,1.0
+cnn+template | augment: window+noise,2,124,0.9734
+cnn+template | augment: window+noise,2,203,0.7032
+cnn+template | augment: window+noise,2,205,0.9913
+cnn+template | augment: window+noise,2,207,0.8671
+cnn+template | augment: window+noise,2,208,0.84
+cnn+template | augment: window+noise,2,209,0.9494
+cnn+template | augment: window+noise,2,215,0.9369
+cnn+template | augment: window+noise,2,220,0.978
+cnn+template | augment: window+noise,2,223,0.9366
+cnn+template | augment: window+noise,2,230,0.9902
+cnn+template | pre: 448,0,101,0.9989
+cnn+template | pre: 448,0,106,0.9763
+cnn+template | pre: 448,0,108,0.9233
+cnn+template | pre: 448,0,109,0.9889
+cnn+template | pre: 448,0,112,0.9988
+cnn+template | pre: 448,0,114,0.9925
+cnn+template | pre: 448,0,115,1.0
+cnn+template | pre: 448,0,116,0.9992
+cnn+template | pre: 448,0,118,0.9508
+cnn+template | pre: 448,0,119,1.0
+cnn+template | pre: 448,0,122,1.0
+cnn+template | pre: 448,0,124,0.9691
+cnn+template | pre: 448,0,203,0.8675
+cnn+template | pre: 448,0,205,0.9943
+cnn+template | pre: 448,0,207,0.9053
+cnn+template | pre: 448,0,208,0.8692
+cnn+template | pre: 448,0,209,0.9161
+cnn+template | pre: 448,0,215,0.9536
+cnn+template | pre: 448,0,220,0.979
+cnn+template | pre: 448,0,223,0.96
+cnn+template | pre: 448,0,230,0.988
+cnn+template | pre: 448,1,101,0.9989
+cnn+template | pre: 448,1,106,0.9571
+cnn+template | pre: 448,1,108,0.9069
+cnn+template | pre: 448,1,109,0.9905
+cnn+template | pre: 448,1,112,0.9992
+cnn+template | pre: 448,1,114,0.9878
+cnn+template | pre: 448,1,115,1.0
+cnn+template | pre: 448,1,116,0.9979
+cnn+template | pre: 448,1,118,0.9508
+cnn+template | pre: 448,1,119,1.0
+cnn+template | pre: 448,1,122,1.0
+cnn+template | pre: 448,1,124,0.9716
+cnn+template | pre: 448,1,203,0.7263
+cnn+template | pre: 448,1,205,0.9943
+cnn+template | pre: 448,1,207,0.908
+cnn+template | pre: 448,1,208,0.8634
+cnn+template | pre: 448,1,209,0.9454
+cnn+template | pre: 448,1,215,0.9089
+cnn+template | pre: 448,1,220,0.9809
+cnn+template | pre: 448,1,223,0.9608
+cnn+template | pre: 448,1,230,0.9951
+cnn+template | pre: 448,2,101,0.9984
+cnn+template | pre: 448,2,106,0.9487
+cnn+template | pre: 448,2,108,0.9199
+cnn+template | pre: 448,2,109,0.9937
+cnn+template | pre: 448,2,112,0.9996
+cnn+template | pre: 448,2,114,0.9925
+cnn+template | pre: 448,2,115,1.0
+cnn+template | pre: 448,2,116,0.9988
+cnn+template | pre: 448,2,118,0.9508
+cnn+template | pre: 448,2,119,1.0
+cnn+template | pre: 448,2,122,1.0
+cnn+template | pre: 448,2,124,0.9734
+cnn+template | pre: 448,2,203,0.7542
+cnn+template | pre: 448,2,205,0.994
+cnn+template | pre: 448,2,207,0.9074
+cnn+template | pre: 448,2,208,0.8702
+cnn+template | pre: 448,2,209,0.9221
+cnn+template | pre: 448,2,215,0.9378
+cnn+template | pre: 448,2,220,0.9834
+cnn+template | pre: 448,2,223,0.9501
+cnn+template | pre: 448,2,230,0.9925

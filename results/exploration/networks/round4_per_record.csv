@@ -1,0 +1,190 @@
+configuration,seed,record,accuracy
+cnn+template | augment: window+noise | noise_share: 0.5,0,101,0.9984
+cnn+template | augment: window+noise | noise_share: 0.5,0,106,0.9778
+cnn+template | augment: window+noise | noise_share: 0.5,0,108,0.9546
+cnn+template | augment: window+noise | noise_share: 0.5,0,109,0.9941
+cnn+template | augment: window+noise | noise_share: 0.5,0,112,1.0
+cnn+template | augment: window+noise | noise_share: 0.5,0,114,0.9925
+cnn+template | augment: window+noise | noise_share: 0.5,0,115,1.0
+cnn+template | augment: window+noise | noise_share: 0.5,0,116,0.9983
+cnn+template | augment: window+noise | noise_share: 0.5,0,118,0.9517
+cnn+template | augment: window+noise | noise_share: 0.5,0,119,1.0
+cnn+template | augment: window+noise | noise_share: 0.5,0,122,1.0
+cnn+template | augment: window+noise | noise_share: 0.5,0,124,0.9685
+cnn+template | augment: window+noise | noise_share: 0.5,0,203,0.6571
+cnn+template | augment: window+noise | noise_share: 0.5,0,205,0.9921
+cnn+template | augment: window+noise | noise_share: 0.5,0,207,0.8778
+cnn+template | augment: window+noise | noise_share: 0.5,0,208,0.8542
+cnn+template | augment: window+noise | noise_share: 0.5,0,209,0.9704
+cnn+template | augment: window+noise | noise_share: 0.5,0,215,0.9408
+cnn+template | augment: window+noise | noise_share: 0.5,0,220,0.9809
+cnn+template | augment: window+noise | noise_share: 0.5,0,223,0.9343
+cnn+template | augment: window+noise | noise_share: 0.5,0,230,0.9938
+cnn+template | augment: window+noise | noise_share: 0.5,1,101,0.9984
+cnn+template | augment: window+noise | noise_share: 0.5,1,106,0.9827
+cnn+template | augment: window+noise | noise_share: 0.5,1,108,0.9342
+cnn+template | augment: window+noise | noise_share: 0.5,1,109,0.9921
+cnn+template | augment: window+noise | noise_share: 0.5,1,112,0.9996
+cnn+template | augment: window+noise | noise_share: 0.5,1,114,0.9936
+cnn+template | augment: window+noise | noise_share: 0.5,1,115,1.0
+cnn+template | augment: window+noise | noise_share: 0.5,1,116,0.9979
+cnn+template | augment: window+noise | noise_share: 0.5,1,118,0.9526
+cnn+template | augment: window+noise | noise_share: 0.5,1,119,1.0
+cnn+template | augment: window+noise | noise_share: 0.5,1,122,1.0
+cnn+template | augment: window+noise | noise_share: 0.5,1,124,0.9728
+cnn+template | augment: window+noise | noise_share: 0.5,1,203,0.6904
+cnn+template | augment: window+noise | noise_share: 0.5,1,205,0.9928
+cnn+template | augment: window+noise | noise_share: 0.5,1,207,0.8692
+cnn+template | augment: window+noise | noise_share: 0.5,1,208,0.8512
+cnn+template | augment: window+noise | noise_share: 0.5,1,209,0.9704
+cnn+template | augment: window+noise | noise_share: 0.5,1,215,0.9289
+cnn+template | augment: window+noise | noise_share: 0.5,1,220,0.9795
+cnn+template | augment: window+noise | noise_share: 0.5,1,223,0.927
+cnn+template | augment: window+noise | noise_share: 0.5,1,230,0.992
+cnn+template | augment: window+noise | noise_share: 0.5,2,101,0.9984
+cnn+template | augment: window+noise | noise_share: 0.5,2,106,0.9739
+cnn+template | augment: window+noise | noise_share: 0.5,2,108,0.9591
+cnn+template | augment: window+noise | noise_share: 0.5,2,109,0.9893
+cnn+template | augment: window+noise | noise_share: 0.5,2,112,1.0
+cnn+template | augment: window+noise | noise_share: 0.5,2,114,0.992
+cnn+template | augment: window+noise | noise_share: 0.5,2,115,1.0
+cnn+template | augment: window+noise | noise_share: 0.5,2,116,0.9975
+cnn+template | augment: window+noise | noise_share: 0.5,2,118,0.953
+cnn+template | augment: window+noise | noise_share: 0.5,2,119,1.0
+cnn+template | augment: window+noise | noise_share: 0.5,2,122,1.0
+cnn+template | augment: window+noise | noise_share: 0.5,2,124,0.9734
+cnn+template | augment: window+noise | noise_share: 0.5,2,203,0.6528
+cnn+template | augment: window+noise | noise_share: 0.5,2,205,0.9921
+cnn+template | augment: window+noise | noise_share: 0.5,2,207,0.8654
+cnn+template | augment: window+noise | noise_share: 0.5,2,208,0.8529
+cnn+template | augment: window+noise | noise_share: 0.5,2,209,0.9804
+cnn+template | augment: window+noise | noise_share: 0.5,2,215,0.9399
+cnn+template | augment: window+noise | noise_share: 0.5,2,220,0.9795
+cnn+template | augment: window+noise | noise_share: 0.5,2,223,0.9335
+cnn+template | augment: window+noise | noise_share: 0.5,2,230,0.9951
+"cnn+template | augment: window+noise | snr: (6, 24)",0,101,0.9984
+"cnn+template | augment: window+noise | snr: (6, 24)",0,106,0.9882
+"cnn+template | augment: window+noise | snr: (6, 24)",0,108,0.9364
+"cnn+template | augment: window+noise | snr: (6, 24)",0,109,0.9941
+"cnn+template | augment: window+noise | snr: (6, 24)",0,112,1.0
+"cnn+template | augment: window+noise | snr: (6, 24)",0,114,0.9936
+"cnn+template | augment: window+noise | snr: (6, 24)",0,115,1.0
+"cnn+template | augment: window+noise | snr: (6, 24)",0,116,0.9988
+"cnn+template | augment: window+noise | snr: (6, 24)",0,118,0.9504
+"cnn+template | augment: window+noise | snr: (6, 24)",0,119,1.0
+"cnn+template | augment: window+noise | snr: (6, 24)",0,122,1.0
+"cnn+template | augment: window+noise | snr: (6, 24)",0,124,0.9703
+"cnn+template | augment: window+noise | snr: (6, 24)",0,203,0.6608
+"cnn+template | augment: window+noise | snr: (6, 24)",0,205,0.9913
+"cnn+template | augment: window+noise | snr: (6, 24)",0,207,0.8977
+"cnn+template | augment: window+noise | snr: (6, 24)",0,208,0.86
+"cnn+template | augment: window+noise | snr: (6, 24)",0,209,0.9817
+"cnn+template | augment: window+noise | snr: (6, 24)",0,215,0.9565
+"cnn+template | augment: window+noise | snr: (6, 24)",0,220,0.9853
+"cnn+template | augment: window+noise | snr: (6, 24)",0,223,0.9293
+"cnn+template | augment: window+noise | snr: (6, 24)",0,230,0.9965
+"cnn+template | augment: window+noise | snr: (6, 24)",1,101,0.9984
+"cnn+template | augment: window+noise | snr: (6, 24)",1,106,0.9768
+"cnn+template | augment: window+noise | snr: (6, 24)",1,108,0.924
+"cnn+template | augment: window+noise | snr: (6, 24)",1,109,0.9858
+"cnn+template | augment: window+noise | snr: (6, 24)",1,112,0.9996
+"cnn+template | augment: window+noise | snr: (6, 24)",1,114,0.9925
+"cnn+template | augment: window+noise | snr: (6, 24)",1,115,1.0
+"cnn+template | augment: window+noise | snr: (6, 24)",1,116,0.9983
+"cnn+template | augment: window+noise | snr: (6, 24)",1,118,0.9534
+"cnn+template | augment: window+noise | snr: (6, 24)",1,119,1.0
+"cnn+template | augment: window+noise | snr: (6, 24)",1,122,0.9996
+"cnn+template | augment: window+noise | snr: (6, 24)",1,124,0.9722
+"cnn+template | augment: window+noise | snr: (6, 24)",1,203,0.5976
+"cnn+template | augment: window+noise | snr: (6, 24)",1,205,0.9932
+"cnn+template | augment: window+noise | snr: (6, 24)",1,207,0.8595
+"cnn+template | augment: window+noise | snr: (6, 24)",1,208,0.8576
+"cnn+template | augment: window+noise | snr: (6, 24)",1,209,0.9817
+"cnn+template | augment: window+noise | snr: (6, 24)",1,215,0.925
+"cnn+template | augment: window+noise | snr: (6, 24)",1,220,0.9775
+"cnn+template | augment: window+noise | snr: (6, 24)",1,223,0.927
+"cnn+template | augment: window+noise | snr: (6, 24)",1,230,0.9942
+"cnn+template | augment: window+noise | snr: (6, 24)",2,101,0.9984
+"cnn+template | augment: window+noise | snr: (6, 24)",2,106,0.9778
+"cnn+template | augment: window+noise | snr: (6, 24)",2,108,0.9807
+"cnn+template | augment: window+noise | snr: (6, 24)",2,109,0.9909
+"cnn+template | augment: window+noise | snr: (6, 24)",2,112,1.0
+"cnn+template | augment: window+noise | snr: (6, 24)",2,114,0.9931
+"cnn+template | augment: window+noise | snr: (6, 24)",2,115,1.0
+"cnn+template | augment: window+noise | snr: (6, 24)",2,116,0.9975
+"cnn+template | augment: window+noise | snr: (6, 24)",2,118,0.9534
+"cnn+template | augment: window+noise | snr: (6, 24)",2,119,1.0
+"cnn+template | augment: window+noise | snr: (6, 24)",2,122,1.0
+"cnn+template | augment: window+noise | snr: (6, 24)",2,124,0.9709
+"cnn+template | augment: window+noise | snr: (6, 24)",2,203,0.637
+"cnn+template | augment: window+noise | snr: (6, 24)",2,205,0.9936
+"cnn+template | augment: window+noise | snr: (6, 24)",2,207,0.8773
+"cnn+template | augment: window+noise | snr: (6, 24)",2,208,0.8502
+"cnn+template | augment: window+noise | snr: (6, 24)",2,209,0.9797
+"cnn+template | augment: window+noise | snr: (6, 24)",2,215,0.9312
+"cnn+template | augment: window+noise | snr: (6, 24)",2,220,0.9819
+"cnn+template | augment: window+noise | snr: (6, 24)",2,223,0.9278
+"cnn+template | augment: window+noise | snr: (6, 24)",2,230,0.9969
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,101,0.9984
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,106,0.9852
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,108,0.9364
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,109,0.9905
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,112,0.9996
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,114,0.9925
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,115,1.0
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,116,0.9988
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,118,0.9561
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,119,1.0
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,122,1.0
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,124,0.9722
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,203,0.6138
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,205,0.9932
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,207,0.8821
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,208,0.8607
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,209,0.962
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,215,0.9304
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,220,0.9853
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,223,0.9328
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,230,0.9956
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,101,0.9984
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,106,0.9743
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,108,0.9109
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,109,0.9802
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,112,1.0
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,114,0.992
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,115,1.0
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,116,0.9983
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,118,0.9548
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,119,1.0
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,122,1.0
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,124,0.9685
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,203,0.6467
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,205,0.9932
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,207,0.8714
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,208,0.8569
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,209,0.9777
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,215,0.9196
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,220,0.9795
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,223,0.9239
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,230,0.9933
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,101,0.9984
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,106,0.9546
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,108,0.9478
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,109,0.9929
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,112,0.9996
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,114,0.992
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,115,1.0
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,116,0.9983
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,118,0.9548
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,119,1.0
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,122,0.9996
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,124,0.9728
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,203,0.7076
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,205,0.9921
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,207,0.873
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,208,0.8617
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,209,0.972
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,215,0.9366
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,220,0.9809
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,223,0.9324
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,230,0.9969

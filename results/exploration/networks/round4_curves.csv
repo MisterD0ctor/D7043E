@@ -1,0 +1,181 @@
+configuration,seed,epoch,train_loss,macro_f1
+cnn+template | augment: window+noise | noise_share: 0.5,0,1,0.1468,0.4611
+cnn+template | augment: window+noise | noise_share: 0.5,0,2,0.0699,0.5235
+cnn+template | augment: window+noise | noise_share: 0.5,0,3,0.0592,0.4903
+cnn+template | augment: window+noise | noise_share: 0.5,0,4,0.0529,0.5584
+cnn+template | augment: window+noise | noise_share: 0.5,0,5,0.0484,0.57
+cnn+template | augment: window+noise | noise_share: 0.5,0,6,0.045,0.5112
+cnn+template | augment: window+noise | noise_share: 0.5,0,7,0.0422,0.5177
+cnn+template | augment: window+noise | noise_share: 0.5,0,8,0.0405,0.5566
+cnn+template | augment: window+noise | noise_share: 0.5,0,9,0.0379,0.5628
+cnn+template | augment: window+noise | noise_share: 0.5,0,10,0.0365,0.5868
+cnn+template | augment: window+noise | noise_share: 0.5,0,11,0.0347,0.5783
+cnn+template | augment: window+noise | noise_share: 0.5,0,12,0.0332,0.5369
+cnn+template | augment: window+noise | noise_share: 0.5,0,13,0.0315,0.5712
+cnn+template | augment: window+noise | noise_share: 0.5,0,14,0.0303,0.5623
+cnn+template | augment: window+noise | noise_share: 0.5,0,15,0.0288,0.5647
+cnn+template | augment: window+noise | noise_share: 0.5,0,16,0.0284,0.5692
+cnn+template | augment: window+noise | noise_share: 0.5,0,17,0.0277,0.5741
+cnn+template | augment: window+noise | noise_share: 0.5,0,18,0.0269,0.5678
+cnn+template | augment: window+noise | noise_share: 0.5,0,19,0.0266,0.5667
+cnn+template | augment: window+noise | noise_share: 0.5,0,20,0.0268,0.5686
+cnn+template | augment: window+noise | noise_share: 0.5,1,1,0.1521,0.4724
+cnn+template | augment: window+noise | noise_share: 0.5,1,2,0.0708,0.4723
+cnn+template | augment: window+noise | noise_share: 0.5,1,3,0.0589,0.5773
+cnn+template | augment: window+noise | noise_share: 0.5,1,4,0.0524,0.5566
+cnn+template | augment: window+noise | noise_share: 0.5,1,5,0.0491,0.5695
+cnn+template | augment: window+noise | noise_share: 0.5,1,6,0.0454,0.553
+cnn+template | augment: window+noise | noise_share: 0.5,1,7,0.0424,0.5417
+cnn+template | augment: window+noise | noise_share: 0.5,1,8,0.0409,0.5176
+cnn+template | augment: window+noise | noise_share: 0.5,1,9,0.0378,0.5604
+cnn+template | augment: window+noise | noise_share: 0.5,1,10,0.0372,0.5662
+cnn+template | augment: window+noise | noise_share: 0.5,1,11,0.0346,0.5585
+cnn+template | augment: window+noise | noise_share: 0.5,1,12,0.0324,0.5433
+cnn+template | augment: window+noise | noise_share: 0.5,1,13,0.0317,0.562
+cnn+template | augment: window+noise | noise_share: 0.5,1,14,0.0306,0.5687
+cnn+template | augment: window+noise | noise_share: 0.5,1,15,0.0292,0.5599
+cnn+template | augment: window+noise | noise_share: 0.5,1,16,0.0283,0.5654
+cnn+template | augment: window+noise | noise_share: 0.5,1,17,0.0275,0.5571
+cnn+template | augment: window+noise | noise_share: 0.5,1,18,0.0268,0.5635
+cnn+template | augment: window+noise | noise_share: 0.5,1,19,0.0267,0.5655
+cnn+template | augment: window+noise | noise_share: 0.5,1,20,0.0266,0.564
+cnn+template | augment: window+noise | noise_share: 0.5,2,1,0.1471,0.4894
+cnn+template | augment: window+noise | noise_share: 0.5,2,2,0.0694,0.5013
+cnn+template | augment: window+noise | noise_share: 0.5,2,3,0.0587,0.5113
+cnn+template | augment: window+noise | noise_share: 0.5,2,4,0.0526,0.504
+cnn+template | augment: window+noise | noise_share: 0.5,2,5,0.0491,0.5661
+cnn+template | augment: window+noise | noise_share: 0.5,2,6,0.0453,0.5133
+cnn+template | augment: window+noise | noise_share: 0.5,2,7,0.0425,0.5703
+cnn+template | augment: window+noise | noise_share: 0.5,2,8,0.0403,0.5367
+cnn+template | augment: window+noise | noise_share: 0.5,2,9,0.0388,0.539
+cnn+template | augment: window+noise | noise_share: 0.5,2,10,0.0366,0.5618
+cnn+template | augment: window+noise | noise_share: 0.5,2,11,0.0344,0.5854
+cnn+template | augment: window+noise | noise_share: 0.5,2,12,0.0335,0.5528
+cnn+template | augment: window+noise | noise_share: 0.5,2,13,0.0321,0.556
+cnn+template | augment: window+noise | noise_share: 0.5,2,14,0.0306,0.5585
+cnn+template | augment: window+noise | noise_share: 0.5,2,15,0.0296,0.5572
+cnn+template | augment: window+noise | noise_share: 0.5,2,16,0.0284,0.5784
+cnn+template | augment: window+noise | noise_share: 0.5,2,17,0.0279,0.5717
+cnn+template | augment: window+noise | noise_share: 0.5,2,18,0.0273,0.5671
+cnn+template | augment: window+noise | noise_share: 0.5,2,19,0.0266,0.5707
+cnn+template | augment: window+noise | noise_share: 0.5,2,20,0.0267,0.5715
+"cnn+template | augment: window+noise | snr: (6, 24)",0,1,0.1306,0.479
+"cnn+template | augment: window+noise | snr: (6, 24)",0,2,0.0563,0.5372
+"cnn+template | augment: window+noise | snr: (6, 24)",0,3,0.0467,0.531
+"cnn+template | augment: window+noise | snr: (6, 24)",0,4,0.0407,0.5761
+"cnn+template | augment: window+noise | snr: (6, 24)",0,5,0.0372,0.562
+"cnn+template | augment: window+noise | snr: (6, 24)",0,6,0.0343,0.561
+"cnn+template | augment: window+noise | snr: (6, 24)",0,7,0.0319,0.5714
+"cnn+template | augment: window+noise | snr: (6, 24)",0,8,0.0299,0.546
+"cnn+template | augment: window+noise | snr: (6, 24)",0,9,0.028,0.5678
+"cnn+template | augment: window+noise | snr: (6, 24)",0,10,0.0269,0.5614
+"cnn+template | augment: window+noise | snr: (6, 24)",0,11,0.0248,0.5621
+"cnn+template | augment: window+noise | snr: (6, 24)",0,12,0.0239,0.5892
+"cnn+template | augment: window+noise | snr: (6, 24)",0,13,0.0225,0.5921
+"cnn+template | augment: window+noise | snr: (6, 24)",0,14,0.0215,0.5929
+"cnn+template | augment: window+noise | snr: (6, 24)",0,15,0.0202,0.5883
+"cnn+template | augment: window+noise | snr: (6, 24)",0,16,0.0195,0.5915
+"cnn+template | augment: window+noise | snr: (6, 24)",0,17,0.0186,0.5917
+"cnn+template | augment: window+noise | snr: (6, 24)",0,18,0.0184,0.5919
+"cnn+template | augment: window+noise | snr: (6, 24)",0,19,0.0184,0.5907
+"cnn+template | augment: window+noise | snr: (6, 24)",0,20,0.0182,0.5909
+"cnn+template | augment: window+noise | snr: (6, 24)",1,1,0.1354,0.4574
+"cnn+template | augment: window+noise | snr: (6, 24)",1,2,0.0573,0.4655
+"cnn+template | augment: window+noise | snr: (6, 24)",1,3,0.0463,0.5551
+"cnn+template | augment: window+noise | snr: (6, 24)",1,4,0.0408,0.5481
+"cnn+template | augment: window+noise | snr: (6, 24)",1,5,0.0372,0.5568
+"cnn+template | augment: window+noise | snr: (6, 24)",1,6,0.0346,0.5543
+"cnn+template | augment: window+noise | snr: (6, 24)",1,7,0.0317,0.5583
+"cnn+template | augment: window+noise | snr: (6, 24)",1,8,0.0304,0.5711
+"cnn+template | augment: window+noise | snr: (6, 24)",1,9,0.0282,0.5562
+"cnn+template | augment: window+noise | snr: (6, 24)",1,10,0.0273,0.5752
+"cnn+template | augment: window+noise | snr: (6, 24)",1,11,0.0251,0.5529
+"cnn+template | augment: window+noise | snr: (6, 24)",1,12,0.0238,0.5619
+"cnn+template | augment: window+noise | snr: (6, 24)",1,13,0.0228,0.5469
+"cnn+template | augment: window+noise | snr: (6, 24)",1,14,0.0215,0.5451
+"cnn+template | augment: window+noise | snr: (6, 24)",1,15,0.0205,0.569
+"cnn+template | augment: window+noise | snr: (6, 24)",1,16,0.0195,0.5718
+"cnn+template | augment: window+noise | snr: (6, 24)",1,17,0.019,0.5609
+"cnn+template | augment: window+noise | snr: (6, 24)",1,18,0.0184,0.5649
+"cnn+template | augment: window+noise | snr: (6, 24)",1,19,0.0182,0.5676
+"cnn+template | augment: window+noise | snr: (6, 24)",1,20,0.0181,0.5669
+"cnn+template | augment: window+noise | snr: (6, 24)",2,1,0.1302,0.5019
+"cnn+template | augment: window+noise | snr: (6, 24)",2,2,0.0565,0.5429
+"cnn+template | augment: window+noise | snr: (6, 24)",2,3,0.0464,0.5286
+"cnn+template | augment: window+noise | snr: (6, 24)",2,4,0.0407,0.5565
+"cnn+template | augment: window+noise | snr: (6, 24)",2,5,0.0377,0.572
+"cnn+template | augment: window+noise | snr: (6, 24)",2,6,0.0338,0.5388
+"cnn+template | augment: window+noise | snr: (6, 24)",2,7,0.0323,0.5867
+"cnn+template | augment: window+noise | snr: (6, 24)",2,8,0.0301,0.5907
+"cnn+template | augment: window+noise | snr: (6, 24)",2,9,0.0284,0.5891
+"cnn+template | augment: window+noise | snr: (6, 24)",2,10,0.0271,0.5734
+"cnn+template | augment: window+noise | snr: (6, 24)",2,11,0.0251,0.5512
+"cnn+template | augment: window+noise | snr: (6, 24)",2,12,0.0243,0.546
+"cnn+template | augment: window+noise | snr: (6, 24)",2,13,0.0233,0.5685
+"cnn+template | augment: window+noise | snr: (6, 24)",2,14,0.0216,0.5805
+"cnn+template | augment: window+noise | snr: (6, 24)",2,15,0.0205,0.5684
+"cnn+template | augment: window+noise | snr: (6, 24)",2,16,0.0195,0.5664
+"cnn+template | augment: window+noise | snr: (6, 24)",2,17,0.0192,0.5711
+"cnn+template | augment: window+noise | snr: (6, 24)",2,18,0.0187,0.5789
+"cnn+template | augment: window+noise | snr: (6, 24)",2,19,0.0181,0.5743
+"cnn+template | augment: window+noise | snr: (6, 24)",2,20,0.0184,0.5733
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,1,0.1249,0.4686
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,2,0.053,0.5364
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,3,0.0438,0.5011
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,4,0.0382,0.5812
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,5,0.0348,0.567
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,6,0.032,0.5393
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,7,0.0293,0.5701
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,8,0.0279,0.5559
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,9,0.0261,0.55
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,10,0.0245,0.5901
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,11,0.0233,0.5803
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,12,0.0223,0.5467
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,13,0.0207,0.5523
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,14,0.0195,0.573
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,15,0.0187,0.5538
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,16,0.018,0.5605
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,17,0.0173,0.5666
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,18,0.0168,0.5643
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,19,0.0168,0.5605
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",0,20,0.0169,0.5624
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,1,0.1298,0.4904
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,2,0.0537,0.4758
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,3,0.0433,0.5619
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,4,0.0379,0.5243
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,5,0.0349,0.5372
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,6,0.032,0.5484
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,7,0.0297,0.5387
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,8,0.0282,0.5509
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,9,0.0257,0.5294
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,10,0.0253,0.5608
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,11,0.0232,0.5571
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,12,0.0216,0.5762
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,13,0.0209,0.5659
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,14,0.0197,0.556
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,15,0.0187,0.5642
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,16,0.018,0.5629
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,17,0.0176,0.5636
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,18,0.0168,0.5575
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,19,0.0167,0.5616
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",1,20,0.0166,0.56
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,1,0.1247,0.5015
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,2,0.0524,0.5128
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,3,0.0431,0.5414
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,4,0.0384,0.5132
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,5,0.035,0.5622
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,6,0.0317,0.551
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,7,0.0299,0.5805
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,8,0.0279,0.544
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,9,0.0266,0.5491
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,10,0.0249,0.5784
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,11,0.0232,0.599
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,12,0.0223,0.56
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,13,0.0211,0.5593
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,14,0.02,0.5727
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,15,0.0192,0.5549
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,16,0.0181,0.5662
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,17,0.0177,0.5752
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,18,0.0172,0.5702
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,19,0.0166,0.5736
+"cnn+template | augment: window+noise | snr: (6, 24) | noise_share: 0.5",2,20,0.0168,0.572

@@ -4,12 +4,14 @@ __pycache__/
 .venv/
 venv/
 .ipynb_checkpoints/
+key.txt
 
 # Raw PhysioNet data and generated datasets (download with src/download_data.py)
 data/
 
 # Training artefacts (large); keep only curated results in results/
 results/runs/
+wandb/
 *.pt
 *.pth.tar
 !max78002/**/*.pth.tar

@@ -1,0 +1,2 @@
+model,seed,protocol,epochs,parameters,condition,accuracy,macro_f1,precision_N,recall_N,f1_N,support_N,precision_S,recall_S,f1_S,support_S,precision_V,recall_V,f1_V,support_V,precision_F,recall_F,f1_F,support_F
+cnn,0,split,20,41156,clean,0.9142,0.5632,0.9896,0.9246,0.956,8736,0.2461,0.4657,0.322,204,0.6167,0.9449,0.7463,780,0.6667,0.1379,0.2286,29

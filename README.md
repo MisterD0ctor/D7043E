@@ -29,16 +29,23 @@ synthesis with the ai8x toolchain.
 │   ├── evaluate.py          # accuracy, macro F1, per-class metrics, confusion matrix        (stage 5)
 │   ├── noise_test.py        # robustness under NSTDB noise at 12 / 6 / 0 dB SNR
 │   ├── noise.py             # NSTDB loading and SNR scaling helpers
-│   └── config.py            # config loading, label mapping, split leakage checks
+│   ├── config.py            # config loading, label mapping, split leakage checks
+│   ├── explore_data.py      # shared helpers for the exploration scripts (DS1 only, cross-validation)
+│   ├── explore_ideas.py     # baseline experiments: classifier families, balancing, measures, noise
+│   ├── explore_networks.py  # edge-model experiments (MAX78002-compatible networks), optional W&B logging
+│   ├── explore_compare.py   # paired patient bootstrap: networks against the gradient-boosting baseline
+│   └── explore_*.py         # earlier exploration (baselines, CNN variants, heart-rate normalization, causal filter)
 ├── notebooks/EDA.ipynb      # data understanding                                             (stage 2)
 ├── results/
 │   ├── data_stats/          # generated split / record / annotation statistics (committed)
 │   ├── figures/             # EDA figures used in the report
+│   ├── exploration/         # cross-validated exploration results on DS1 (ideas/, networks/, earlier runs)
 │   ├── metrics.csv, confusion_matrix_*, noise_results_*
 │   └── runs/                # training checkpoints and histories (git-ignored)
 ├── max78002/                # ai8x model, dataset loader, network YAML, quantization + synthesis output (stage 6)
 ├── report/report.md         # CRISP-DM report draft (exported to report.pdf)
-└── docs/decision_log.md     # CRISP-DM iterations: what changed and why
+├── docs/decision_log.md     # CRISP-DM iterations: what changed and why
+└── docs/exploration_notes.md  # what the exploration runs found
 ```
 
 ## Setup
@@ -51,6 +58,10 @@ python -m venv .venv
 pip install torch==2.11.0 --index-url https://download.pytorch.org/whl/cu128   # optional: NVIDIA GPU
 pip install -r requirements.txt
 ```
+
+Experiment logging uses [Weights & Biases](https://wandb.ai). Put your API key (wandb.ai -> User settings -> API keys)
+in a file `key.txt` in the repository root (git-ignored, never commit it), or run `wandb login` once, or set
+`WANDB_API_KEY`. Runs go to the project "D7043E Edge-Ready ECG Classification".
 
 All commands below are run from the repository root.
 
@@ -131,6 +142,24 @@ validation, so model selection should rest on record-grouped cross-validation ov
 - Model and hyperparameter selection use leave-one-record-out cross-validation over the 21 development records (`cross_validation` in `configs/data.yaml`, folds in `results/data_stats/cv_folds.csv`); the validation records only monitor a training run.
 - NSTDB noise records are split in time (`noise.parts` in `configs/data.yaml`): first 40 % for augmentation and the EDA, next 20 % for noisy held-out records during model selection, last 40 % for the robustness test on DS2.
 - Records 201 and 202 come from the same subject (DS1 and DS2 respectively). Record 201 is therefore not used for training, validation or model selection (`splits.exclude` in `configs/data.yaml`); it is still prepared (`excluded.npz`) and described in the EDA.
+
+## Exploration on DS1 (Submission 2, model selection)
+
+Everything here is cross-validated leave-one-record-out over the 21 development records; DS2 is never read
+(`build_record` refuses DS2 records). Needs the downloaded data (step 1) but not `prepare_data.py`. Findings:
+`docs/exploration_notes.md`; decisions: `docs/decision_log.md`.
+
+```bash
+python src/explore_ideas.py --group models imbalance features priors noise refine --jobs 4   # baselines
+python src/explore_networks.py --plan round1 --wandb       # edge-model rounds: round1 ... round4 (PLANS in the file)
+python src/explore_networks.py --plan round4 --configs 2   # rerun one configuration; results merge into round4.*
+python src/explore_compare.py --plan round1 round2 round3 round4   # bootstrap against the baseline
+```
+
+`explore_compare.py` needs the baseline predictions in `results/exploration/ideas/refine_predictions.npz`
+(committed, or produced by the `refine` group). A network round takes about an hour on one GPU (about 1 GB of GPU
+memory and up to 4 GB of RAM); run one at a time. Results in `results/exploration/` from before 2026-10-14 (top-level
+files and `causal_filter/`) were made with record 201 still in DS1.
 
 ## Modeling, evaluation and deployment (Submission 2)
 

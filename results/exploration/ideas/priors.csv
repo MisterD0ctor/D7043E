@@ -1,0 +1,5 @@
+group,experiment,model,strategy,n_features,training data,condition,accuracy,macro_f1,precision_N,recall_N,f1_N,support_N,precision_S,recall_S,f1_S,support_S,precision_V,recall_V,f1_V,support_V,precision_F,recall_F,f1_F,support_F
+priors,gradient boosting | none,gradient boosting,none,75,clean,clean,0.954,0.584,0.9757,0.9778,0.9767,44198,0.359,0.3137,0.3349,816,0.876,0.9022,0.8889,3588,0.1576,0.1189,0.1355,412
+priors,gradient boosting | none | priors tuned on the other records,gradient boosting,none,75,clean,clean,0.9501,0.5892,0.979,0.9715,0.9753,44198,0.3828,0.3664,0.3745,816,0.7833,0.9136,0.8434,3588,0.262,0.1189,0.1636,412
+priors,gradient boosting | inverse weights,gradient boosting,inverse weights,75,clean,clean,0.9437,0.5384,0.9803,0.9634,0.9718,44198,0.2708,0.3676,0.3119,816,0.7994,0.9395,0.8638,3588,0.0079,0.0049,0.006,412
+priors,gradient boosting | inverse weights | priors tuned on the other records,gradient boosting,inverse weights,75,clean,clean,0.9171,0.5186,0.9792,0.9466,0.9626,44198,0.2111,0.3113,0.2516,816,0.9127,0.7924,0.8483,3588,0.0071,0.034,0.0118,412

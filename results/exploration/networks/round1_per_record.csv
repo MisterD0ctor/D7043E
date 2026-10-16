@@ -1,0 +1,505 @@
+configuration,seed,record,accuracy
+cnn,0,101,0.9984
+cnn,0,106,0.9852
+cnn,0,108,0.8173
+cnn,0,109,0.7609
+cnn,0,112,0.9996
+cnn,0,114,0.9904
+cnn,0,115,1.0
+cnn,0,116,0.9992
+cnn,0,118,0.8235
+cnn,0,119,1.0
+cnn,0,122,1.0
+cnn,0,124,0.9697
+cnn,0,203,0.6158
+cnn,0,205,0.9947
+cnn,0,207,0.1674
+cnn,0,208,0.8627
+cnn,0,209,0.9421
+cnn,0,215,0.861
+cnn,0,220,0.9795
+cnn,0,223,0.9462
+cnn,0,230,0.9916
+cnn,1,101,0.9984
+cnn,1,106,0.9635
+cnn,1,108,0.8224
+cnn,1,109,0.8609
+cnn,1,112,0.9992
+cnn,1,114,0.992
+cnn,1,115,1.0
+cnn,1,116,0.9983
+cnn,1,118,0.841
+cnn,1,119,1.0
+cnn,1,122,1.0
+cnn,1,124,0.9666
+cnn,1,203,0.6141
+cnn,1,205,0.9943
+cnn,1,207,0.275
+cnn,1,208,0.8631
+cnn,1,209,0.9764
+cnn,1,215,0.6631
+cnn,1,220,0.9804
+cnn,1,223,0.9693
+cnn,1,230,0.9933
+cnn,2,101,0.9984
+cnn,2,106,0.9788
+cnn,2,108,0.7957
+cnn,2,109,0.8423
+cnn,2,112,0.9992
+cnn,2,114,0.992
+cnn,2,115,1.0
+cnn,2,116,0.9988
+cnn,2,118,0.9223
+cnn,2,119,1.0
+cnn,2,122,1.0
+cnn,2,124,0.9635
+cnn,2,203,0.6437
+cnn,2,205,0.994
+cnn,2,207,0.2169
+cnn,2,208,0.8566
+cnn,2,209,0.9677
+cnn,2,215,0.8619
+cnn,2,220,0.9814
+cnn,2,223,0.9758
+cnn,2,230,0.9969
+cnn | balance: sqrt,0,101,0.9979
+cnn | balance: sqrt,0,106,0.9595
+cnn | balance: sqrt,0,108,0.6844
+cnn | balance: sqrt,0,109,0.7545
+cnn | balance: sqrt,0,112,0.9976
+cnn | balance: sqrt,0,114,0.9862
+cnn | balance: sqrt,0,115,0.999
+cnn | balance: sqrt,0,116,0.9975
+cnn | balance: sqrt,0,118,0.9442
+cnn | balance: sqrt,0,119,1.0
+cnn | balance: sqrt,0,122,0.9996
+cnn | balance: sqrt,0,124,0.9678
+cnn | balance: sqrt,0,203,0.6255
+cnn | balance: sqrt,0,205,0.9868
+cnn | balance: sqrt,0,207,0.2083
+cnn | balance: sqrt,0,208,0.8475
+cnn | balance: sqrt,0,209,0.9098
+cnn | balance: sqrt,0,215,0.6967
+cnn | balance: sqrt,0,220,0.9824
+cnn | balance: sqrt,0,223,0.8993
+cnn | balance: sqrt,0,230,0.9823
+cnn | balance: sqrt,1,101,0.9984
+cnn | balance: sqrt,1,106,0.9359
+cnn | balance: sqrt,1,108,0.643
+cnn | balance: sqrt,1,109,0.5356
+cnn | balance: sqrt,1,112,0.9992
+cnn | balance: sqrt,1,114,0.9611
+cnn | balance: sqrt,1,115,0.9964
+cnn | balance: sqrt,1,116,0.9975
+cnn | balance: sqrt,1,118,0.6614
+cnn | balance: sqrt,1,119,1.0
+cnn | balance: sqrt,1,122,0.9984
+cnn | balance: sqrt,1,124,0.9722
+cnn | balance: sqrt,1,203,0.5408
+cnn | balance: sqrt,1,205,0.9962
+cnn | balance: sqrt,1,207,0.1706
+cnn | balance: sqrt,1,208,0.8285
+cnn | balance: sqrt,1,209,0.8142
+cnn | balance: sqrt,1,215,0.6461
+cnn | balance: sqrt,1,220,0.9824
+cnn | balance: sqrt,1,223,0.9716
+cnn | balance: sqrt,1,230,0.9734
+cnn | balance: sqrt,2,101,0.9979
+cnn | balance: sqrt,2,106,0.9102
+cnn | balance: sqrt,2,108,0.6578
+cnn | balance: sqrt,2,109,0.83
+cnn | balance: sqrt,2,112,0.9988
+cnn | balance: sqrt,2,114,0.9894
+cnn | balance: sqrt,2,115,0.9995
+cnn | balance: sqrt,2,116,0.9979
+cnn | balance: sqrt,2,118,0.9324
+cnn | balance: sqrt,2,119,1.0
+cnn | balance: sqrt,2,122,1.0
+cnn | balance: sqrt,2,124,0.9703
+cnn | balance: sqrt,2,203,0.6269
+cnn | balance: sqrt,2,205,0.9906
+cnn | balance: sqrt,2,207,0.1991
+cnn | balance: sqrt,2,208,0.8488
+cnn | balance: sqrt,2,209,0.9074
+cnn | balance: sqrt,2,215,0.7009
+cnn | balance: sqrt,2,220,0.9819
+cnn | balance: sqrt,2,223,0.9673
+cnn | balance: sqrt,2,230,0.9703
+cnn | balance: sampling,0,101,0.9979
+cnn | balance: sampling,0,106,0.928
+cnn | balance: sampling,0,108,0.6373
+cnn | balance: sampling,0,109,0.2664
+cnn | balance: sampling,0,112,0.9953
+cnn | balance: sampling,0,114,0.9627
+cnn | balance: sampling,0,115,0.9815
+cnn | balance: sampling,0,116,0.9967
+cnn | balance: sampling,0,118,0.8489
+cnn | balance: sampling,0,119,1.0
+cnn | balance: sampling,0,122,0.9988
+cnn | balance: sampling,0,124,0.9716
+cnn | balance: sampling,0,203,0.5254
+cnn | balance: sampling,0,205,0.9846
+cnn | balance: sampling,0,207,0.2809
+cnn | balance: sampling,0,208,0.8498
+cnn | balance: sampling,0,209,0.6747
+cnn | balance: sampling,0,215,0.8324
+cnn | balance: sampling,0,220,0.9863
+cnn | balance: sampling,0,223,0.9097
+cnn | balance: sampling,0,230,0.9823
+cnn | balance: sampling,1,101,0.9984
+cnn | balance: sampling,1,106,0.8727
+cnn | balance: sampling,1,108,0.5726
+cnn | balance: sampling,1,109,0.5704
+cnn | balance: sampling,1,112,0.9878
+cnn | balance: sampling,1,114,0.9207
+cnn | balance: sampling,1,115,0.9985
+cnn | balance: sampling,1,116,0.9971
+cnn | balance: sampling,1,118,0.4638
+cnn | balance: sampling,1,119,1.0
+cnn | balance: sampling,1,122,0.9996
+cnn | balance: sampling,1,124,0.9728
+cnn | balance: sampling,1,203,0.4524
+cnn | balance: sampling,1,205,0.9959
+cnn | balance: sampling,1,207,0.169
+cnn | balance: sampling,1,208,0.8475
+cnn | balance: sampling,1,209,0.8139
+cnn | balance: sampling,1,215,0.7622
+cnn | balance: sampling,1,220,0.9834
+cnn | balance: sampling,1,223,0.9155
+cnn | balance: sampling,1,230,0.9809
+cnn | balance: sampling,2,101,0.9973
+cnn | balance: sampling,2,106,0.886
+cnn | balance: sampling,2,108,0.5244
+cnn | balance: sampling,2,109,0.8123
+cnn | balance: sampling,2,112,0.9945
+cnn | balance: sampling,2,114,0.9036
+cnn | balance: sampling,2,115,0.9944
+cnn | balance: sampling,2,116,0.9975
+cnn | balance: sampling,2,118,0.7071
+cnn | balance: sampling,2,119,1.0
+cnn | balance: sampling,2,122,0.998
+cnn | balance: sampling,2,124,0.9685
+cnn | balance: sampling,2,203,0.5566
+cnn | balance: sampling,2,205,0.991
+cnn | balance: sampling,2,207,0.1658
+cnn | balance: sampling,2,208,0.8485
+cnn | balance: sampling,2,209,0.657
+cnn | balance: sampling,2,215,0.7616
+cnn | balance: sampling,2,220,0.9834
+cnn | balance: sampling,2,223,0.9466
+cnn | balance: sampling,2,230,0.9836
+mlp | measures: reference | augment: none,0,101,0.9984
+mlp | measures: reference | augment: none,0,106,0.9911
+mlp | measures: reference | augment: none,0,108,0.903
+mlp | measures: reference | augment: none,0,109,0.9933
+mlp | measures: reference | augment: none,0,112,1.0
+mlp | measures: reference | augment: none,0,114,0.8147
+mlp | measures: reference | augment: none,0,115,0.9985
+mlp | measures: reference | augment: none,0,116,0.9992
+mlp | measures: reference | augment: none,0,118,0.957
+mlp | measures: reference | augment: none,0,119,1.0
+mlp | measures: reference | augment: none,0,122,1.0
+mlp | measures: reference | augment: none,0,124,0.9604
+mlp | measures: reference | augment: none,0,203,0.5082
+mlp | measures: reference | augment: none,0,205,0.9879
+mlp | measures: reference | augment: none,0,207,0.817
+mlp | measures: reference | augment: none,0,208,0.8681
+mlp | measures: reference | augment: none,0,209,0.8808
+mlp | measures: reference | augment: none,0,215,0.9054
+mlp | measures: reference | augment: none,0,220,0.9932
+mlp | measures: reference | augment: none,0,223,0.9347
+mlp | measures: reference | augment: none,0,230,0.9814
+mlp | measures: reference | augment: none,1,101,0.9984
+mlp | measures: reference | augment: none,1,106,0.9891
+mlp | measures: reference | augment: none,1,108,0.8365
+mlp | measures: reference | augment: none,1,109,0.9945
+mlp | measures: reference | augment: none,1,112,0.9996
+mlp | measures: reference | augment: none,1,114,0.7604
+mlp | measures: reference | augment: none,1,115,0.9985
+mlp | measures: reference | augment: none,1,116,0.9988
+mlp | measures: reference | augment: none,1,118,0.9622
+mlp | measures: reference | augment: none,1,119,1.0
+mlp | measures: reference | augment: none,1,122,1.0
+mlp | measures: reference | augment: none,1,124,0.9617
+mlp | measures: reference | augment: none,1,203,0.5328
+mlp | measures: reference | augment: none,1,205,0.9932
+mlp | measures: reference | augment: none,1,207,0.704
+mlp | measures: reference | augment: none,1,208,0.8732
+mlp | measures: reference | augment: none,1,209,0.8861
+mlp | measures: reference | augment: none,1,215,0.9402
+mlp | measures: reference | augment: none,1,220,0.9912
+mlp | measures: reference | augment: none,1,223,0.9262
+mlp | measures: reference | augment: none,1,230,0.9729
+mlp | measures: reference | augment: none,2,101,0.9984
+mlp | measures: reference | augment: none,2,106,0.9916
+mlp | measures: reference | augment: none,2,108,0.8201
+mlp | measures: reference | augment: none,2,109,0.9893
+mlp | measures: reference | augment: none,2,112,0.9996
+mlp | measures: reference | augment: none,2,114,0.6736
+mlp | measures: reference | augment: none,2,115,0.999
+mlp | measures: reference | augment: none,2,116,0.9992
+mlp | measures: reference | augment: none,2,118,0.9693
+mlp | measures: reference | augment: none,2,119,1.0
+mlp | measures: reference | augment: none,2,122,1.0
+mlp | measures: reference | augment: none,2,124,0.961
+mlp | measures: reference | augment: none,2,203,0.5271
+mlp | measures: reference | augment: none,2,205,0.974
+mlp | measures: reference | augment: none,2,207,0.7088
+mlp | measures: reference | augment: none,2,208,0.8695
+mlp | measures: reference | augment: none,2,209,0.8958
+mlp | measures: reference | augment: none,2,215,0.8708
+mlp | measures: reference | augment: none,2,220,0.9912
+mlp | measures: reference | augment: none,2,223,0.9259
+mlp | measures: reference | augment: none,2,230,0.9916
+mlp | measures: patient-relative | augment: none,0,101,1.0
+mlp | measures: patient-relative | augment: none,0,106,0.9906
+mlp | measures: patient-relative | augment: none,0,108,0.9438
+mlp | measures: patient-relative | augment: none,0,109,0.996
+mlp | measures: patient-relative | augment: none,0,112,0.9992
+mlp | measures: patient-relative | augment: none,0,114,0.9904
+mlp | measures: patient-relative | augment: none,0,115,0.9995
+mlp | measures: patient-relative | augment: none,0,116,0.9988
+mlp | measures: patient-relative | augment: none,0,118,0.9679
+mlp | measures: patient-relative | augment: none,0,119,0.9995
+mlp | measures: patient-relative | augment: none,0,122,1.0
+mlp | measures: patient-relative | augment: none,0,124,0.9623
+mlp | measures: patient-relative | augment: none,0,203,0.7375
+mlp | measures: patient-relative | augment: none,0,205,0.9913
+mlp | measures: patient-relative | augment: none,0,207,0.887
+mlp | measures: patient-relative | augment: none,0,208,0.8359
+mlp | measures: patient-relative | augment: none,0,209,0.8968
+mlp | measures: patient-relative | augment: none,0,215,0.9295
+mlp | measures: patient-relative | augment: none,0,220,0.9702
+mlp | measures: patient-relative | augment: none,0,223,0.9174
+mlp | measures: patient-relative | augment: none,0,230,0.9907
+mlp | measures: patient-relative | augment: none,1,101,0.9989
+mlp | measures: patient-relative | augment: none,1,106,0.9896
+mlp | measures: patient-relative | augment: none,1,108,0.9001
+mlp | measures: patient-relative | augment: none,1,109,0.9949
+mlp | measures: patient-relative | augment: none,1,112,0.9992
+mlp | measures: patient-relative | augment: none,1,114,0.9856
+mlp | measures: patient-relative | augment: none,1,115,0.9985
+mlp | measures: patient-relative | augment: none,1,116,0.9983
+mlp | measures: patient-relative | augment: none,1,118,0.9776
+mlp | measures: patient-relative | augment: none,1,119,0.997
+mlp | measures: patient-relative | augment: none,1,122,1.0
+mlp | measures: patient-relative | augment: none,1,124,0.961
+mlp | measures: patient-relative | augment: none,1,203,0.7365
+mlp | measures: patient-relative | augment: none,1,205,0.991
+mlp | measures: patient-relative | augment: none,1,207,0.909
+mlp | measures: patient-relative | augment: none,1,208,0.8359
+mlp | measures: patient-relative | augment: none,1,209,0.8918
+mlp | measures: patient-relative | augment: none,1,215,0.9054
+mlp | measures: patient-relative | augment: none,1,220,0.9736
+mlp | measures: patient-relative | augment: none,1,223,0.9251
+mlp | measures: patient-relative | augment: none,1,230,0.9987
+mlp | measures: patient-relative | augment: none,2,101,0.9989
+mlp | measures: patient-relative | augment: none,2,106,0.9926
+mlp | measures: patient-relative | augment: none,2,108,0.9137
+mlp | measures: patient-relative | augment: none,2,109,0.9937
+mlp | measures: patient-relative | augment: none,2,112,0.9992
+mlp | measures: patient-relative | augment: none,2,114,0.9931
+mlp | measures: patient-relative | augment: none,2,115,1.0
+mlp | measures: patient-relative | augment: none,2,116,0.9996
+mlp | measures: patient-relative | augment: none,2,118,0.9794
+mlp | measures: patient-relative | augment: none,2,119,0.998
+mlp | measures: patient-relative | augment: none,2,122,0.9996
+mlp | measures: patient-relative | augment: none,2,124,0.9617
+mlp | measures: patient-relative | augment: none,2,203,0.7476
+mlp | measures: patient-relative | augment: none,2,205,0.9879
+mlp | measures: patient-relative | augment: none,2,207,0.8983
+mlp | measures: patient-relative | augment: none,2,208,0.8312
+mlp | measures: patient-relative | augment: none,2,209,0.8931
+mlp | measures: patient-relative | augment: none,2,215,0.9226
+mlp | measures: patient-relative | augment: none,2,220,0.978
+mlp | measures: patient-relative | augment: none,2,223,0.9032
+mlp | measures: patient-relative | augment: none,2,230,0.9947
+mlp | measures: patient-relative | balance: sqrt | augment: none,0,101,0.9989
+mlp | measures: patient-relative | balance: sqrt | augment: none,0,106,0.9852
+mlp | measures: patient-relative | balance: sqrt | augment: none,0,108,0.9166
+mlp | measures: patient-relative | balance: sqrt | augment: none,0,109,0.9921
+mlp | measures: patient-relative | balance: sqrt | augment: none,0,112,0.9992
+mlp | measures: patient-relative | balance: sqrt | augment: none,0,114,0.9915
+mlp | measures: patient-relative | balance: sqrt | augment: none,0,115,0.9995
+mlp | measures: patient-relative | balance: sqrt | augment: none,0,116,0.9983
+mlp | measures: patient-relative | balance: sqrt | augment: none,0,118,0.9816
+mlp | measures: patient-relative | balance: sqrt | augment: none,0,119,0.997
+mlp | measures: patient-relative | balance: sqrt | augment: none,0,122,0.9996
+mlp | measures: patient-relative | balance: sqrt | augment: none,0,124,0.9685
+mlp | measures: patient-relative | balance: sqrt | augment: none,0,203,0.7334
+mlp | measures: patient-relative | balance: sqrt | augment: none,0,205,0.9917
+mlp | measures: patient-relative | balance: sqrt | augment: none,0,207,0.8983
+mlp | measures: patient-relative | balance: sqrt | augment: none,0,208,0.8369
+mlp | measures: patient-relative | balance: sqrt | augment: none,0,209,0.8958
+mlp | measures: patient-relative | balance: sqrt | augment: none,0,215,0.9119
+mlp | measures: patient-relative | balance: sqrt | augment: none,0,220,0.9775
+mlp | measures: patient-relative | balance: sqrt | augment: none,0,223,0.9189
+mlp | measures: patient-relative | balance: sqrt | augment: none,0,230,0.988
+mlp | measures: patient-relative | balance: sqrt | augment: none,1,101,0.9995
+mlp | measures: patient-relative | balance: sqrt | augment: none,1,106,0.9911
+mlp | measures: patient-relative | balance: sqrt | augment: none,1,108,0.8814
+mlp | measures: patient-relative | balance: sqrt | augment: none,1,109,0.9968
+mlp | measures: patient-relative | balance: sqrt | augment: none,1,112,0.9992
+mlp | measures: patient-relative | balance: sqrt | augment: none,1,114,0.9904
+mlp | measures: patient-relative | balance: sqrt | augment: none,1,115,0.9995
+mlp | measures: patient-relative | balance: sqrt | augment: none,1,116,0.9988
+mlp | measures: patient-relative | balance: sqrt | augment: none,1,118,0.9789
+mlp | measures: patient-relative | balance: sqrt | augment: none,1,119,0.9985
+mlp | measures: patient-relative | balance: sqrt | augment: none,1,122,0.9996
+mlp | measures: patient-relative | balance: sqrt | augment: none,1,124,0.961
+mlp | measures: patient-relative | balance: sqrt | augment: none,1,203,0.7042
+mlp | measures: patient-relative | balance: sqrt | augment: none,1,205,0.9891
+mlp | measures: patient-relative | balance: sqrt | augment: none,1,207,0.9037
+mlp | measures: patient-relative | balance: sqrt | augment: none,1,208,0.8407
+mlp | measures: patient-relative | balance: sqrt | augment: none,1,209,0.8918
+mlp | measures: patient-relative | balance: sqrt | augment: none,1,215,0.8536
+mlp | measures: patient-relative | balance: sqrt | augment: none,1,220,0.9775
+mlp | measures: patient-relative | balance: sqrt | augment: none,1,223,0.8932
+mlp | measures: patient-relative | balance: sqrt | augment: none,1,230,0.9929
+mlp | measures: patient-relative | balance: sqrt | augment: none,2,101,0.9995
+mlp | measures: patient-relative | balance: sqrt | augment: none,2,106,0.9882
+mlp | measures: patient-relative | balance: sqrt | augment: none,2,108,0.8666
+mlp | measures: patient-relative | balance: sqrt | augment: none,2,109,0.9972
+mlp | measures: patient-relative | balance: sqrt | augment: none,2,112,0.9992
+mlp | measures: patient-relative | balance: sqrt | augment: none,2,114,0.9909
+mlp | measures: patient-relative | balance: sqrt | augment: none,2,115,0.9995
+mlp | measures: patient-relative | balance: sqrt | augment: none,2,116,0.9988
+mlp | measures: patient-relative | balance: sqrt | augment: none,2,118,0.9807
+mlp | measures: patient-relative | balance: sqrt | augment: none,2,119,0.9965
+mlp | measures: patient-relative | balance: sqrt | augment: none,2,122,0.9992
+mlp | measures: patient-relative | balance: sqrt | augment: none,2,124,0.966
+mlp | measures: patient-relative | balance: sqrt | augment: none,2,203,0.7318
+mlp | measures: patient-relative | balance: sqrt | augment: none,2,205,0.991
+mlp | measures: patient-relative | balance: sqrt | augment: none,2,207,0.9004
+mlp | measures: patient-relative | balance: sqrt | augment: none,2,208,0.8434
+mlp | measures: patient-relative | balance: sqrt | augment: none,2,209,0.8921
+mlp | measures: patient-relative | balance: sqrt | augment: none,2,215,0.8961
+mlp | measures: patient-relative | balance: sqrt | augment: none,2,220,0.978
+mlp | measures: patient-relative | balance: sqrt | augment: none,2,223,0.9109
+mlp | measures: patient-relative | balance: sqrt | augment: none,2,230,0.9951
+cnn | measures: context,0,101,0.9995
+cnn | measures: context,0,106,0.9916
+cnn | measures: context,0,108,0.9285
+cnn | measures: context,0,109,0.9953
+cnn | measures: context,0,112,0.9992
+cnn | measures: context,0,114,0.9883
+cnn | measures: context,0,115,0.9964
+cnn | measures: context,0,116,0.9975
+cnn | measures: context,0,118,0.9684
+cnn | measures: context,0,119,0.999
+cnn | measures: context,0,122,1.0
+cnn | measures: context,0,124,0.9598
+cnn | measures: context,0,203,0.6948
+cnn | measures: context,0,205,0.9906
+cnn | measures: context,0,207,0.8784
+cnn | measures: context,0,208,0.862
+cnn | measures: context,0,209,0.8894
+cnn | measures: context,0,215,0.8932
+cnn | measures: context,0,220,0.9917
+cnn | measures: context,0,223,0.9205
+cnn | measures: context,0,230,0.9969
+cnn | measures: context,1,101,0.9995
+cnn | measures: context,1,106,0.9931
+cnn | measures: context,1,108,0.9489
+cnn | measures: context,1,109,0.9901
+cnn | measures: context,1,112,1.0
+cnn | measures: context,1,114,0.9723
+cnn | measures: context,1,115,0.9969
+cnn | measures: context,1,116,0.9983
+cnn | measures: context,1,118,0.9574
+cnn | measures: context,1,119,0.999
+cnn | measures: context,1,122,1.0
+cnn | measures: context,1,124,0.9555
+cnn | measures: context,1,203,0.6817
+cnn | measures: context,1,205,0.991
+cnn | measures: context,1,207,0.8827
+cnn | measures: context,1,208,0.838
+cnn | measures: context,1,209,0.8898
+cnn | measures: context,1,215,0.9423
+cnn | measures: context,1,220,0.9936
+cnn | measures: context,1,223,0.9259
+cnn | measures: context,1,230,0.9978
+cnn | measures: context,2,101,0.9995
+cnn | measures: context,2,106,0.9852
+cnn | measures: context,2,108,0.9376
+cnn | measures: context,2,109,0.9933
+cnn | measures: context,2,112,1.0
+cnn | measures: context,2,114,0.9782
+cnn | measures: context,2,115,0.9979
+cnn | measures: context,2,116,0.9979
+cnn | measures: context,2,118,0.9868
+cnn | measures: context,2,119,0.9995
+cnn | measures: context,2,122,1.0
+cnn | measures: context,2,124,0.9586
+cnn | measures: context,2,203,0.6847
+cnn | measures: context,2,205,0.9917
+cnn | measures: context,2,207,0.88
+cnn | measures: context,2,208,0.8475
+cnn | measures: context,2,209,0.9074
+cnn | measures: context,2,215,0.9321
+cnn | measures: context,2,220,0.9932
+cnn | measures: context,2,223,0.9385
+cnn | measures: context,2,230,0.9996
+cnn | measures: context | balance: sqrt,0,101,0.9984
+cnn | measures: context | balance: sqrt,0,106,0.9891
+cnn | measures: context | balance: sqrt,0,108,0.941
+cnn | measures: context | balance: sqrt,0,109,0.9897
+cnn | measures: context | balance: sqrt,0,112,1.0
+cnn | measures: context | balance: sqrt,0,114,0.9824
+cnn | measures: context | balance: sqrt,0,115,0.9862
+cnn | measures: context | balance: sqrt,0,116,0.9967
+cnn | measures: context | balance: sqrt,0,118,0.9732
+cnn | measures: context | balance: sqrt,0,119,0.9965
+cnn | measures: context | balance: sqrt,0,122,1.0
+cnn | measures: context | balance: sqrt,0,124,0.9604
+cnn | measures: context | balance: sqrt,0,203,0.6424
+cnn | measures: context | balance: sqrt,0,205,0.9913
+cnn | measures: context | balance: sqrt,0,207,0.8821
+cnn | measures: context | balance: sqrt,0,208,0.8468
+cnn | measures: context | balance: sqrt,0,209,0.8904
+cnn | measures: context | balance: sqrt,0,215,0.8479
+cnn | measures: context | balance: sqrt,0,220,0.9941
+cnn | measures: context | balance: sqrt,0,223,0.952
+cnn | measures: context | balance: sqrt,0,230,0.9929
+cnn | measures: context | balance: sqrt,1,101,0.9995
+cnn | measures: context | balance: sqrt,1,106,0.9887
+cnn | measures: context | balance: sqrt,1,108,0.9064
+cnn | measures: context | balance: sqrt,1,109,0.9901
+cnn | measures: context | balance: sqrt,1,112,1.0
+cnn | measures: context | balance: sqrt,1,114,0.9856
+cnn | measures: context | balance: sqrt,1,115,0.9892
+cnn | measures: context | balance: sqrt,1,116,0.9942
+cnn | measures: context | balance: sqrt,1,118,0.9662
+cnn | measures: context | balance: sqrt,1,119,0.9985
+cnn | measures: context | balance: sqrt,1,122,1.0
+cnn | measures: context | balance: sqrt,1,124,0.9604
+cnn | measures: context | balance: sqrt,1,203,0.6097
+cnn | measures: context | balance: sqrt,1,205,0.9917
+cnn | measures: context | balance: sqrt,1,207,0.8827
+cnn | measures: context | balance: sqrt,1,208,0.8315
+cnn | measures: context | balance: sqrt,1,209,0.9018
+cnn | measures: context | balance: sqrt,1,215,0.8583
+cnn | measures: context | balance: sqrt,1,220,0.9941
+cnn | measures: context | balance: sqrt,1,223,0.9347
+cnn | measures: context | balance: sqrt,1,230,0.988
+cnn | measures: context | balance: sqrt,2,101,0.9995
+cnn | measures: context | balance: sqrt,2,106,0.9931
+cnn | measures: context | balance: sqrt,2,108,0.9415
+cnn | measures: context | balance: sqrt,2,109,0.9917
+cnn | measures: context | balance: sqrt,2,112,1.0
+cnn | measures: context | balance: sqrt,2,114,0.975
+cnn | measures: context | balance: sqrt,2,115,0.9764
+cnn | measures: context | balance: sqrt,2,116,0.9929
+cnn | measures: context | balance: sqrt,2,118,0.9745
+cnn | measures: context | balance: sqrt,2,119,0.9985
+cnn | measures: context | balance: sqrt,2,122,1.0
+cnn | measures: context | balance: sqrt,2,124,0.9592
+cnn | measures: context | balance: sqrt,2,203,0.6252
+cnn | measures: context | balance: sqrt,2,205,0.9898
+cnn | measures: context | balance: sqrt,2,207,0.8864
+cnn | measures: context | balance: sqrt,2,208,0.8471
+cnn | measures: context | balance: sqrt,2,209,0.9061
+cnn | measures: context | balance: sqrt,2,215,0.9256
+cnn | measures: context | balance: sqrt,2,220,0.9946
+cnn | measures: context | balance: sqrt,2,223,0.9385
+cnn | measures: context | balance: sqrt,2,230,0.9938

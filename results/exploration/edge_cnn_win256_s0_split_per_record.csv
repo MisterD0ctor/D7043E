@@ -1,0 +1,5 @@
+record,split,beats,accuracy,support_N,recall_N,predicted_N,support_S,recall_S,predicted_S,support_V,recall_V,predicted_V,support_F,recall_F,predicted_F
+109,val,2530,0.3668,2490,0.3598,902,0,,2,38,0.8421,1626,2,0.0,0
+201,val,1963,0.7697,1635,0.7939,1341,128,0.1172,149,198,1.0,263,2,0.0,210
+205,val,2656,0.991,2571,0.9957,2572,3,0.6667,4,71,0.9718,69,11,0.0909,11
+223,val,2605,0.9747,2045,0.9951,2080,73,0.6986,56,473,0.9577,468,14,0.0,1

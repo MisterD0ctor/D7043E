@@ -1,0 +1,3 @@
+filter,qrs_peak_offset_ms,accuracy,macro_f1,precision_N,recall_N,f1_N,support_N,precision_S,recall_S,f1_S,support_S,precision_V,recall_V,f1_V,support_V,precision_F,recall_F,f1_F,support_F
+zero-phase,0.0,0.9442,0.5398,0.9801,0.9643,0.9721,44198,0.2671,0.3689,0.3098,816,0.805,0.9342,0.8648,3588,0.0169,0.0097,0.0123,412
+causal,11.1111,0.9444,0.5487,0.9776,0.9666,0.9721,44198,0.3267,0.3824,0.3523,816,0.7971,0.9044,0.8474,3588,0.028,0.0194,0.0229,412

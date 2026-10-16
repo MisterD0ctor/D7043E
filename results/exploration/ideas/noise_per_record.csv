@@ -1,0 +1,85 @@
+experiment,record,accuracy,recall_N,recall_S,recall_V,recall_F
+gradient boosting | reference,101,0.9995,1.0,0.6667,,
+gradient boosting | reference,106,0.9896,0.994,,0.9769,
+gradient boosting | reference,108,0.9563,0.9597,0.5,0.8235,0.0
+gradient boosting | reference,109,0.9704,0.9707,,0.9737,0.5
+gradient boosting | reference,112,0.9996,1.0,0.5,,
+gradient boosting | reference,114,0.942,0.9456,0.5,1.0,0.0
+gradient boosting | reference,115,0.9928,0.9928,,,
+gradient boosting | reference,116,0.9988,0.9991,1.0,0.9908,
+gradient boosting | reference,118,0.9912,1.0,0.8646,0.5625,
+gradient boosting | reference,119,0.998,0.9974,,1.0,
+gradient boosting | reference,122,0.9964,0.9964,,,
+gradient boosting | reference,124,0.974,1.0,0.0323,0.8511,0.0
+gradient boosting | reference,203,0.6447,0.5835,0.0,0.9977,0.0
+gradient boosting | reference,205,0.9932,0.9996,0.6667,0.9155,0.0909
+gradient boosting | reference,207,0.8988,0.952,0.0,0.9665,
+gradient boosting | reference,208,0.8522,0.9615,0.0,0.999,0.0
+gradient boosting | reference,209,0.8928,0.9996,0.1619,1.0,
+gradient boosting | reference,215,0.9637,0.9815,1.0,0.622,0.0
+gradient boosting | reference,220,0.9946,0.9995,0.8936,,
+gradient boosting | reference,223,0.942,0.9961,0.726,0.7696,0.0
+gradient boosting | reference,230,0.965,0.965,,1.0,
+"gradient boosting | reference, noise augmentation",101,0.9995,1.0,0.6667,,
+"gradient boosting | reference, noise augmentation",106,0.9896,0.994,,0.9769,
+"gradient boosting | reference, noise augmentation",108,0.9467,0.9494,0.75,0.8235,0.0
+"gradient boosting | reference, noise augmentation",109,0.9905,0.9924,,0.8947,0.5
+"gradient boosting | reference, noise augmentation",112,1.0,1.0,1.0,,
+"gradient boosting | reference, noise augmentation",114,0.9867,0.9912,0.5833,1.0,0.0
+"gradient boosting | reference, noise augmentation",115,0.9908,0.9908,,,
+"gradient boosting | reference, noise augmentation",116,0.9983,0.9991,1.0,0.9817,
+"gradient boosting | reference, noise augmentation",118,0.9895,1.0,0.875,0.25,
+"gradient boosting | reference, noise augmentation",119,0.9995,1.0,,0.9977,
+"gradient boosting | reference, noise augmentation",122,0.998,0.998,,,
+"gradient boosting | reference, noise augmentation",124,0.9629,1.0,0.0323,0.4681,0.0
+"gradient boosting | reference, noise augmentation",203,0.5546,0.4794,0.0,0.9865,0.0
+"gradient boosting | reference, noise augmentation",205,0.9906,0.9992,0.6667,0.8451,0.0
+"gradient boosting | reference, noise augmentation",207,0.852,0.9559,0.0,0.5215,
+"gradient boosting | reference, noise augmentation",208,0.8515,0.9703,0.0,0.9828,0.0
+"gradient boosting | reference, noise augmentation",209,0.9001,0.9992,0.2219,1.0,
+"gradient boosting | reference, noise augmentation",215,0.9777,0.9981,1.0,0.5854,0.0
+"gradient boosting | reference, noise augmentation",220,0.9956,1.0,0.9043,,
+"gradient boosting | reference, noise augmentation",223,0.9197,0.999,0.726,0.6342,0.0
+"gradient boosting | reference, noise augmentation",230,0.992,0.992,,1.0,
+gradient boosting | reference + deviations,101,0.9995,1.0,0.6667,,
+gradient boosting | reference + deviations,106,0.9926,0.996,,0.9827,
+gradient boosting | reference + deviations,108,0.9705,0.9753,0.5,0.7059,0.0
+gradient boosting | reference + deviations,109,0.9933,0.9948,,0.9474,0.0
+gradient boosting | reference + deviations,112,1.0,1.0,1.0,,
+gradient boosting | reference + deviations,114,0.9862,0.9912,0.5,1.0,0.0
+gradient boosting | reference + deviations,115,0.9918,0.9918,,,
+gradient boosting | reference + deviations,116,0.9979,0.9983,1.0,0.9908,
+gradient boosting | reference + deviations,118,0.9908,0.9995,0.8438,0.6875,
+gradient boosting | reference + deviations,119,0.9965,0.9955,,1.0,
+gradient boosting | reference + deviations,122,0.9984,0.9984,,,
+gradient boosting | reference + deviations,124,0.9746,1.0,0.0323,0.8723,0.0
+gradient boosting | reference + deviations,203,0.6726,0.6179,0.0,0.9887,0.0
+gradient boosting | reference + deviations,205,0.9951,0.9996,0.6667,0.9859,0.0909
+gradient boosting | reference + deviations,207,0.9133,0.9728,0.0,0.9426,
+gradient boosting | reference + deviations,208,0.8329,0.9256,0.0,0.998,0.0027
+gradient boosting | reference + deviations,209,0.9154,1.0,0.3368,1.0,
+gradient boosting | reference + deviations,215,0.9458,0.9818,1.0,0.25,0.0
+gradient boosting | reference + deviations,220,0.9956,0.9995,0.9149,,
+gradient boosting | reference + deviations,223,0.9458,0.9985,0.7123,0.778,0.1429
+gradient boosting | reference + deviations,230,0.9898,0.9898,,1.0,
+"gradient boosting | reference + deviations, noise augmentation",101,0.9995,1.0,0.6667,,
+"gradient boosting | reference + deviations, noise augmentation",106,0.9877,0.9947,,0.9673,
+"gradient boosting | reference + deviations, noise augmentation",108,0.9745,0.9776,0.75,0.8235,0.0
+"gradient boosting | reference + deviations, noise augmentation",109,0.9877,0.9952,,0.5526,0.0
+"gradient boosting | reference + deviations, noise augmentation",112,1.0,1.0,1.0,,
+"gradient boosting | reference + deviations, noise augmentation",114,0.9883,0.9929,0.5833,1.0,0.0
+"gradient boosting | reference + deviations, noise augmentation",115,0.9856,0.9856,,,
+"gradient boosting | reference + deviations, noise augmentation",116,0.9967,0.997,1.0,0.9908,
+"gradient boosting | reference + deviations, noise augmentation",118,0.9903,1.0,0.8958,0.25,
+"gradient boosting | reference + deviations, noise augmentation",119,0.9985,0.9987,,0.9977,
+"gradient boosting | reference + deviations, noise augmentation",122,0.9988,0.9988,,,
+"gradient boosting | reference + deviations, noise augmentation",124,0.9635,1.0,0.0323,0.4894,0.0
+"gradient boosting | reference + deviations, noise augmentation",203,0.5647,0.4925,0.0,0.9797,0.0
+"gradient boosting | reference + deviations, noise augmentation",205,0.9921,0.9996,0.3333,0.8873,0.0909
+"gradient boosting | reference + deviations, noise augmentation",207,0.8638,0.9721,0.0,0.5072,
+"gradient boosting | reference + deviations, noise augmentation",208,0.8515,0.9666,0.0,0.9889,0.0
+"gradient boosting | reference + deviations, noise augmentation",209,0.9054,0.9985,0.2689,1.0,
+"gradient boosting | reference + deviations, noise augmentation",215,0.9792,0.9975,1.0,0.628,0.0
+"gradient boosting | reference + deviations, noise augmentation",220,0.9961,0.9995,0.9255,,
+"gradient boosting | reference + deviations, noise augmentation",223,0.9285,0.999,0.6986,0.685,0.0714
+"gradient boosting | reference + deviations, noise augmentation",230,0.9889,0.9889,,1.0,

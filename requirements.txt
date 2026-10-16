@@ -13,6 +13,7 @@ wfdb==4.3.1
 PyYAML==6.0.3
 tqdm==4.70.1
 torch==2.11.0
+wandb==0.30.0      # experiment logging (src/explore_networks.py --wandb); API key in key.txt or WANDB_API_KEY
 
 # notebooks
 jupyter==1.1.1
